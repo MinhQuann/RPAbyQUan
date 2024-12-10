@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.14 on win32)" generated="20241209 13:41:36.570" rpa="true" schemaversion="4">
+<suite id="s1" name="ActionConfigObject" source="d:\RPA2\PageObject\ActionFile\ActionConfigObject.robot">
+<test id="s1-t1" name="Add Object To Frist Group" line="11">
+<kw name="Open CRM" library="LoginPageLocators">
+<kw name="Open Browser" library="RPA.Browser.Selenium">
+<arg>${urlLAB}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20241209 13:41:39.478" level="INFO">Opening browser 'chrome' to base url 'https://lab.connect247.vn/ucrm-ver3/settings'.</msg>
+<status status="PASS" starttime="20241209 13:41:39.475" endtime="20241209 13:41:51.896"/>
+</kw>
+<kw name="Maximize Browser Window" library="RPA.Browser.Selenium">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20241209 13:41:51.897" endtime="20241209 13:41:51.918"/>
+</kw>
+<status status="PASS" starttime="20241209 13:41:39.473" endtime="20241209 13:41:51.919"/>
+</kw>
+<kw name="Login CRM" library="LoginPageLocators">
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${BtnLoginOutSide}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241209 13:41:51.927" level="INFO">Clicking element '//*[@id='root']/div[2]/div/div/div[2]/div/button'.</msg>
+<status status="PASS" starttime="20241209 13:41:51.924" endtime="20241209 13:41:52.468"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>${EmaiLogin}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241209 13:41:52.472" endtime="20241209 13:41:52.915"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${EmaiLogin}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:41:52.919" level="INFO">Typing text 'auto@basebs.com' into text field 'id:basic_email'.</msg>
+<status status="PASS" starttime="20241209 13:41:52.917" endtime="20241209 13:41:53.322"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${Pwdlogin}</arg>
+<arg>${pwd}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:41:53.325" level="INFO">Typing text '12345678x@X' into text field 'id:basic_pass'.</msg>
+<status status="PASS" starttime="20241209 13:41:53.323" endtime="20241209 13:41:53.590"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${Clickbtnlogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241209 13:41:53.593" level="INFO">Clicking element '//*[@id='basic']/div[3]/div/div/div/div/button'.</msg>
+<status status="PASS" starttime="20241209 13:41:53.591" endtime="20241209 13:41:53.816"/>
+</kw>
+<status status="PASS" starttime="20241209 13:41:51.921" endtime="20241209 13:41:53.816"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241209 13:41:55.829" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241209 13:41:53.818" endtime="20241209 13:41:55.831"/>
+</kw>
+<kw name="Click ObjectManagement" library="SettingsCRMLocators">
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${ObjectManagement}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241209 13:41:55.838" level="INFO">Clicking element 'id:ucrm_setting_1_0'.</msg>
+<status status="PASS" starttime="20241209 13:41:55.835" endtime="20241209 13:41:56.230"/>
+</kw>
+<status status="PASS" starttime="20241209 13:41:55.833" endtime="20241209 13:41:56.230"/>
+</kw>
+<kw name="Add Object To Frist Group" library="ObjectLocators">
+<kw name="Open Workbook" library="RPA.Excel.Files">
+<arg>${ObjConfig}</arg>
+<doc>Open an existing Excel workbook.</doc>
+<msg timestamp="20241209 13:41:56.281" level="INFO">Opened workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x0000018BFB11FCA0&gt;</msg>
+<status status="PASS" starttime="20241209 13:41:56.236" endtime="20241209 13:41:56.287"/>
+</kw>
+<kw name="Read Worksheet As Table" library="RPA.Excel.Files">
+<var>${rows}</var>
+<arg>header=True</arg>
+<arg>name=${SheetName1}</arg>
+<doc>Read the contents of a worksheet into a Table container. Allows
+sorting/filtering/manipulating using the ``RPA.Tables`` library.</doc>
+<msg timestamp="20241209 13:41:56.298" level="INFO">Created table: Table(columns=['ObjectName', 'LabelIDName', 'Prefix', 'Sequence'], rows=5)</msg>
+<msg timestamp="20241209 13:41:56.299" level="INFO">${rows} = Table(columns=['ObjectName', 'LabelIDName', 'Prefix', 'Sequence'], rows=5)</msg>
+<status status="PASS" starttime="20241209 13:41:56.289" endtime="20241209 13:41:56.300"/>
+</kw>
+<for flavor="IN">
+<var>${row}</var>
+<value>@{rows}</value>
+<iter>
+<var name="${row}">{'ObjectName': 'Task', 'LabelIDName': 'Task ID', 'Prefix': 'TAS', 'Sequence': 10000}</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>message: ${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241209 13:41:56.306" endtime="20241209 13:41:56.309"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${ObjectName}</var>
+<arg>${row}</arg>
+<arg>ObjectName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:41:56.316" level="INFO">${ObjectName} = Task</msg>
+<status status="PASS" starttime="20241209 13:41:56.311" endtime="20241209 13:41:56.316"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${LabelIDName}</var>
+<arg>${row}</arg>
+<arg>LabelIDName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:41:56.326" level="INFO">${LabelIDName} = Task ID</msg>
+<status status="PASS" starttime="20241209 13:41:56.322" endtime="20241209 13:41:56.327"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${Prefix}</var>
+<arg>${row}</arg>
+<arg>Prefix</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:41:56.333" level="INFO">${Prefix} = TAS</msg>
+<status status="PASS" starttime="20241209 13:41:56.330" endtime="20241209 13:41:56.336"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${StartSequence}</var>
+<arg>${row}</arg>
+<arg>Sequence</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:41:56.340" level="INFO">${StartSequence} = 10000</msg>
+<status status="PASS" starttime="20241209 13:41:56.337" endtime="20241209 13:41:56.341"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241209 13:41:58.346" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241209 13:41:56.342" endtime="20241209 13:41:58.347"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${CreateObjectfrom1stGroup}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241209 13:41:58.356" level="INFO">Clicking element '//*[@id="root"]/section/section/section/main/div/div[3]/div/div[1]/div[2]/div[2]'.</msg>
+<status status="PASS" starttime="20241209 13:41:58.349" endtime="20241209 13:41:58.796"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${objName}</arg>
+<arg>${ObjectName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:41:58.798" level="INFO">Typing text 'Task' into text field 'id:basic_objectName'.</msg>
+<status status="PASS" starttime="20241209 13:41:58.797" endtime="20241209 13:41:59.061"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${LabelIDName1}</arg>
+<arg>${LabelIDName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:41:59.065" level="INFO">Typing text 'Task ID' into text field 'id:basic_labelIDName'.</msg>
+<status status="PASS" starttime="20241209 13:41:59.063" endtime="20241209 13:41:59.388"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${Prefix1}</arg>
+<arg>${Prefix}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:41:59.392" level="INFO">Typing text 'TAS' into text field 'id:basic_prefix'.</msg>
+<status status="PASS" starttime="20241209 13:41:59.388" endtime="20241209 13:41:59.624"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${StartSequence1}</arg>
+<arg>${StartSequence}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:41:59.630" level="INFO">Typing text '10000' into text field 'id:basic_startSequence'.</msg>
+<status status="PASS" starttime="20241209 13:41:59.626" endtime="20241209 13:41:59.894"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${btnSaveObject}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241209 13:41:59.899" level="INFO">Clicking element '(//*[@id="basic"]/div[10]/button[1])[1]'.</msg>
+<status status="PASS" starttime="20241209 13:41:59.897" endtime="20241209 13:42:00.229"/>
+</kw>
+<status status="PASS" starttime="20241209 13:41:56.304" endtime="20241209 13:42:00.229"/>
+</iter>
+<iter>
+<var name="${row}">{'ObjectName': 'Complaint', 'LabelIDName': 'Complaint ID', 'Prefix': 'COM', 'Sequence': 10000}</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>message: ${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241209 13:42:00.231" endtime="20241209 13:42:00.233"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${ObjectName}</var>
+<arg>${row}</arg>
+<arg>ObjectName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:00.238" level="INFO">${ObjectName} = Complaint</msg>
+<status status="PASS" starttime="20241209 13:42:00.235" endtime="20241209 13:42:00.239"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${LabelIDName}</var>
+<arg>${row}</arg>
+<arg>LabelIDName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:00.243" level="INFO">${LabelIDName} = Complaint ID</msg>
+<status status="PASS" starttime="20241209 13:42:00.240" endtime="20241209 13:42:00.243"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${Prefix}</var>
+<arg>${row}</arg>
+<arg>Prefix</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:00.247" level="INFO">${Prefix} = COM</msg>
+<status status="PASS" starttime="20241209 13:42:00.245" endtime="20241209 13:42:00.248"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${StartSequence}</var>
+<arg>${row}</arg>
+<arg>Sequence</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:00.257" level="INFO">${StartSequence} = 10000</msg>
+<status status="PASS" starttime="20241209 13:42:00.250" endtime="20241209 13:42:00.259"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241209 13:42:02.261" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241209 13:42:00.260" endtime="20241209 13:42:02.262"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${CreateObjectfrom1stGroup}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:02.265" level="INFO">Clicking element '//*[@id="root"]/section/section/section/main/div/div[3]/div/div[1]/div[2]/div[2]'.</msg>
+<status status="PASS" starttime="20241209 13:42:02.263" endtime="20241209 13:42:02.420"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${objName}</arg>
+<arg>${ObjectName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:02.425" level="INFO">Typing text 'Complaint' into text field 'id:basic_objectName'.</msg>
+<status status="PASS" starttime="20241209 13:42:02.422" endtime="20241209 13:42:02.866"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${LabelIDName1}</arg>
+<arg>${LabelIDName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:02.870" level="INFO">Typing text 'Complaint ID' into text field 'id:basic_labelIDName'.</msg>
+<status status="PASS" starttime="20241209 13:42:02.867" endtime="20241209 13:42:03.142"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${Prefix1}</arg>
+<arg>${Prefix}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:03.147" level="INFO">Typing text 'COM' into text field 'id:basic_prefix'.</msg>
+<status status="PASS" starttime="20241209 13:42:03.144" endtime="20241209 13:42:03.426"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${StartSequence1}</arg>
+<arg>${StartSequence}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:03.431" level="INFO">Typing text '10000' into text field 'id:basic_startSequence'.</msg>
+<status status="PASS" starttime="20241209 13:42:03.427" endtime="20241209 13:42:03.699"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${btnSaveObject}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:03.706" level="INFO">Clicking element '(//*[@id="basic"]/div[10]/button[1])[1]'.</msg>
+<status status="PASS" starttime="20241209 13:42:03.703" endtime="20241209 13:42:03.927"/>
+</kw>
+<status status="PASS" starttime="20241209 13:42:00.230" endtime="20241209 13:42:03.927"/>
+</iter>
+<iter>
+<var name="${row}">{'ObjectName': 'Monitaz', 'LabelIDName': 'Monitaz ID', 'Prefix': 'MON', 'Sequence': 10000}</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>message: ${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241209 13:42:03.928" endtime="20241209 13:42:03.930"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${ObjectName}</var>
+<arg>${row}</arg>
+<arg>ObjectName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:03.934" level="INFO">${ObjectName} = Monitaz</msg>
+<status status="PASS" starttime="20241209 13:42:03.932" endtime="20241209 13:42:03.935"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${LabelIDName}</var>
+<arg>${row}</arg>
+<arg>LabelIDName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:03.941" level="INFO">${LabelIDName} = Monitaz ID</msg>
+<status status="PASS" starttime="20241209 13:42:03.937" endtime="20241209 13:42:03.942"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${Prefix}</var>
+<arg>${row}</arg>
+<arg>Prefix</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:03.945" level="INFO">${Prefix} = MON</msg>
+<status status="PASS" starttime="20241209 13:42:03.943" endtime="20241209 13:42:03.946"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${StartSequence}</var>
+<arg>${row}</arg>
+<arg>Sequence</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:03.949" level="INFO">${StartSequence} = 10000</msg>
+<status status="PASS" starttime="20241209 13:42:03.947" endtime="20241209 13:42:03.952"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241209 13:42:05.966" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241209 13:42:03.954" endtime="20241209 13:42:05.969"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${CreateObjectfrom1stGroup}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:05.975" level="INFO">Clicking element '//*[@id="root"]/section/section/section/main/div/div[3]/div/div[1]/div[2]/div[2]'.</msg>
+<status status="PASS" starttime="20241209 13:42:05.970" endtime="20241209 13:42:06.809"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${objName}</arg>
+<arg>${ObjectName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:06.811" level="INFO">Typing text 'Monitaz' into text field 'id:basic_objectName'.</msg>
+<status status="PASS" starttime="20241209 13:42:06.809" endtime="20241209 13:42:07.245"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${LabelIDName1}</arg>
+<arg>${LabelIDName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:07.255" level="INFO">Typing text 'Monitaz ID' into text field 'id:basic_labelIDName'.</msg>
+<status status="PASS" starttime="20241209 13:42:07.247" endtime="20241209 13:42:07.588"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${Prefix1}</arg>
+<arg>${Prefix}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:07.593" level="INFO">Typing text 'MON' into text field 'id:basic_prefix'.</msg>
+<status status="PASS" starttime="20241209 13:42:07.589" endtime="20241209 13:42:07.812"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${StartSequence1}</arg>
+<arg>${StartSequence}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:07.817" level="INFO">Typing text '10000' into text field 'id:basic_startSequence'.</msg>
+<status status="PASS" starttime="20241209 13:42:07.812" endtime="20241209 13:42:08.126"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${btnSaveObject}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:08.129" level="INFO">Clicking element '(//*[@id="basic"]/div[10]/button[1])[1]'.</msg>
+<status status="PASS" starttime="20241209 13:42:08.127" endtime="20241209 13:42:08.415"/>
+</kw>
+<status status="PASS" starttime="20241209 13:42:03.928" endtime="20241209 13:42:08.417"/>
+</iter>
+<iter>
+<var name="${row}">{'ObjectName': 'Service Request', 'LabelIDName': 'Service Request ID', 'Prefix': 'SRQ', 'Sequence': 10000}</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>message: ${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241209 13:42:08.418" endtime="20241209 13:42:08.420"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${ObjectName}</var>
+<arg>${row}</arg>
+<arg>ObjectName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:08.428" level="INFO">${ObjectName} = Service Request</msg>
+<status status="PASS" starttime="20241209 13:42:08.423" endtime="20241209 13:42:08.428"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${LabelIDName}</var>
+<arg>${row}</arg>
+<arg>LabelIDName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:08.431" level="INFO">${LabelIDName} = Service Request ID</msg>
+<status status="PASS" starttime="20241209 13:42:08.429" endtime="20241209 13:42:08.432"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${Prefix}</var>
+<arg>${row}</arg>
+<arg>Prefix</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:08.433" level="INFO">${Prefix} = SRQ</msg>
+<status status="PASS" starttime="20241209 13:42:08.433" endtime="20241209 13:42:08.434"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${StartSequence}</var>
+<arg>${row}</arg>
+<arg>Sequence</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:08.437" level="INFO">${StartSequence} = 10000</msg>
+<status status="PASS" starttime="20241209 13:42:08.436" endtime="20241209 13:42:08.438"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241209 13:42:10.449" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241209 13:42:08.438" endtime="20241209 13:42:10.451"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${CreateObjectfrom1stGroup}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:10.456" level="INFO">Clicking element '//*[@id="root"]/section/section/section/main/div/div[3]/div/div[1]/div[2]/div[2]'.</msg>
+<status status="PASS" starttime="20241209 13:42:10.452" endtime="20241209 13:42:10.775"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${objName}</arg>
+<arg>${ObjectName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:10.778" level="INFO">Typing text 'Service Request' into text field 'id:basic_objectName'.</msg>
+<status status="PASS" starttime="20241209 13:42:10.776" endtime="20241209 13:42:11.252"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${LabelIDName1}</arg>
+<arg>${LabelIDName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:11.256" level="INFO">Typing text 'Service Request ID' into text field 'id:basic_labelIDName'.</msg>
+<status status="PASS" starttime="20241209 13:42:11.254" endtime="20241209 13:42:11.603"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${Prefix1}</arg>
+<arg>${Prefix}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:11.608" level="INFO">Typing text 'SRQ' into text field 'id:basic_prefix'.</msg>
+<status status="PASS" starttime="20241209 13:42:11.604" endtime="20241209 13:42:11.853"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${StartSequence1}</arg>
+<arg>${StartSequence}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:11.860" level="INFO">Typing text '10000' into text field 'id:basic_startSequence'.</msg>
+<status status="PASS" starttime="20241209 13:42:11.856" endtime="20241209 13:42:12.177"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${btnSaveObject}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:12.181" level="INFO">Clicking element '(//*[@id="basic"]/div[10]/button[1])[1]'.</msg>
+<status status="PASS" starttime="20241209 13:42:12.178" endtime="20241209 13:42:12.474"/>
+</kw>
+<status status="PASS" starttime="20241209 13:42:08.417" endtime="20241209 13:42:12.474"/>
+</iter>
+<iter>
+<var name="${row}">{'ObjectName': 'Recyle Bin', 'LabelIDName': 'ID', 'Prefix': 'BIN', 'Sequence': 10000}</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>message: ${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241209 13:42:12.476" endtime="20241209 13:42:12.480"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${ObjectName}</var>
+<arg>${row}</arg>
+<arg>ObjectName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:12.485" level="INFO">${ObjectName} = Recyle Bin</msg>
+<status status="PASS" starttime="20241209 13:42:12.482" endtime="20241209 13:42:12.486"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${LabelIDName}</var>
+<arg>${row}</arg>
+<arg>LabelIDName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:12.494" level="INFO">${LabelIDName} = ID</msg>
+<status status="PASS" starttime="20241209 13:42:12.487" endtime="20241209 13:42:12.495"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${Prefix}</var>
+<arg>${row}</arg>
+<arg>Prefix</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:12.500" level="INFO">${Prefix} = BIN</msg>
+<status status="PASS" starttime="20241209 13:42:12.497" endtime="20241209 13:42:12.500"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${StartSequence}</var>
+<arg>${row}</arg>
+<arg>Sequence</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20241209 13:42:12.506" level="INFO">${StartSequence} = 10000</msg>
+<status status="PASS" starttime="20241209 13:42:12.502" endtime="20241209 13:42:12.507"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241209 13:42:14.519" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241209 13:42:12.508" endtime="20241209 13:42:14.521"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${CreateObjectfrom1stGroup}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:14.531" level="INFO">Clicking element '//*[@id="root"]/section/section/section/main/div/div[3]/div/div[1]/div[2]/div[2]'.</msg>
+<status status="PASS" starttime="20241209 13:42:14.524" endtime="20241209 13:42:14.867"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${objName}</arg>
+<arg>${ObjectName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:14.870" level="INFO">Typing text 'Recyle Bin' into text field 'id:basic_objectName'.</msg>
+<status status="PASS" starttime="20241209 13:42:14.868" endtime="20241209 13:42:15.357"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${LabelIDName1}</arg>
+<arg>${LabelIDName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:15.363" level="INFO">Typing text 'ID' into text field 'id:basic_labelIDName'.</msg>
+<status status="PASS" starttime="20241209 13:42:15.358" endtime="20241209 13:42:15.629"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${Prefix1}</arg>
+<arg>${Prefix}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:15.634" level="INFO">Typing text 'BIN' into text field 'id:basic_prefix'.</msg>
+<status status="PASS" starttime="20241209 13:42:15.630" endtime="20241209 13:42:15.989"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${StartSequence1}</arg>
+<arg>${StartSequence}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:15.994" level="INFO">Typing text '10000' into text field 'id:basic_startSequence'.</msg>
+<status status="PASS" starttime="20241209 13:42:15.992" endtime="20241209 13:42:16.352"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${btnSaveObject}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241209 13:42:16.359" level="INFO">Clicking element '(//*[@id="basic"]/div[10]/button[1])[1]'.</msg>
+<status status="PASS" starttime="20241209 13:42:16.356" endtime="20241209 13:42:16.665"/>
+</kw>
+<status status="PASS" starttime="20241209 13:42:12.475" endtime="20241209 13:42:16.666"/>
+</iter>
+<status status="PASS" starttime="20241209 13:41:56.301" endtime="20241209 13:42:16.666"/>
+</for>
+<status status="PASS" starttime="20241209 13:41:56.233" endtime="20241209 13:42:16.668"/>
+</kw>
+<status status="PASS" starttime="20241209 13:41:39.471" endtime="20241209 13:42:16.670"/>
+</test>
+<status status="PASS" starttime="20241209 13:41:36.585" endtime="20241209 13:42:16.680"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="ActionConfigObject">ActionConfigObject</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20241209 13:41:39.459" level="ERROR">Error in file 'd:\RPA2\PageObject\ActionFile\ActionConfigObject.robot' on line 7: Error in file 'd:\RPA2\PageObject\ActionFile\ActionLogin.robot' on line 4: Resource file with 'Tasks' section is invalid.</msg>
+</errors>
+</robot>
