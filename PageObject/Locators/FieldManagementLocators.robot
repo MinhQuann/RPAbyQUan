@@ -43,7 +43,7 @@ ${DefaultValueSelect}       id:basic_default_value
 # Config Field Type Droplist
 ${Droplist}                 id:basic_droplist_id
 
-# Config Field Type Linking Object
+# Config Field Type Linking ObjectPageObject/Locators/FieldManagementLocators.robot
 ${ObjectName}               id:basic_objectname
 ${FieldLinking}             //*[@id="basic"]/div[7]/div/div[2]/div/div/div/div/span[2]
 
