@@ -1,6 +1,9 @@
 *** Settings ***
+Resource    d:/RPA2/PageObject/Locators/LoginPageLocators.robot
 Resource    d:/RPA2/PageObject/Locators/Common_keyword.robot
+Library     RPA.Browser.Selenium
 Library     SeleniumLibrary
+Resource    d:/RPA2/PageObject/Data/Variables .robot
 
 
 *** Variables ***
@@ -12,7 +15,7 @@ ${Clickbtnlogin} =      //*[@id='basic']/div[3]/div/div/div/div/button
 
 *** Keywords ***
 Open CRM
-    RPA.Browser.Selenium.Open Browser    ${urlLAB}    chrome
+    RPA.Browser.Selenium.Open Browser    ${urlLAB1}    chrome
     RPA.Browser.Selenium.Maximize Browser Window
 
 Login CRM

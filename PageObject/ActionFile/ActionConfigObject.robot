@@ -24,5 +24,3 @@ Add Object
     # CreateNewOBj4thGroup
     Add Object To New Fourth Group
 
-
-*** Test Cases ***

@@ -14,8 +14,9 @@ ${NewCustomerTab} =     id:ucrm_callcenter_0
 ${NewCustomerName} =    (//*[@id="ucrm_multiDetails_0"]/div)[1]
 ${PhoneNumber}=         (//*[@id="ucrm_multiDetails_0"]/div)[4]
 ${Email}=               (//*[@id="ucrm_multiDetails_2"]/div)[1]
-${Settings}=            //*[@id="basic"]/div[1]/div[2]/div/div/div[3]
-${EditRecord}=          ${EMPTY}
+${Settings}=            id:ucrm_multiDetail_setting
+${EditRecord}=          id:ucrm_multiDetails_EDITRECORD
+${EditRecordBtn}=       //*[@id="ucrm_multiDetails_EDITRECORD"]
 
 # Form Contact
 ${FieldName}=           id:fld_contact_first_name_00000001_form_interaction
@@ -27,27 +28,47 @@ ${FieldOtherPhone2}=    ${EMPTY}
 ${SaveContact}=         //*[@id="basic"]/div[4]/button[1]
 
 # TicketHistory
-${+}                    //*[@id="rc-tabs-0-panel-6656932b01838ccdb7d8d785_0"]/div/div[1]/div/div[1]/span
+${+}                    ${EMPTY}
+${link}                 ${EMPTY}
 
 
 *** Keywords ***
 # GET_TEXT_FORM_TAB_NAME
 #    GET_TEXT_FORM_TAB_NAME    ${NewCustomerTab}
 
-EditContactInfo
-    RPA.Browser.Selenium.Wait Until Element Is Visible    ${NewCustomerTab}
-    RPA.Browser.Selenium.Mouse Over    ${Settings}
-    RPA.Browser.Selenium.Click Element    ${EditRecord}
+EditContactInfo_1_TH_0_ContactCRM
+    # RPA.Browser.Selenium.Wait Until Element Is Visible    ${NewCustomerTab}
+    Sleep    5s
+    RPA.Browser.Selenium.Click Element    ${Settings}
+    Sleep    4s
+    RPA.Browser.Selenium.Wait Until Element Is Visible    ${EditRecord}
+    RPA.Browser.Selenium.Wait Until Element Is Visible    ${EditRecordBtn}
+    RPA.Browser.Selenium.Click Element    ${EditRecordBtn}
     ${RandomName}=    Generate_Random_Full_Name
+    Sleep    5s
+    RPA.Browser.Selenium.Wait Until Element Is Visible    ${FieldName}
+    FOR    ${i}    IN RANGE    0    50
+        ${current_value}=    RPA.Browser.Selenium.Get Element Attribute    ${FieldName}    value
+        IF    '${current_value}' != ''
+            RPA.Browser.Selenium.Click Element    ${FieldName}
+            RPA.Browser.Selenium.Press Keys    ${FieldName}    CONTROL+A
+            RPA.Browser.Selenium.Execute JavaScript
+            ...    document.getElementById("fld_contact_first_name_00000001_form_interaction").value = ''
+        END
+        Sleep    1s
+        ${current_value}=    RPA.Browser.Selenium.Get Element Attribute    ${FieldName}    value
+        IF    '${current_value}' == ''    BREAK
+    END
     RPA.Browser.Selenium.Input Text    ${FieldName}    ${RandomName}
     ${RandomEmail}=    Generate_Random_Email
+    RPA.Browser.Selenium.Wait Until Element Is Visible    ${FieldEmail}
+    Sleep    2s
     RPA.Browser.Selenium.Input Text    ${FieldEmail}    ${RandomEmail}
     ${RandomGender}=    Generate_Random_Gender
+    Sleep    2s
     RPA.Browser.Selenium.Input Text    ${FieldGender}    ${RandomGender}
-    RPA.Browser.Selenium.Press Key    ${FieldGender}    Enter
+    RPA.Browser.Selenium.Press Keys    ${FieldGender}    Enter
     ${RandomDepartment}=    Generate_DepartMent
+    Sleep    2s
     RPA.Browser.Selenium.Input Text    ${FieldDepartment}    ${RandomDepartment}
     RPA.Browser.Selenium.Click Element    ${SaveContact}
-    
-
-

@@ -12,10 +12,6 @@ Library     Collections
 
 
 *** Variables ***
-# Login Information
-${urlLAB}                   https://lab.connect247.vn/ucrm-ver3/settings
-${email}                    auto@basebs.com
-${pwd}                      12345678x@X
 
 # Excel File
 ${ObjConfig}                Object Test.xlsx
@@ -34,17 +30,16 @@ ${AUTHORIZATION_HEADER}     Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAi
 &{HEADERS}                  Content-Type=application/json    Authorization=${AUTHORIZATION_HEADER}
 
 
-*** Tasks ***
-Test
-    ${Test}=    Generate_Random_Gender
-    Log To Console    ${Test}
+# *** Tasks ***
+# Test
+#     RPACallAPI_CALL_CTI    501    8010    RINGING    1
 
 
 *** Keywords ***
-RPACallAPI_CALL
-    [Arguments]    ${LinkedID}    ${ExtentionID}    ${CallStatus}    ${Direction}
+RPACallAPI_CALL_CTI
+    [Arguments]    ${LinkedID}    ${ExtentionID}    ${CallStatus}    ${Direction}   ${PhoneNumber}
     ${PAYLOADRINGING}=    Set Variable
-    ...    {"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "0399478262", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "user8014@email.com", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}
+    ...    {"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "user8014@email.com", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}
     Create Session
     ...    api_session
     ...    ${API_URL}
@@ -69,12 +64,10 @@ Generate_Random_Email
     ${full_email}=    Set Variable    ${EmailName}${EmailNameMiddle}${Email_Domanins}
     RETURN    ${full_email}
 
-
-
 Generate_Random_Gender
     ${Gender}=    Evaluate    random.choice(${Gender})
     ${Gender_}=    Set Variable    ${Gender}
-    RETURN    ${Gender_} 
+    RETURN    ${Gender_}
 
 GET_TEXT_FORM_TAB_NAME
     [Arguments]    ${Locator}
@@ -83,3 +76,6 @@ GET_TEXT_FORM_TAB_NAME
 Generate_DepartMent
     ${Street}=    Evaluate    random.choice(${Street})
     RETURN    ${Street}
+
+# CheckValueExist
+    

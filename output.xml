@@ -1,38 +1,519 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.14 on win32)" generated="20241211 23:24:14.735" rpa="true" schemaversion="4">
-<suite id="s1" name="Common keyword" source="d:\RPA2\PageObject\Locators\Common_keyword.robot">
-<test id="s1-t1" name="Test" line="38">
-<kw name="Generate_Random_Gender">
-<var>${Test}</var>
+<robot generator="Robot 6.1.1 (Python 3.10.14 on win32)" generated="20241212 16:58:47.826" rpa="true" schemaversion="4">
+<suite id="s1" name="ActionCallCenter" source="d:\RPA2\PageObject\ActionFile\ActionCallCenter.robot">
+<test id="s1-t1" name="Test" line="14">
+<kw name="Open CRM" library="LoginPageLocators">
+<kw name="Open Browser" library="RPA.Browser.Selenium">
+<arg>${urlLAB1}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20241212 16:58:50.125" level="INFO">Opening browser 'chrome' to base url 'https://lab.connect247.vn/ucrm-ver3/call-center'.</msg>
+<status status="PASS" starttime="20241212 16:58:50.121" endtime="20241212 16:58:56.054"/>
+</kw>
+<kw name="Maximize Browser Window" library="RPA.Browser.Selenium">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20241212 16:58:56.054" endtime="20241212 16:58:56.126"/>
+</kw>
+<status status="PASS" starttime="20241212 16:58:50.120" endtime="20241212 16:58:56.127"/>
+</kw>
+<kw name="Login CRM" library="LoginPageLocators">
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${BtnLoginOutSide}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241212 16:58:56.137" level="INFO">Clicking element '//*[@id='root']/div[2]/div/div/div[2]/div/button'.</msg>
+<status status="PASS" starttime="20241212 16:58:56.133" endtime="20241212 16:58:56.424"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>${EmaiLogin}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241212 16:58:56.429" endtime="20241212 16:58:56.507"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${EmaiLogin}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241212 16:58:56.511" level="INFO">Typing text 'user8010@yopmail.com' into text field 'id:basic_email'.</msg>
+<status status="PASS" starttime="20241212 16:58:56.508" endtime="20241212 16:58:57.091"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${Pwdlogin}</arg>
+<arg>${pwd}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241212 16:58:57.095" level="INFO">Typing text '12345678x@X' into text field 'id:basic_pass'.</msg>
+<status status="PASS" starttime="20241212 16:58:57.092" endtime="20241212 16:58:57.332"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${Clickbtnlogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241212 16:58:57.334" level="INFO">Clicking element '//*[@id='basic']/div[3]/div/div/div/div/button'.</msg>
+<status status="PASS" starttime="20241212 16:58:57.333" endtime="20241212 16:58:57.457"/>
+</kw>
+<status status="PASS" starttime="20241212 16:58:56.130" endtime="20241212 16:58:57.458"/>
+</kw>
+<kw name="Get Window Handles" library="RPA.Browser.Selenium">
+<var>${original_tab}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20241212 16:58:57.464" level="INFO">${original_tab} = ['A0D5A92BA121F14D2B140D0F5F27B5A9']</msg>
+<status status="PASS" starttime="20241212 16:58:57.459" endtime="20241212 16:58:57.466"/>
+</kw>
+<kw name="RPACallAPI_CALL_CTI" library="Common_keyword">
+<arg>12</arg>
+<arg>8010</arg>
+<arg>RINGING</arg>
+<arg>1</arg>
+<arg>0906453332</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PAYLOADRINGING}</var>
+<arg>{"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "user8014@email.com", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241212 16:58:57.473" level="INFO">${PAYLOADRINGING} = {"LinkedID": "12", "QueueID": "", "CallPhone": "0906453332", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "RINGING", "TotalDuration": "0", "BillDurat...</msg>
+<status status="PASS" starttime="20241212 16:58:57.472" endtime="20241212 16:58:57.474"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>api_session</arg>
+<arg>${API_URL}</arg>
+<arg>headers=&amp;{HEADERS}</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20241212 16:58:57.477" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-ver3/cti/call-data, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20241212 16:58:57.475" endtime="20241212 16:58:57.479"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>url=${API_URL}</arg>
+<arg>data=${PAYLOADRINGING}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20241212 16:58:59.242" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-ver3/cti/call-data 
+ path_url=/ucrmapi-ver3/cti/call-data 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs', 'Content-Length': '532'} 
+ body={"LinkedID": "12", "QueueID": "", "CallPhone": "0906453332", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "RINGING", "TotalDuration": "0", "BillDuration": "0", "Username": "user8014@email.com", "Hotline": "", "ExtentionID": "8010", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"} 
+ </msg>
+<msg timestamp="20241212 16:58:59.243" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-ver3/cti/call-data 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Thu, 12 Dec 2024 09:58:59 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'Vary': 'Accept, origin', 'Allow': 'GET, OPTIONS, POST', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'X-Frame-Options': 'DENY', 'Sec-Fetch-Site': 'cross-site'} 
+ body={"data": [], "message": "success", "status_code": 200} 
+ </msg>
+<msg timestamp="20241212 16:58:59.243" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20241212 16:58:59.244" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20241212 16:58:57.480" endtime="20241212 16:58:59.245"/>
+</kw>
+<status status="PASS" starttime="20241212 16:58:57.469" endtime="20241212 16:58:59.246"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241212 16:59:01.258" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241212 16:58:59.248" endtime="20241212 16:59:01.259"/>
+</kw>
+<kw name="Get Window Handles" library="RPA.Browser.Selenium">
+<var>${all_tab}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20241212 16:59:01.267" level="INFO">${all_tab} = ['A0D5A92BA121F14D2B140D0F5F27B5A9', '662E9374A0562D695E185CF1EA4E5945']</msg>
+<status status="PASS" starttime="20241212 16:59:01.260" endtime="20241212 16:59:01.268"/>
+</kw>
+<kw name="Switch Window" library="RPA.Browser.Selenium">
+<arg>${original_tab}[0]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20241212 16:59:01.269" endtime="20241212 16:59:01.371"/>
+</kw>
+<kw name="RPACallAPI_CALL_CTI" library="Common_keyword">
+<arg>12</arg>
+<arg>8010</arg>
+<arg>ANSWER</arg>
+<arg>1</arg>
+<arg>0906453332</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PAYLOADRINGING}</var>
+<arg>{"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "user8014@email.com", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241212 16:59:01.380" level="INFO">${PAYLOADRINGING} = {"LinkedID": "12", "QueueID": "", "CallPhone": "0906453332", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "ANSWER", "TotalDuration": "0", "BillDurati...</msg>
+<status status="PASS" starttime="20241212 16:59:01.376" endtime="20241212 16:59:01.382"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>api_session</arg>
+<arg>${API_URL}</arg>
+<arg>headers=&amp;{HEADERS}</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20241212 16:59:01.386" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-ver3/cti/call-data, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20241212 16:59:01.384" endtime="20241212 16:59:01.388"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>url=${API_URL}</arg>
+<arg>data=${PAYLOADRINGING}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20241212 16:59:02.655" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-ver3/cti/call-data 
+ path_url=/ucrmapi-ver3/cti/call-data 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs', 'Content-Length': '531'} 
+ body={"LinkedID": "12", "QueueID": "", "CallPhone": "0906453332", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "ANSWER", "TotalDuration": "0", "BillDuration": "0", "Username": "user8014@email.com", "Hotline": "", "ExtentionID": "8010", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"} 
+ </msg>
+<msg timestamp="20241212 16:59:02.655" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-ver3/cti/call-data 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Thu, 12 Dec 2024 09:59:03 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'Vary': 'Accept, origin', 'Allow': 'GET, POST, OPTIONS', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'X-Frame-Options': 'DENY', 'Sec-Fetch-Site': 'cross-site'} 
+ body={"data": [], "message": "success", "status_code": 200} 
+ </msg>
+<msg timestamp="20241212 16:59:02.656" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20241212 16:59:02.657" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20241212 16:59:01.389" endtime="20241212 16:59:02.657"/>
+</kw>
+<status status="PASS" starttime="20241212 16:59:01.372" endtime="20241212 16:59:02.658"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241212 16:59:03.663" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20241212 16:59:02.659" endtime="20241212 16:59:03.664"/>
+</kw>
+<kw name="EditContactInfo_1_TH_0_ContactCRM" library="CallCenterLocator">
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241212 16:59:08.679" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20241212 16:59:03.666" endtime="20241212 16:59:08.680"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${Settings}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241212 16:59:08.681" level="INFO">Clicking element 'id:ucrm_multiDetail_setting'.</msg>
+<status status="PASS" starttime="20241212 16:59:08.681" endtime="20241212 16:59:08.795"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241212 16:59:12.802" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20241212 16:59:08.796" endtime="20241212 16:59:12.802"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>${EditRecord}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241212 16:59:12.803" endtime="20241212 16:59:12.839"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>${EditRecordBtn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241212 16:59:12.839" endtime="20241212 16:59:12.872"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${EditRecordBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241212 16:59:12.873" level="INFO">Clicking element '//*[@id="ucrm_multiDetails_EDITRECORD"]'.</msg>
+<status status="PASS" starttime="20241212 16:59:12.872" endtime="20241212 16:59:13.058"/>
+</kw>
+<kw name="Generate_Random_Full_Name" library="Common_keyword">
+<var>${RandomName}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${first_name}</var>
+<arg>random.choice(${NAMES})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241212 16:59:13.064" level="INFO">${first_name} = Huy</msg>
+<status status="PASS" starttime="20241212 16:59:13.063" endtime="20241212 16:59:13.064"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${last_name}</var>
+<arg>random.choice(${LAST_NAMES})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241212 16:59:13.065" level="INFO">${last_name} = Trần</msg>
+<status status="PASS" starttime="20241212 16:59:13.064" endtime="20241212 16:59:13.066"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${mid_name}</var>
+<arg>random.choice(${MID_NAMES})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241212 16:59:13.067" level="INFO">${mid_name} = Thị</msg>
+<status status="PASS" starttime="20241212 16:59:13.066" endtime="20241212 16:59:13.067"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${full_name}</var>
+<arg>${last_name} ${mid_name} ${first_name}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241212 16:59:13.071" level="INFO">${full_name} = Trần Thị Huy</msg>
+<status status="PASS" starttime="20241212 16:59:13.070" endtime="20241212 16:59:13.071"/>
+</kw>
+<return>
+<value>${full_name}</value>
+<status status="PASS" starttime="20241212 16:59:13.071" endtime="20241212 16:59:13.072"/>
+</return>
+<msg timestamp="20241212 16:59:13.072" level="INFO">${RandomName} = Trần Thị Huy</msg>
+<status status="PASS" starttime="20241212 16:59:13.060" endtime="20241212 16:59:13.072"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241212 16:59:18.083" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20241212 16:59:13.072" endtime="20241212 16:59:18.086"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>${FieldName}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241212 16:59:18.087" endtime="20241212 16:59:18.137"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>0</value>
+<value>50</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Get Element Attribute" library="RPA.Browser.Selenium">
+<var>${current_value}</var>
+<arg>${FieldName}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20241212 16:59:18.192" level="INFO">${current_value} = New Customer</msg>
+<status status="PASS" starttime="20241212 16:59:18.139" endtime="20241212 16:59:18.192"/>
+</kw>
+<if>
+<branch type="IF" condition="'${current_value}' != ''">
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${FieldName}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241212 16:59:18.194" level="INFO">Clicking element 'id:fld_contact_first_name_00000001_form_interaction'.</msg>
+<status status="PASS" starttime="20241212 16:59:18.193" endtime="20241212 16:59:18.577"/>
+</kw>
+<kw name="Press Keys" library="RPA.Browser.Selenium">
+<arg>${FieldName}</arg>
+<arg>CONTROL+A</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20241212 16:59:18.580" level="INFO">Sending key(s) ('CONTROL+A',) to id:fld_contact_first_name_00000001_form_interaction element.</msg>
+<msg timestamp="20241212 16:59:18.961" level="INFO">Pressing special key CONTROL down.</msg>
+<msg timestamp="20241212 16:59:18.961" level="INFO">Sending key A</msg>
+<msg timestamp="20241212 16:59:18.961" level="INFO">Releasing special key CONTROL.</msg>
+<status status="PASS" starttime="20241212 16:59:18.578" endtime="20241212 16:59:18.997"/>
+</kw>
+<kw name="Execute Javascript" library="RPA.Browser.Selenium">
+<arg>document.getElementById("fld_contact_first_name_00000001_form_interaction").value = ''</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20241212 16:59:19.004" level="INFO">Executing JavaScript:
+document.getElementById("fld_contact_first_name_00000001_form_interaction").value = ''
+Without any arguments.</msg>
+<status status="PASS" starttime="20241212 16:59:18.999" endtime="20241212 16:59:19.017"/>
+</kw>
+<status status="PASS" starttime="20241212 16:59:18.192" endtime="20241212 16:59:19.019"/>
+</branch>
+<status status="PASS" starttime="20241212 16:59:18.192" endtime="20241212 16:59:19.021"/>
+</if>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241212 16:59:20.025" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20241212 16:59:19.022" endtime="20241212 16:59:20.026"/>
+</kw>
+<kw name="Get Element Attribute" library="RPA.Browser.Selenium">
+<var>${current_value}</var>
+<arg>${FieldName}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20241212 16:59:20.063" level="INFO">${current_value} = </msg>
+<status status="PASS" starttime="20241212 16:59:20.026" endtime="20241212 16:59:20.063"/>
+</kw>
+<if>
+<branch type="IF" condition="'${current_value}' == ''">
+<break>
+<status status="PASS" starttime="20241212 16:59:20.064" endtime="20241212 16:59:20.064"/>
+</break>
+<status status="PASS" starttime="20241212 16:59:20.063" endtime="20241212 16:59:20.064"/>
+</branch>
+<status status="PASS" starttime="20241212 16:59:20.063" endtime="20241212 16:59:20.064"/>
+</if>
+<status status="PASS" starttime="20241212 16:59:18.138" endtime="20241212 16:59:20.065"/>
+</iter>
+<status status="PASS" starttime="20241212 16:59:18.137" endtime="20241212 16:59:20.065"/>
+</for>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${FieldName}</arg>
+<arg>${RandomName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241212 16:59:20.071" level="INFO">Typing text 'Trần Thị Huy' into text field 'id:fld_contact_first_name_00000001_form_interaction'.</msg>
+<status status="PASS" starttime="20241212 16:59:20.067" endtime="20241212 16:59:20.345"/>
+</kw>
+<kw name="Generate_Random_Email" library="Common_keyword">
+<var>${RandomEmail}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${EmailName}</var>
+<arg>random.choice(${EmailName})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241212 16:59:20.348" level="INFO">${EmailName} = huyenh</msg>
+<status status="PASS" starttime="20241212 16:59:20.346" endtime="20241212 16:59:20.348"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${EmailNameMiddle}</var>
+<arg>random.choice(${EmailNameMiddle})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241212 16:59:20.355" level="INFO">${EmailNameMiddle} = huyh</msg>
+<status status="PASS" starttime="20241212 16:59:20.350" endtime="20241212 16:59:20.356"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${Email_Domanins}</var>
+<arg>random.choice(${Email_Domanins})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241212 16:59:20.358" level="INFO">${Email_Domanins} = @outlook.com</msg>
+<status status="PASS" starttime="20241212 16:59:20.357" endtime="20241212 16:59:20.358"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${full_email}</var>
+<arg>${EmailName}${EmailNameMiddle}${Email_Domanins}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241212 16:59:20.361" level="INFO">${full_email} = huyenhhuyh@outlook.com</msg>
+<status status="PASS" starttime="20241212 16:59:20.359" endtime="20241212 16:59:20.361"/>
+</kw>
+<return>
+<value>${full_email}</value>
+<status status="PASS" starttime="20241212 16:59:20.362" endtime="20241212 16:59:20.362"/>
+</return>
+<msg timestamp="20241212 16:59:20.363" level="INFO">${RandomEmail} = huyenhhuyh@outlook.com</msg>
+<status status="PASS" starttime="20241212 16:59:20.345" endtime="20241212 16:59:20.364"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>${FieldEmail}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241212 16:59:20.365" endtime="20241212 16:59:20.443"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241212 16:59:22.447" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241212 16:59:20.444" endtime="20241212 16:59:22.447"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${FieldEmail}</arg>
+<arg>${RandomEmail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241212 16:59:22.449" level="INFO">Typing text 'huyenhhuyh@outlook.com' into text field 'id:fld_contact_email_00000001_form_interaction'.</msg>
+<status status="PASS" starttime="20241212 16:59:22.448" endtime="20241212 16:59:22.989"/>
+</kw>
+<kw name="Generate_Random_Gender" library="Common_keyword">
+<var>${RandomGender}</var>
 <kw name="Evaluate" library="BuiltIn">
 <var>${Gender}</var>
 <arg>random.choice(${Gender})</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20241211 23:24:16.839" level="INFO">${Gender} = Male</msg>
-<status status="PASS" starttime="20241211 23:24:16.838" endtime="20241211 23:24:16.839"/>
+<msg timestamp="20241212 16:59:22.993" level="INFO">${Gender} = Male</msg>
+<status status="PASS" starttime="20241212 16:59:22.992" endtime="20241212 16:59:22.994"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${Gender_}</var>
 <arg>${Gender}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20241211 23:24:16.841" level="INFO">${Gender_} = Male</msg>
-<status status="PASS" starttime="20241211 23:24:16.840" endtime="20241211 23:24:16.841"/>
+<msg timestamp="20241212 16:59:22.996" level="INFO">${Gender_} = Male</msg>
+<status status="PASS" starttime="20241212 16:59:22.995" endtime="20241212 16:59:22.996"/>
 </kw>
 <return>
 <value>${Gender_}</value>
-<status status="PASS" starttime="20241211 23:24:16.841" endtime="20241211 23:24:16.841"/>
+<status status="PASS" starttime="20241212 16:59:22.996" endtime="20241212 16:59:22.997"/>
 </return>
-<msg timestamp="20241211 23:24:16.843" level="INFO">${Test} = Male</msg>
-<status status="PASS" starttime="20241211 23:24:16.838" endtime="20241211 23:24:16.843"/>
+<msg timestamp="20241212 16:59:22.998" level="INFO">${RandomGender} = Male</msg>
+<status status="PASS" starttime="20241212 16:59:22.990" endtime="20241212 16:59:22.998"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${Test}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20241211 23:24:16.844" endtime="20241211 23:24:16.845"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241212 16:59:25.002" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241212 16:59:22.999" endtime="20241212 16:59:25.002"/>
 </kw>
-<status status="PASS" starttime="20241211 23:24:16.837" endtime="20241211 23:24:16.846"/>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${FieldGender}</arg>
+<arg>${RandomGender}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241212 16:59:25.005" level="INFO">Typing text 'Male' into text field '//*[@id="basic_fld_contact_gender_00000001"]'.</msg>
+<status status="PASS" starttime="20241212 16:59:25.003" endtime="20241212 16:59:25.300"/>
+</kw>
+<kw name="Press Keys" library="RPA.Browser.Selenium">
+<arg>${FieldGender}</arg>
+<arg>Enter</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20241212 16:59:25.302" level="INFO">Sending key(s) ('Enter',) to //*[@id="basic_fld_contact_gender_00000001"] element.</msg>
+<msg timestamp="20241212 16:59:25.649" level="INFO">Sending keys Enter</msg>
+<status status="PASS" starttime="20241212 16:59:25.301" endtime="20241212 16:59:25.797"/>
+</kw>
+<kw name="Generate_DepartMent" library="Common_keyword">
+<var>${RandomDepartment}</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${Street}</var>
+<arg>random.choice(${Street})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241212 16:59:25.799" level="INFO">${Street} = 404 Đường Võ Thị Sáu, Phường 13, Quận Tân Bình</msg>
+<status status="PASS" starttime="20241212 16:59:25.798" endtime="20241212 16:59:25.799"/>
+</kw>
+<return>
+<value>${Street}</value>
+<status status="PASS" starttime="20241212 16:59:25.800" endtime="20241212 16:59:25.800"/>
+</return>
+<msg timestamp="20241212 16:59:25.800" level="INFO">${RandomDepartment} = 404 Đường Võ Thị Sáu, Phường 13, Quận Tân Bình</msg>
+<status status="PASS" starttime="20241212 16:59:25.798" endtime="20241212 16:59:25.800"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241212 16:59:27.813" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241212 16:59:25.801" endtime="20241212 16:59:27.813"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${FieldDepartment}</arg>
+<arg>${RandomDepartment}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241212 16:59:27.815" level="INFO">Typing text '404 Đường Võ Thị Sáu, Phường 13, Quận Tân Bình' into text field 'id:fld_contact_department_00000001_form_interaction'.</msg>
+<status status="PASS" starttime="20241212 16:59:27.814" endtime="20241212 16:59:28.492"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${SaveContact}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241212 16:59:28.494" level="INFO">Clicking element '//*[@id="basic"]/div[4]/button[1]'.</msg>
+<status status="PASS" starttime="20241212 16:59:28.493" endtime="20241212 16:59:29.498"/>
+</kw>
+<status status="PASS" starttime="20241212 16:59:03.665" endtime="20241212 16:59:29.498"/>
+</kw>
+<kw name="RPACallAPI_CALL_CTI" library="Common_keyword">
+<arg>12</arg>
+<arg>8010</arg>
+<arg>SUCCCESS</arg>
+<arg>1</arg>
+<arg>0906453332</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PAYLOADRINGING}</var>
+<arg>{"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "user8014@email.com", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241212 16:59:29.503" level="INFO">${PAYLOADRINGING} = {"LinkedID": "12", "QueueID": "", "CallPhone": "0906453332", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "SUCCCESS", "TotalDuration": "0", "BillDura...</msg>
+<status status="PASS" starttime="20241212 16:59:29.502" endtime="20241212 16:59:29.503"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>api_session</arg>
+<arg>${API_URL}</arg>
+<arg>headers=&amp;{HEADERS}</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20241212 16:59:29.505" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-ver3/cti/call-data, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20241212 16:59:29.504" endtime="20241212 16:59:29.505"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>url=${API_URL}</arg>
+<arg>data=${PAYLOADRINGING}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20241212 16:59:30.267" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-ver3/cti/call-data 
+ path_url=/ucrmapi-ver3/cti/call-data 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs', 'Content-Length': '533'} 
+ body={"LinkedID": "12", "QueueID": "", "CallPhone": "0906453332", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "SUCCCESS", "TotalDuration": "0", "BillDuration": "0", "Username": "user8014@email.com", "Hotline": "", "ExtentionID": "8010", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"} 
+ </msg>
+<msg timestamp="20241212 16:59:30.267" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-ver3/cti/call-data 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Thu, 12 Dec 2024 09:59:30 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'Vary': 'Accept, origin', 'Allow': 'GET, POST, OPTIONS', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'X-Frame-Options': 'DENY', 'Sec-Fetch-Site': 'cross-site'} 
+ body={"data": [], "message": "success", "status_code": 200} 
+ </msg>
+<msg timestamp="20241212 16:59:30.267" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20241212 16:59:30.269" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20241212 16:59:29.506" endtime="20241212 16:59:30.269"/>
+</kw>
+<status status="PASS" starttime="20241212 16:59:29.499" endtime="20241212 16:59:30.270"/>
+</kw>
+<status status="PASS" starttime="20241212 16:58:50.117" endtime="20241212 16:59:30.272"/>
 </test>
-<status status="PASS" starttime="20241211 23:24:14.746" endtime="20241211 23:24:16.848"/>
+<status status="PASS" starttime="20241212 16:58:47.841" endtime="20241212 16:59:30.276"/>
 </suite>
 <statistics>
 <total>
@@ -41,10 +522,10 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Common keyword">Common keyword</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="ActionCallCenter">ActionCallCenter</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20241211 23:24:14.835" level="ERROR">Error in file 'd:\RPA2\PageObject\Locators\SettingsCRMLocators.robot' on line 2: Error in file 'd:\RPA2\PageObject\Locators\Common_keyword.robot' on line 37: Resource file with 'Tasks' section is invalid.</msg>
+<msg timestamp="20241212 16:58:50.066" level="ERROR">Error in file 'd:\RPA2\PageObject\ActionFile\ActionCallCenter.robot' on line 8: Error in file 'd:\RPA2\PageObject\ActionFile\ActionLogin.robot' on line 6: Resource file with 'Tasks' section is invalid.</msg>
 </errors>
 </robot>
