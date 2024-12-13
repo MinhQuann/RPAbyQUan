@@ -28,7 +28,7 @@ ${FieldOtherPhone2}=    ${EMPTY}
 ${SaveContact}=         //*[@id="basic"]/div[4]/button[1]
 
 # TicketHistory
-${+}                    ${EMPTY}
+${+}                    id:
 ${link}                 ${EMPTY}
 
 
@@ -72,3 +72,7 @@ EditContactInfo_1_TH_0_ContactCRM
     Sleep    2s
     RPA.Browser.Selenium.Input Text    ${FieldDepartment}    ${RandomDepartment}
     RPA.Browser.Selenium.Click Element    ${SaveContact}
+
+
+
+# CreateTicket
