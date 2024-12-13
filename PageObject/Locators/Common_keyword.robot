@@ -72,11 +72,14 @@ GET_TEXT_FORM_TAB_NAME
     [Arguments]    ${Locator}
     ${Name}=    RPA.Browser.Selenium.Get Text    ${Locator}
 
-Generate_DepartMent
+Generate_Street
     ${Street}=    Evaluate    random.choice(${Street})
     ${Street_}=    Set Variable    ${Street}
     RETURN    ${Street}
 
-# CheckValueExist
+Generate_Phone
+    ${Phone}=    Evaluate    random.choice(${Phone})
+    ${Phone_}=    Set Variable    ${Phone}
+    RETURN    ${Phone_}
 
-# RPACallAPI_CALL_FIN
+# Generate_Random Number
