@@ -82,4 +82,17 @@ Generate_Phone
     ${Phone_}=    Set Variable    ${Phone}
     RETURN    ${Phone_}
 
-# Generate_Random Number
+# Loop ListBox
+
+random_number
+    [Arguments]    ${min}    ${max}
+    ${random_number}=    Evaluate    random.randint(${min}, ${max})
+    RETURN    ${random_number}
+
+Get Random Element
+    [Arguments]    ${elements}
+    ${count}=    Get Length    ${elements}
+    Log To Console    message=${count}
+    ${random_index}=    Evaluate    random.randint(0, ${count} - 1)
+    ${random_element}=    Get From List    ${elements}    ${random_index}
+    RETURN    ${random_element}
