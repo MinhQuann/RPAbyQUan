@@ -2,13 +2,11 @@
 Resource    d:/RPA2/PageObject/Locators/Common_keyword.robot
 Library     SeleniumLibrary
 Library     RPA.Browser.Selenium
-Library     Random
-Library     RPA.Excel.Files
+Library     random
 Library     Collections
-Library     RPA.PDF
 Library     BuiltIn
-Library     RPA.Browser.Selenium
 Library     RPA.Desktop
+Library     XML
 
 
 *** Variables ***
@@ -22,7 +20,10 @@ ${Email}                (//*[@id="ucrm_multiDetails_2"]/div)[1]
 ${Settings}             id:ucrm_multiDetail_setting
 ${EditRecord}           id:ucrm_multiDetails_EDITRECORD
 ${EditRecordBtn}        //*[@id="ucrm_multiDetails_EDITRECORD"]
-${Search}               //*[@id="basic"]/div[1]/div[2]/div/div/div[1]/div/div/span/span/span[2]/input
+${btnSearchMulti}       id:ucrm_multiDetail_searchBtn
+${btnSearchloc}         id:ucrm_listOfContact_ucrmSearchBtn
+${btnSearch}            xpath=//button[span[text()='Search']]
+${Search}               id:ucrm-multiDetail-search
 
 # Form Contact
 ${FieldName}            id:fld_contact_first_name_00000001_form_interaction
@@ -36,7 +37,7 @@ ${SaveContact}          //*[@id="basic"]/div[4]/button[1]
 
 # TicketHistory
 ${+}                    id:ucrm_ticketlist_addrecord
-# ${NgônNgữ}    id:basic_fld_ngon_ngu_01
+${link}                 ${EMPTY}
 ${NgônNgữ}              //*[@id="basic"]/div[2]/div[2]/div/div[3]/div/div/div[2]/div/div/div/div
 ${PhânLoạiKH}           id:basic_fld_phan_loai_kh_new_01
 ${Level1}               id:basic_fld_1_spdv_01
@@ -49,8 +50,6 @@ ${KQtưvấnKH}            id:basic_fld_kq_tu_van_kh_01
 ${GhiChú}               id:fld_ghichu_85169728_form_interaction
 ${Save}                 //*[@id="basic"]/div[13]/button[1]
 
-${XPATH_LIST_ITEMS}     //div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
-
 
 *** Keywords ***
 # GET_TEXT_FORM_TAB_NAME
@@ -58,7 +57,7 @@ ${XPATH_LIST_ITEMS}     //div[contains(@class, 'ant-select-item ant-select-item-
 
 Edit_New_Cus_Name
     Sleep    5s
-    RPA.Browser.Selenium.Click Element    ${Settings}
+    Try Click Element Or Execute JavaScript_Xpath    ${Settings}
     Sleep    2s
     RPA.Browser.Selenium.Wait Until Element Is Visible    ${EditRecord}
     RPA.Browser.Selenium.Wait Until Element Is Visible    ${EditRecordBtn}
@@ -101,12 +100,22 @@ EditContactInfo
 # Add New Ticket History
 
 Add_New_Ticket_History
-    RPA.Browser.Selenium.Click Element    ${+}
-    Sleep    3s
+    Sleep    5s
+    RPA.Browser.Selenium.Wait Until Element Is Visible    ${+}
+    ${notificationExists}=    Run Keyword And Return Status
+    ...    RPA.Browser.Selenium.Element Should Be Visible
+    ...    xpath=//div[contains(@class, 'ant-notification-notice-message')]
+    ...    timeout=5s
+    IF    ${notificationExists}
+        RPA.Browser.Selenium.Wait Until Element Is Not Visible
+        ...    xpath=//div[contains(@class, 'ant-notification-notice-message')]
+    END
+    Run Keyword Unless    ${notificationExists}    RPA.Browser.Selenium.Click Element    ${+}
+    Sleep    5s
     RPA.Browser.Selenium.Wait Until Element Is Visible    //*[@id="basic_fld_ngon_ngu_01"]
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_ngon_ngu_01
     RPA.Browser.Selenium.Wait Until Element Is Visible
-    ...    xpath=//div[contains(@class, 'rc-virtual-list-holder-inner')][1]
+    ...    xpath=//div[contains(@class, 'rc-virtual-list-holder-inner')]
     ...    timeout=10
     ${div_elements}=    RPA.Browser.Selenium.Get WebElements
     ...    xpath=//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
@@ -115,92 +124,146 @@ Add_New_Ticket_History
     ${random_index}=    Evaluate    random.randint(0, ${list_length} - 1)
     RPA.Browser.Selenium.Click Element    ${div_elements[${random_index}]}
 
+    Sleep    3s
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_phan_loai_kh_new_01
-    Sleep    2s
     RPA.Browser.Selenium.Execute Javascript
-    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[1].offsetTop);
+    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[1]);
     ${div_elements}=    RPA.Browser.Selenium.Get WebElements
-    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[2]//div[contains(@class, 'ant-select-item')]
+    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[2]//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
     ${list_length}=    Get Length    ${div_elements}
     Log To Console    message=${list_length}
     ${random_index}=    Evaluate    random.randint(0, ${list_length} - 1)
-    RPA.Browser.Selenium.Click Element    ${div_elements[${random_index}]}
+    Run Keyword And Ignore Error    Try Click Element Or Execute JavaScript    ${div_elements}    ${random_index}
+    # RPA.Browser.Selenium.Click Element    ${div_elements[${random_index}]}
 
+    Sleep    3s
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_1_spdv_01
-    Sleep    1s
     RPA.Browser.Selenium.Execute Javascript
-    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[2].offsetTop);
+    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[2]);
     ${div_elements3}=    RPA.Browser.Selenium.Get WebElements
-    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[3]//div[contains(@class, 'ant-select-item')]
+    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[3]//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
     ${list_length3}=    Get Length    ${div_elements3}
     Log To Console    message=${list_length3}
-    ${random_index3}=    Evaluate    random.randint(0, ${list_length3} - 10)
-    RPA.Browser.Selenium.Click Element    ${div_elements3[${random_index3}]}
+    ${random_index3}=    Evaluate    random.randint(0, ${list_length3}-1)
+    Log To Console    message=${random_index3}
+    Run Keyword And Ignore Error    Try Click Element Or Execute JavaScript    ${div_elements3}    ${random_index3}
+    # RPA.Browser.Selenium.Click Element    ${div_elements3[${random_index3}]}
 
+    Sleep    3s
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_2_spdv_chi_tiet_01
-    Sleep    1s
     RPA.Browser.Selenium.Execute Javascript
-    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[3].offsetTop);
+    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[3]);
     ${div_elements4}=    RPA.Browser.Selenium.Get WebElements
-    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[4]//div[contains(@class, 'ant-select-item')]
+    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[4]//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
     ${list_length4}=    Get Length    ${div_elements4}
     Log To Console    message=${list_length4}
-    ${random_index4}=    Evaluate    random.randint(0, ${list_length4} - 5)
-    RPA.Browser.Selenium.Click Element    ${div_elements4[${random_index4}]}
+    ${random_index4}=    Evaluate    random.randint(0, ${list_length4}-1)
+    Run Keyword And Ignore Error    Try Click Element Or Execute JavaScript    ${div_elements4}    ${random_index4}
+    # RPA.Browser.Selenium.Click Element    ${div_elements4[${random_index4}]}
 
+    Sleep    3s
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_3_chuc_nang_tien_ich_01
-    Sleep    1s
     RPA.Browser.Selenium.Execute Javascript
-    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[4].offsetTop);
+    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[4]);
     ${div_elements5}=    RPA.Browser.Selenium.Get WebElements
-    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[5]//div[contains(@class, 'ant-select-item')]
+    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[5]//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
     ${list_length5}=    Get Length    ${div_elements5}
     Log To Console    message=${list_length5}
-    ${random_index5}=    Evaluate    random.randint(0, ${list_length5} - 12)
-    RPA.Browser.Selenium.Click Element    ${div_elements5[${random_index5}]}
+    ${random_index5}=    Evaluate    random.randint(0, ${list_length5}-1)
+    Log To Console    message=${random_index5}
+    Run Keyword And Ignore Error    Try Click Element Or Execute JavaScript    ${div_elements5}    ${random_index5}
+    # RPA.Browser.Selenium.Click Element    ${div_elements5[${random_index5}]}
+    Log To Console    message=${div_elements5[${random_index5}]}
 
+    Sleep    3s
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_4_van_de_kh_01
-    Sleep    1s
     RPA.Browser.Selenium.Execute Javascript
-    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[5].offsetTop);
+    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[5]);
     ${div_elements6}=    RPA.Browser.Selenium.Get WebElements
-    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[6]//div[contains(@class, 'ant-select-item')]
+    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[6]//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
     ${list_length6}=    Get Length    ${div_elements6}
     Log To Console    message=${list_length6}
-    ${random_index6}=    Evaluate    random.randint(0, ${list_length6} - 1)
-    RPA.Browser.Selenium.Click Element    ${div_elements6[${random_index6}]}
+    ${random_index6}=    Evaluate    random.randint(0, ${list_length6}-1)
+    Run Keyword And Ignore Error    Try Click Element Or Execute JavaScript    ${div_elements6}    ${random_index6}
+    # RPA.Browser.Selenium.Click Element    ${div_elements6[${random_index6}]}
 
+    Sleep    3s
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_5_phan_loai_yeu_cau_01
-    Sleep    1s
     RPA.Browser.Selenium.Execute Javascript
-    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[6].offsetTop);
+    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[6]);
     ${div_elements7}=    RPA.Browser.Selenium.Get WebElements
-    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[7]//div[contains(@class, 'ant-select-item')]
+    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[7]//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
     ${list_length7}=    Get Length    ${div_elements7}
     Log To Console    message=${list_length7}
-    ${random_index7}=    Evaluate    random.randint(0, ${list_length7} - 1)
-    RPA.Browser.Selenium.Click Element    ${div_elements7[${random_index7}]}
+    ${random_index7}=    Evaluate    random.randint(0, ${list_length7}-1)
+    Run Keyword And Ignore Error    Try Click Element Or Execute JavaScript    ${div_elements7}    ${random_index7}
+    # RPA.Browser.Selenium.Click Element    ${div_elements7[${random_index7}]}
 
+    Sleep    3s
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_kenh_new_01
-    Sleep    1s
     RPA.Browser.Selenium.Execute Javascript
-    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[7].offsetTop);
+    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[7]);
     ${div_elements8}=    RPA.Browser.Selenium.Get WebElements
-    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[8]//div[contains(@class, 'ant-select-item')]
+    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[8]//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
     ${list_length8}=    Get Length    ${div_elements8}
     Log To Console    message=${list_length8}
-    ${random_index8}=    Evaluate    random.randint(0, ${list_length8} - 16)
-    RPA.Browser.Selenium.Click Element    ${div_elements8[${random_index8}]}
+    ${random_index8}=    Evaluate    random.randint(0, ${list_length8}-1)
+    Run Keyword And Ignore Error    Try Click Element Or Execute JavaScript    ${div_elements8}    ${random_index8}
+    # RPA.Browser.Selenium.Click Element    ${div_elements8[${random_index8}]}
 
+    Sleep    3s
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_kq_tu_van_kh_01
-    Sleep    1s
     RPA.Browser.Selenium.Execute Javascript
-    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[8].offsetTop);
+    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[8]);
     ${div_elements9}=    RPA.Browser.Selenium.Get WebElements
-    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[9]//div[contains(@class, 'ant-select-item')]
+    ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[9]//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
+    Log To Console    message=${div_elements9}
     ${list_length9}=    Get Length    ${div_elements9}
     Log To Console    message=${list_length9}
-    ${random_index9}=    Evaluate    random.randint(0, ${list_length9} - 1)
-    RPA.Browser.Selenium.Click Element    ${div_elements9[${random_index9}]}
+    ${random_index9}=    Evaluate    random.randint(0, ${list_length9}-1)
+    Run Keyword And Ignore Error    Try Click Element Or Execute JavaScript    ${div_elements9}    ${random_index9}
+    # RPA.Browser.Selenium.Click Element    ${div_elements9[${random_index9}]}
+
+    Sleep    4s
+    RPA.Browser.Selenium.Click Element    ${GhiChú}
+    ${note_}=    Generate Random Note
+    RPA.Browser.Selenium.Input Text    ${GhiChú}    ${note_}
 
     RPA.Browser.Selenium.Click Element    ${Save}
+
+Search Contact CRM
+    [Arguments]    ${Otherphone}
+    Sleep    2s
+    # RPA.Browser.Selenium.Execute Javascript
+    # ...    document.querySelector('.overlay-class').style.display = 'none';
+    # Try Click Element Or Execute JavaScript_Xpath
+    # ...    xpath=//span[@class='ant-input-affix-wrapper']/input[@id='ucrm-multiDetail-search']
+    RPA.Browser.Selenium.Wait Until Element Is Not Visible    xpath=//div[contains(@class, 'ant-drawer-mask')]
+    Try Click Element Or Execute JavaScript_Xpath    id:ucrm_multiDetail_searchBtn
+    Input Text Or Execute JavaScript
+    ...    xpath=//input[@placeholder='Search' and @class='ant-input']
+    ...    ${Otherphone}
+    Sleep    2s
+    RPA.Browser.Selenium.Execute Javascript
+    ...    var overlay = document.querySelector('.ant-drawer-mask');
+    ...    if (overlay) { overlay.style.display = 'none'; }
+    Sleep    5s
+    RPA.Browser.Selenium.Execute Javascript
+...    document.getElementById('ucrm_listOfContact_ucrmSearchBtn').click();
+    # RPA.Browser.Selenium.Wait Until Element Is Visible    ${btnSearchloc}    timeout=10
+    # RPA.Browser.Selenium.Click Element    ${btnSearchloc}
+    Sleep    5s
+    RPA.Browser.Selenium.Execute Javascript
+    ...    var element=
+    ...    document.evaluate("//tbody//tr[contains(@class, 'ant-table-row ant-table-row-level-0 ant-table-row-selected') and position() > 1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+    ...    if(element){
+    ...    var event= new MouseEvent('dblclick', { bubbles: true, cancelable: true });
+    ...    element.dispatchEvent(event);
+    ...    }
+    # RPA.Browser.Selenium.Scroll Element Into View
+    # ...    xpath=//tbody//tr[contains(@class, 'ant-table-row ant-table-row-level-0 ant-table-row-selected') and position() > 1]
+    # RPA.Browser.Selenium.Wait Until Element Is Enabled
+    # ...    xpath=//tbody//tr[contains(@class, 'ant-table-row ant-table-row-level-0 ant-table-row-selected') and position() > 1]
+    # ...    timeout=10
+    # RPA.Browser.Selenium.Double Click Element
+    # ...    xpath=//tbody//tr[contains(@class, 'ant-table-row ant-table-row-level-0 ant-table-row-selected') and position() > 1]

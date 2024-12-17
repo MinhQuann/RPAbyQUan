@@ -9,6 +9,7 @@ Library     SeleniumLibrary
 Library     RPA.Browser.Selenium
 Library     String
 Library     Collections
+Library     random
 
 
 *** Variables ***
@@ -29,9 +30,10 @@ ${API_URL_FIN}                  https://lab.connect247.vn/ucrmapi-ver3/finesse-i
 ${AUTHORIZATION_HEADER_CTI}     Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs
 &{HEADERS_CTI}                  Content-Type=application/json    Authorization=${AUTHORIZATION_HEADER_CTI}
 
+
 # *** Tasks ***
 # Test
-#    RPACallAPI_CALL_CTI    501    8010    RINGING    1    0908776512
+#     RPACallAPI_CALL_CTI    5012355254442447444    8010    RINGING    1    09064533110
 
 
 *** Keywords ***
@@ -96,3 +98,82 @@ Get Random Element
     ${random_index}=    Evaluate    random.randint(0, ${count} - 1)
     ${random_element}=    Get From List    ${elements}    ${random_index}
     RETURN    ${random_element}
+
+Generate Random Note
+    ${Note}=    Evaluate    random.choice(${Note})
+    ${Note_}=    Set Variable    ${Note}
+    RETURN    ${Note_}
+
+Try Double Click Or Execute JavaScript From XPath
+    [Arguments]    ${xpath}
+    # Lấy danh sách phần tử dựa trên xpath
+    ${elements}=    RPA.Browser.Selenium.Get WebElements    ${xpath}
+    Log To Console    Found elements: ${elements}
+
+    # Kiểm tra nếu danh sách phần tử rỗng
+    ${count}=    Get Length    ${elements}
+    IF    ${count} == 0
+        Fail    No elements found for the given XPath: ${xpath}
+    END
+
+    # Lấy chỉ số ngẫu nhiên trong danh sách phần tử
+    ${random_index}=    Evaluate    random.randint(0, ${count} - 1)
+    Log To Console    Selected random element index: ${random_index}
+
+    # Thực hiện Double Click hoặc sử dụng JavaScript
+    TRY
+        RPA.Browser.Selenium.Double Click Element    ${elements}[${random_index}]
+        Log To Console    Successfully double-clicked element at index ${random_index}.
+    EXCEPT    ElementNotInteractableException
+        Log To Console    Failed to double-click element at index ${random_index}, using JavaScript instead.
+        RPA.Browser.Selenium.Execute Javascript
+        ...    arguments[0].dispatchEvent(new MouseEvent('dblclick', { bubbles: true, cancelable: true }));
+        ...    ${elements}[${random_index}]
+    END
+
+Try Click Element Or Execute JavaScript
+    [Arguments]    ${elements}    ${index}
+    TRY
+        # Cố gắng click trực tiếp vào phần tử
+        RPA.Browser.Selenium.Click Element    ${elements[${index}]}
+    EXCEPT    ElementNotInteractableException
+        # Nếu không click được thì fallback sang JavaScript
+        RPA.Browser.Selenium.Execute Javascript
+        ...    arguments[0].click();
+        ...    ${elements[${index}]}
+    END
+
+Input Text Or Execute JavaScript
+    [Arguments]    ${locator}    ${text}
+    TRY
+        # Thử nhập văn bản thông thường với Selenium
+        RPA.Browser.Selenium.Input Text    ${locator}    ${text}
+        Log To Console    Successfully input text using Selenium for locator: ${locator}.
+    EXCEPT    ElementNotInteractableException
+        # Nếu không nhập được, fallback sang JavaScript
+        Log To Console    Failed to input text for locator: ${locator}, using JavaScript instead.
+        RPA.Browser.Selenium.Execute Javascript
+        ...    var element = document.querySelector(arguments[0]);
+        ...    if (element) {
+        ...    element.value = arguments[1];
+        ...    element.dispatchEvent(new Event('input', { bubbles: true }));
+        ...    }
+        ...    ${locator}    ${text}
+    END
+
+Try Click Element Or Execute JavaScript_Xpath
+    [Arguments]    ${xpath}
+    TRY
+        # Lấy phần tử bằng XPath
+        ${element}=    RPA.Browser.Selenium.Get WebElement    ${xpath}
+        # Thử click trực tiếp vào phần tử
+        RPA.Browser.Selenium.Click Element    ${element}
+        Log To Console    Successfully clicked element with xpath: ${xpath}.
+    EXCEPT    ElementNotInteractableException
+        # Nếu không click được thì fallback sang JavaScript
+        Log To Console    Failed to click element with xpath: ${xpath}, using JavaScript instead.
+        RPA.Browser.Selenium.Execute Javascript
+        ...    var element = document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+        ...    if (element) { element.click(); }
+        ...    ${xpath}
+    END
