@@ -111,6 +111,7 @@ Add_New_Ticket_History
         ...    xpath=//div[contains(@class, 'ant-notification-notice-message')]
     END
     Run Keyword Unless    ${notificationExists}    RPA.Browser.Selenium.Click Element    ${+}
+
     Sleep    5s
     RPA.Browser.Selenium.Wait Until Element Is Visible    //*[@id="basic_fld_ngon_ngu_01"]
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_ngon_ngu_01
@@ -127,7 +128,7 @@ Add_New_Ticket_History
     Sleep    3s
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_phan_loai_kh_new_01
     RPA.Browser.Selenium.Execute Javascript
-    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[1]);
+    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[1].offsetTop);
     ${div_elements}=    RPA.Browser.Selenium.Get WebElements
     ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[2]//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
     ${list_length}=    Get Length    ${div_elements}
@@ -139,7 +140,7 @@ Add_New_Ticket_History
     Sleep    3s
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_1_spdv_01
     RPA.Browser.Selenium.Execute Javascript
-    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[2]);
+    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[2].offsetTop);
     ${div_elements3}=    RPA.Browser.Selenium.Get WebElements
     ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[3]//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
     ${list_length3}=    Get Length    ${div_elements3}
@@ -152,7 +153,7 @@ Add_New_Ticket_History
     Sleep    3s
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_2_spdv_chi_tiet_01
     RPA.Browser.Selenium.Execute Javascript
-    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[3]);
+    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[3].offsetTop);
     ${div_elements4}=    RPA.Browser.Selenium.Get WebElements
     ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[4]//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
     ${list_length4}=    Get Length    ${div_elements4}
@@ -164,7 +165,7 @@ Add_New_Ticket_History
     Sleep    3s
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_3_chuc_nang_tien_ich_01
     RPA.Browser.Selenium.Execute Javascript
-    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[4]);
+    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[4].offsetTop);
     ${div_elements5}=    RPA.Browser.Selenium.Get WebElements
     ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[5]//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
     ${list_length5}=    Get Length    ${div_elements5}
@@ -190,7 +191,7 @@ Add_New_Ticket_History
     Sleep    3s
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_5_phan_loai_yeu_cau_01
     RPA.Browser.Selenium.Execute Javascript
-    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[6]);
+    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[6].offsetTop);
     ${div_elements7}=    RPA.Browser.Selenium.Get WebElements
     ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[7]//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
     ${list_length7}=    Get Length    ${div_elements7}
@@ -202,7 +203,7 @@ Add_New_Ticket_History
     Sleep    3s
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_kenh_new_01
     RPA.Browser.Selenium.Execute Javascript
-    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[7]);
+    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[7].offsetTop);
     ${div_elements8}=    RPA.Browser.Selenium.Get WebElements
     ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[8]//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
     ${list_length8}=    Get Length    ${div_elements8}
@@ -214,7 +215,7 @@ Add_New_Ticket_History
     Sleep    3s
     RPA.Browser.Selenium.Mouse Down    id:basic_fld_kq_tu_van_kh_01
     RPA.Browser.Selenium.Execute Javascript
-    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[8]);
+    ...    window.scrollTo(0, document.querySelectorAll("div.rc-virtual-list-holder-inner")[8].offsetTop);
     ${div_elements9}=    RPA.Browser.Selenium.Get WebElements
     ...    xpath=(//div[contains(@class, 'rc-virtual-list-holder-inner')])[9]//div[contains(@class, 'ant-select-item ant-select-item-option optionSelect')]
     Log To Console    message=${div_elements9}
