@@ -10,6 +10,8 @@ Library     RPA.Browser.Selenium
 Library     String
 Library     Collections
 Library     random
+Library     RPA.Salesforce
+Library     OperatingSystem
 
 
 *** Variables ***
@@ -20,10 +22,15 @@ ${SheetName1}                   Group1
 ${SheetName2}                   Group2
 ${SheetName3}                   FieldContact
 
+${DATA}                         SDT 1.xlsx
+${SheetName}                    Test1
+
+${DATA2}                        SDT 2.xlsx
+${SheetNameee}                  Test2
 # RPA CAll API
 # ${LinkeđID}    1721622634.191953
 # ${ExtentionID}    8014
-${API_URL_CTI}                  https://lab.connect247.vn/ucrmapi-ver3/cti/call-data
+${API_URL_CTI}                  https://lab.connect247.vn/ucrmapi-cti/cti/call-data
 ${API_URL_FIN}                  https://lab.connect247.vn/ucrmapi-ver3/finesse-integration/handle-response-from-server
 # ${PAYLOADRINGING}    {"LinkedID": "${LinkeđID} ", "QueueID": "", "CallPhone": "0399478262", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "RINGING", "TotalDuration": "0", "BillDuration": "0", "Username": "user8014@email.com", "Hotline": null, "ExtentionID": "${ExtentionID}", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}
 # ${PAYLOADRINGING_DICT}=    Evaluate    json.loads('${PAYLOADRINGING}')
@@ -37,7 +44,7 @@ ${AUTHORIZATION_HEADER_CTI}     Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJl
 #    ${randomExtention}=    Generate_EXTENTION
 #    ${username_}=    Generate_Random_Email_CALL
 #    FOR    ${i}    IN RANGE    200
-#    RPACallAPI_CALL_CTI    ${randomLinkeđI}    ${randomExtention}    RINGING    1    ${randomPhone}    ${username}
+# RPACallAPI_CALL_CTI    132445    8009    RINGING    1    0906453332    user8009@email.com
 #    RPACallAPI_CALL_CTI    ${randomLinkeđI}    ${randomExtention}    ANSWER    1    ${randomPhone}    ${username}
 #    RPACallAPI_CALL_CTI    ${randomLinkeđI}    ${randomExtention}    SUCCESS    1    ${randomPhone}    ${username}
 #    END
@@ -196,3 +203,51 @@ Generate_Random_Email_CALL
     ${EmailName_Call}=    Evaluate    random.choice(${EmailNameCall})
     ${Email_}=    Set Variable    ${EmailName_Call}
     RETURN    ${Email_}
+
+Test
+    Open Workbook    ${DATA}
+    ${rows}=    Read Worksheet As Table    header=True    name=${SheetName}
+    FOR    ${row}    IN    @{rows}
+        ${ID1}=    Get From Dictionary    ${row}    ID
+        ${SDT1}=    Get From Dictionary    ${row}    SDT
+
+        Sleep    6s
+        RPA.Browser.Selenium.Click Element
+        ...    xpath=//*[@id="root"]/section/section/section/main/div[3]/div[1]/div/table/thead/tr/th[2]/div/div[1]/div/img
+        # RPA.Browser.Selenium.Click Element
+        # ...    xpath=xpath=//*[@id="root"]/section/section/section/main/div[3]/div[1]/div/table/thead/tr/th[2]/div/div[2]/span/input
+        RPA.Browser.Selenium.Input Text
+        ...    xpath=//*[@id="root"]/section/section/section/main/div[3]/div[1]/div/table/thead/tr/th[2]/div/div[2]/span/input
+        ...    ${ID1}
+        RPA.Browser.Selenium.Press Keys
+        ...    xpath=//input[@placeholder='Mã phiếu ghi']
+        ...    ENTER
+        Sleep    1s
+        RPA.Browser.Selenium.Click Element    xpath=//img[@alt='Edit']
+        Sleep    1s
+        RPA.Browser.Selenium.Wait Until Element Is Visible    xpath=(//div[@class='staging_crm'])[1]    timeout=6s
+        RPA.Browser.Selenium.Click Element
+        ...    xpath=(//div[@class='staging_crm'])[1]
+        Sleep    3s
+        RPA.Browser.Selenium.Click Element    //input[@placeholder='Search this list...']
+        RPA.Browser.Selenium.Input Text
+        ...    //input[@placeholder='Search this list...']    0${SDT1}
+        RPA.Browser.Selenium.Press Keys    //input[@placeholder='Search this list...']    ENTER
+        Sleep    1s
+        ${rows1}=    RPA.Browser.Selenium.Get Web Elements    xpath=(//tbody[contains(@class, 'table-body')])[2]/tr
+        Log To Console    message: ${rows1}
+        ${row_count}=    Get Length    ${rows1}
+        IF    ${row_count} > 0    Action
+        IF    ${row_count} == 0    RPA.Browser.Selenium.Reload Page
+    END
+
+Action
+    RPA.Browser.Selenium.Click Element
+    ...    //input[@type='radio' and @class='ant-radio-input']
+    RPA.Browser.Selenium.Click Element
+    ...    //button[@type='button']//span[text()='Save']
+    RPA.Browser.Selenium.Click Element    //*[@id="basic"]/div[4]/button[1]
+    RPA.Browser.Selenium.Reload Page
+
+
+   

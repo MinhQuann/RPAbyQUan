@@ -1,22 +1,27 @@
 *** Settings ***
 Resource    d:/RPA2/PageObject/Locators/Common_keyword.robot
+Resource    d:/RPA2/PageObject/Locators/LoginPageLocators.robot
+Library     SeleniumLibrary
+Library     RPA.Browser.Selenium
+Library     RPA.Excel.Files
+Library     Collections
 
 
-*** Tasks ***
-Test
-    ${randomLinkeđI}=    evaluate    random.randint(0, 1000000)
-    ${randomPhone}=    Generate_Phone
-    ${randomExtention}=    Generate_EXTENTION
-    ${username_}=    Generate_Random_Email_CALL
-    FOR    ${i}    IN RANGE    100
-        RPACallAPI_CALL_CTI    ${randomLinkeđI}    ${randomExtention}    RINGING    1    ${randomPhone}    ${username}
-        Log To Console    message=${i}
-    END
-    Sleep    5s
-    FOR    ${j}    IN    100
-        RPACallAPI_CALL_CTI    ${randomLinkeđI}    ${randomExtention}    ANSWER    1    ${randomPhone}    ${username}
-    END
-    Sleep    5s
-    FOR    ${k}    IN    100
-        RPACallAPI_CALL_CTI    ${randomLinkeđI}    ${randomExtention}    SUCCESS    1    ${randomPhone}    ${username}
-    END
+*** Test Cases ***
+Test1
+    Open CRM urlPROD
+    Login urlPROD
+    Sleep    2s
+    ${original_tab}=    RPA.Browser.Selenium.Get Window Handles
+    Sleep    2s
+    RPA.Browser.Selenium.Click Element    xpath=//*[@id="root"]/div/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]
+    Sleep    3s
+    ${new_tabs}=    RPA.Browser.Selenium.Get Window Handles
+    ${new_tab}=    Evaluate    [tab for tab in ${new_tabs} if tab not in ${original_tab}][0]
+    RPA.Browser.Selenium.Switch Window    ${new_tab}
+    Sleep    6s
+    RPA.Browser.Selenium.Click Element
+    ...    xpath=//*[@id="root"]/section/header/div[2]/div[1]/div[2]/div[2]/div/ul/li[2]/div/span
+
+    Sleep    3s
+    Test

@@ -1,10 +1,72 @@
 ==============================================================================
 Tasks                                                                         
 ==============================================================================
-Test                                                                  | FAIL |
-HTTPError: 502 Server Error: Bad Gateway for url: https://lab.connect247.vn/ucrmapi-cti/cti/call-data
+Test1                                                                   
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\RPA2\tasks.robot:11
+    T:  Test1    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\RPA2\tasks.robot:27
+      Test    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  d:\RPA2\PageObject\Locators\Common_keyword.robot:209
+      ${row} IN [ @{rows} ]    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  d:\RPA2\PageObject\Locators\Common_keyword.robot:209
+      ${row} = {'ID': 'TIC10001113', 'SDT': 938501278}    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  d:\RPA2\PageObject\Locators\Common_keyword.robot:236
+      Click Element    //input[@type='radio' and @class='ant-radio-input']
+______________________________________________________________________________
+| FAIL |
+Element with locator '//input[@type='radio' and @class='ant-radio-input']' not found.
+------------------------------------------------------------------------------
+Test2                                                                   
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\RPA2\tasks.robot:29
+    T:  Test2    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\RPA2\tasks.robot:30
+      Open CRM urlPROD    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  d:\RPA2\PageObject\Locators\LoginPageLocators.robot:31
+      Maximize Browser Window    
+______________________________________________________________________________
+| FAIL |
+WebDriverException: Message: disconnected: Unable to receive message from renderer
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=131.0.6778.140)
+Stacktrace:
+	GetHandleVerifier [0x00007FF71AEBFB05+28789]
+	(No symbol) [0x00007FF71AE286E0]
+	(No symbol) [0x00007FF71ACC592A]
+	(No symbol) [0x00007FF71ACB3992]
+	(No symbol) [0x00007FF71ACB1274]
+	(No symbol) [0x00007FF71ACB1D1F]
+	(No symbol) [0x00007FF71ACB1C50]
+	(No symbol) [0x00007FF71ACA3037]
+	(No symbol) [0x00007FF71ACA0B6A]
+	(No symbol) [0x00007FF71ACA00E3]
+	(No symbol) [0x00007FF71AD77491]
+	(No symbol) [0x00007FF71AD3F43A]
+	(No symbol) [0x00007FF71AD5F654]
+	(No symbol) [0x00007FF71AD3F1E3]
+	(No symbol) [0x00007FF71AD0A938]
+	(No symbol) [0x00007FF71AD0BAA1]
+	GetHandleVerifier [0x00007FF71B1F933D+3410093]
+	GetHandleVerifier [0x00007FF71B20E7DD+3497293]
+	GetHandleVerifier [0x00007FF71B202A73+3448803]
+	GetHandleVerifier [0x00007FF71AF87BBB+848171]
+	(No symbol) [0x00007FF71AE33C3F]
+	(No symbol) [0x00007FF71AE2F6E4]
+	(No symbol) [0x00007FF71AE2F87D]
+	(No symbol) [0x00007FF71AE1ED49]
+	BaseThreadInitThunk [0x00007FFAE77B259D+29]
+	RtlUserThreadStart [0x00007FFAE898AF38+40]
 ------------------------------------------------------------------------------
 Tasks                                                                 | FAIL |
-1 task, 0 passed, 1 failed
+2 tests, 0 passed, 2 failed
 ==============================================================================
 Output:  D:\RPA2\pabot_results\0\output.xml

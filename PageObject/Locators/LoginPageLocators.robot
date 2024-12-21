@@ -24,3 +24,13 @@ Login CRM
     RPA.Browser.Selenium.Input Text    ${EmaiLogin}    ${email}
     RPA.Browser.Selenium.Input Text    ${Pwdlogin}    ${pwd}
     RPA.Browser.Selenium.Click Element    ${Clickbtnlogin}
+
+
+Open CRM urlPROD
+    RPA.Browser.Selenium.Open Browser    ${urlPROD}    chrome
+    RPA.Browser.Selenium.Maximize Browser Window
+
+Login urlPROD
+    RPA.Browser.Selenium.Input Text    id:signin_username    ${email1}
+    RPA.Browser.Selenium.Input Text    id:signin_password    ${pwd1}
+    RPA.Browser.Selenium.Click Element    xpath=(//*[@id="signin"]/div[4]/button)[1]
