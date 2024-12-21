@@ -248,6 +248,3 @@ Action
     ...    //button[@type='button']//span[text()='Save']
     RPA.Browser.Selenium.Click Element    //*[@id="basic"]/div[4]/button[1]
     RPA.Browser.Selenium.Reload Page
-
-
-   
