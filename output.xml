@@ -3628,4 +3628,445 @@
 <arg>url=${API_URL_CTI}</arg>
 <arg>data=${PAYLOADRINGING}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20241218 18:16:04.808" level="INFO">
+<msg timestamp="20241218 18:16:04.808" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ path_url=/ucrmapi-cti/cti/call-data 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs', 'Content-Length': '536'} 
+ body={"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "SUCCESS", "TotalDuration": "0", "BillDuration": "0", "Username": "user8011@email.com", "Hotline": "", "ExtentionID": "1997", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"} 
+ </msg>
+<msg timestamp="20241218 18:16:04.809" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 18 Dec 2024 11:16:04 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'Vary': 'Accept, origin', 'Allow': 'OPTIONS, GET, POST', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'X-Frame-Options': 'DENY', 'Sec-Fetch-Site': 'cross-site'} 
+ body={"data": [], "message": "success", "status_code": 200} 
+ </msg>
+<msg timestamp="20241218 18:16:04.810" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20241218 18:16:04.813" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20241218 18:16:03.568" endtime="20241218 18:16:04.813"/>
+</kw>
+<status status="PASS" starttime="20241218 18:16:03.564" endtime="20241218 18:16:04.814"/>
+</kw>
+<status status="PASS" starttime="20241218 18:16:01.730" endtime="20241218 18:16:04.816"/>
+</iter>
+<iter>
+<var name="${i}">26</var>
+<kw name="RPACallAPI_CALL_CTI" library="Common_keyword">
+<arg>${randomLinkeđI}</arg>
+<arg>${randomExtention}</arg>
+<arg>RINGING</arg>
+<arg>1</arg>
+<arg>${randomPhone}</arg>
+<arg>${username}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PAYLOADRINGING}</var>
+<arg>{"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "${username}", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241218 18:16:04.819" level="INFO">${PAYLOADRINGING} = {"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "RINGING", "TotalDuration": "0", "BillD...</msg>
+<status status="PASS" starttime="20241218 18:16:04.818" endtime="20241218 18:16:04.819"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>api_session</arg>
+<arg>${API_URL_CTI}</arg>
+<arg>headers=&amp;{HEADERS_CTI}</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20241218 18:16:04.820" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20241218 18:16:04.820" endtime="20241218 18:16:04.821"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>url=${API_URL_CTI}</arg>
+<arg>data=${PAYLOADRINGING}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20241218 18:16:06.687" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ path_url=/ucrmapi-cti/cti/call-data 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs', 'Content-Length': '536'} 
+ body={"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "RINGING", "TotalDuration": "0", "BillDuration": "0", "Username": "user8011@email.com", "Hotline": "", "ExtentionID": "1997", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"} 
+ </msg>
+<msg timestamp="20241218 18:16:06.688" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 18 Dec 2024 11:16:06 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'Vary': 'Accept, origin', 'Allow': 'OPTIONS, GET, POST', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'X-Frame-Options': 'DENY', 'Sec-Fetch-Site': 'cross-site'} 
+ body={"data": [], "message": "success", "status_code": 200} 
+ </msg>
+<msg timestamp="20241218 18:16:06.689" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20241218 18:16:06.690" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20241218 18:16:04.821" endtime="20241218 18:16:06.690"/>
+</kw>
+<status status="PASS" starttime="20241218 18:16:04.817" endtime="20241218 18:16:06.691"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>message=${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241218 18:16:06.692" endtime="20241218 18:16:06.694"/>
+</kw>
+<kw name="RPACallAPI_CALL_CTI" library="Common_keyword">
+<arg>${randomLinkeđI}</arg>
+<arg>${randomExtention}</arg>
+<arg>ANSWER</arg>
+<arg>1</arg>
+<arg>${randomPhone}</arg>
+<arg>${username}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PAYLOADRINGING}</var>
+<arg>{"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "${username}", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241218 18:16:06.701" level="INFO">${PAYLOADRINGING} = {"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "ANSWER", "TotalDuration": "0", "BillDu...</msg>
+<status status="PASS" starttime="20241218 18:16:06.698" endtime="20241218 18:16:06.701"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>api_session</arg>
+<arg>${API_URL_CTI}</arg>
+<arg>headers=&amp;{HEADERS_CTI}</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20241218 18:16:06.703" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20241218 18:16:06.702" endtime="20241218 18:16:06.705"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>url=${API_URL_CTI}</arg>
+<arg>data=${PAYLOADRINGING}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20241218 18:16:07.697" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ path_url=/ucrmapi-cti/cti/call-data 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs', 'Content-Length': '535'} 
+ body={"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "ANSWER", "TotalDuration": "0", "BillDuration": "0", "Username": "user8011@email.com", "Hotline": "", "ExtentionID": "1997", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"} 
+ </msg>
+<msg timestamp="20241218 18:16:07.698" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 18 Dec 2024 11:16:07 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'Vary': 'Accept, origin', 'Allow': 'OPTIONS, POST, GET', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'X-Frame-Options': 'DENY', 'Sec-Fetch-Site': 'cross-site'} 
+ body={"data": [], "message": "success", "status_code": 200} 
+ </msg>
+<msg timestamp="20241218 18:16:07.699" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20241218 18:16:07.705" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20241218 18:16:06.706" endtime="20241218 18:16:07.706"/>
+</kw>
+<status status="PASS" starttime="20241218 18:16:06.695" endtime="20241218 18:16:07.707"/>
+</kw>
+<kw name="RPACallAPI_CALL_CTI" library="Common_keyword">
+<arg>${randomLinkeđI}</arg>
+<arg>${randomExtention}</arg>
+<arg>SUCCESS</arg>
+<arg>1</arg>
+<arg>${randomPhone}</arg>
+<arg>${username}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PAYLOADRINGING}</var>
+<arg>{"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "${username}", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241218 18:16:07.716" level="INFO">${PAYLOADRINGING} = {"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "SUCCESS", "TotalDuration": "0", "BillD...</msg>
+<status status="PASS" starttime="20241218 18:16:07.712" endtime="20241218 18:16:07.717"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>api_session</arg>
+<arg>${API_URL_CTI}</arg>
+<arg>headers=&amp;{HEADERS_CTI}</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20241218 18:16:07.719" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20241218 18:16:07.717" endtime="20241218 18:16:07.720"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>url=${API_URL_CTI}</arg>
+<arg>data=${PAYLOADRINGING}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20241218 18:16:09.306" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ path_url=/ucrmapi-cti/cti/call-data 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs', 'Content-Length': '536'} 
+ body={"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "SUCCESS", "TotalDuration": "0", "BillDuration": "0", "Username": "user8011@email.com", "Hotline": "", "ExtentionID": "1997", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"} 
+ </msg>
+<msg timestamp="20241218 18:16:09.307" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 18 Dec 2024 11:16:08 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'Vary': 'Accept, origin', 'Allow': 'OPTIONS, GET, POST', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'X-Frame-Options': 'DENY', 'Sec-Fetch-Site': 'cross-site'} 
+ body={"data": [], "message": "success", "status_code": 200} 
+ </msg>
+<msg timestamp="20241218 18:16:09.309" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20241218 18:16:09.311" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20241218 18:16:07.721" endtime="20241218 18:16:09.313"/>
+</kw>
+<status status="PASS" starttime="20241218 18:16:07.709" endtime="20241218 18:16:09.315"/>
+</kw>
+<status status="PASS" starttime="20241218 18:16:04.817" endtime="20241218 18:16:09.315"/>
+</iter>
+<iter>
+<var name="${i}">27</var>
+<kw name="RPACallAPI_CALL_CTI" library="Common_keyword">
+<arg>${randomLinkeđI}</arg>
+<arg>${randomExtention}</arg>
+<arg>RINGING</arg>
+<arg>1</arg>
+<arg>${randomPhone}</arg>
+<arg>${username}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PAYLOADRINGING}</var>
+<arg>{"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "${username}", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241218 18:16:09.320" level="INFO">${PAYLOADRINGING} = {"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "RINGING", "TotalDuration": "0", "BillD...</msg>
+<status status="PASS" starttime="20241218 18:16:09.319" endtime="20241218 18:16:09.321"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>api_session</arg>
+<arg>${API_URL_CTI}</arg>
+<arg>headers=&amp;{HEADERS_CTI}</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20241218 18:16:09.324" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20241218 18:16:09.321" endtime="20241218 18:16:09.325"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>url=${API_URL_CTI}</arg>
+<arg>data=${PAYLOADRINGING}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20241218 18:16:10.307" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ path_url=/ucrmapi-cti/cti/call-data 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs', 'Content-Length': '536'} 
+ body={"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "RINGING", "TotalDuration": "0", "BillDuration": "0", "Username": "user8011@email.com", "Hotline": "", "ExtentionID": "1997", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"} 
+ </msg>
+<msg timestamp="20241218 18:16:10.307" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 18 Dec 2024 11:16:09 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'Vary': 'Accept, origin', 'Allow': 'OPTIONS, POST, GET', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'X-Frame-Options': 'DENY', 'Sec-Fetch-Site': 'cross-site'} 
+ body={"data": [], "message": "success", "status_code": 200} 
+ </msg>
+<msg timestamp="20241218 18:16:10.308" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20241218 18:16:10.309" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20241218 18:16:09.325" endtime="20241218 18:16:10.309"/>
+</kw>
+<status status="PASS" starttime="20241218 18:16:09.317" endtime="20241218 18:16:10.310"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>message=${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241218 18:16:10.310" endtime="20241218 18:16:10.313"/>
+</kw>
+<kw name="RPACallAPI_CALL_CTI" library="Common_keyword">
+<arg>${randomLinkeđI}</arg>
+<arg>${randomExtention}</arg>
+<arg>ANSWER</arg>
+<arg>1</arg>
+<arg>${randomPhone}</arg>
+<arg>${username}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PAYLOADRINGING}</var>
+<arg>{"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "${username}", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241218 18:16:10.317" level="INFO">${PAYLOADRINGING} = {"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "ANSWER", "TotalDuration": "0", "BillDu...</msg>
+<status status="PASS" starttime="20241218 18:16:10.316" endtime="20241218 18:16:10.318"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>api_session</arg>
+<arg>${API_URL_CTI}</arg>
+<arg>headers=&amp;{HEADERS_CTI}</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20241218 18:16:10.320" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20241218 18:16:10.318" endtime="20241218 18:16:10.322"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>url=${API_URL_CTI}</arg>
+<arg>data=${PAYLOADRINGING}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20241218 18:16:10.943" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ path_url=/ucrmapi-cti/cti/call-data 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs', 'Content-Length': '535'} 
+ body={"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "ANSWER", "TotalDuration": "0", "BillDuration": "0", "Username": "user8011@email.com", "Hotline": "", "ExtentionID": "1997", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"} 
+ </msg>
+<msg timestamp="20241218 18:16:10.944" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 18 Dec 2024 11:16:10 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'Vary': 'Accept, origin', 'Allow': 'OPTIONS, GET, POST', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'X-Frame-Options': 'DENY', 'Sec-Fetch-Site': 'cross-site'} 
+ body={"data": [], "message": "success", "status_code": 200} 
+ </msg>
+<msg timestamp="20241218 18:16:10.944" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20241218 18:16:10.945" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20241218 18:16:10.322" endtime="20241218 18:16:10.946"/>
+</kw>
+<status status="PASS" starttime="20241218 18:16:10.314" endtime="20241218 18:16:10.947"/>
+</kw>
+<kw name="RPACallAPI_CALL_CTI" library="Common_keyword">
+<arg>${randomLinkeđI}</arg>
+<arg>${randomExtention}</arg>
+<arg>SUCCESS</arg>
+<arg>1</arg>
+<arg>${randomPhone}</arg>
+<arg>${username}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PAYLOADRINGING}</var>
+<arg>{"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "${username}", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241218 18:16:10.952" level="INFO">${PAYLOADRINGING} = {"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "SUCCESS", "TotalDuration": "0", "BillD...</msg>
+<status status="PASS" starttime="20241218 18:16:10.950" endtime="20241218 18:16:10.952"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>api_session</arg>
+<arg>${API_URL_CTI}</arg>
+<arg>headers=&amp;{HEADERS_CTI}</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20241218 18:16:10.955" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20241218 18:16:10.954" endtime="20241218 18:16:10.955"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>url=${API_URL_CTI}</arg>
+<arg>data=${PAYLOADRINGING}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20241218 18:16:12.377" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ path_url=/ucrmapi-cti/cti/call-data 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs', 'Content-Length': '536'} 
+ body={"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "SUCCESS", "TotalDuration": "0", "BillDuration": "0", "Username": "user8011@email.com", "Hotline": "", "ExtentionID": "1997", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"} 
+ </msg>
+<msg timestamp="20241218 18:16:12.377" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 18 Dec 2024 11:16:11 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'Vary': 'Accept, origin', 'Allow': 'OPTIONS, POST, GET', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'X-Frame-Options': 'DENY', 'Sec-Fetch-Site': 'cross-site'} 
+ body={"data": [], "message": "success", "status_code": 200} 
+ </msg>
+<msg timestamp="20241218 18:16:12.378" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20241218 18:16:12.379" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20241218 18:16:10.956" endtime="20241218 18:16:12.379"/>
+</kw>
+<status status="PASS" starttime="20241218 18:16:10.948" endtime="20241218 18:16:12.380"/>
+</kw>
+<status status="PASS" starttime="20241218 18:16:09.316" endtime="20241218 18:16:12.381"/>
+</iter>
+<iter>
+<var name="${i}">28</var>
+<kw name="RPACallAPI_CALL_CTI" library="Common_keyword">
+<arg>${randomLinkeđI}</arg>
+<arg>${randomExtention}</arg>
+<arg>RINGING</arg>
+<arg>1</arg>
+<arg>${randomPhone}</arg>
+<arg>${username}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PAYLOADRINGING}</var>
+<arg>{"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "${username}", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241218 18:16:12.385" level="INFO">${PAYLOADRINGING} = {"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "RINGING", "TotalDuration": "0", "BillD...</msg>
+<status status="PASS" starttime="20241218 18:16:12.384" endtime="20241218 18:16:12.386"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>api_session</arg>
+<arg>${API_URL_CTI}</arg>
+<arg>headers=&amp;{HEADERS_CTI}</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20241218 18:16:12.390" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20241218 18:16:12.386" endtime="20241218 18:16:12.391"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>url=${API_URL_CTI}</arg>
+<arg>data=${PAYLOADRINGING}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20241218 18:16:13.581" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ path_url=/ucrmapi-cti/cti/call-data 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs', 'Content-Length': '536'} 
+ body={"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "RINGING", "TotalDuration": "0", "BillDuration": "0", "Username": "user8011@email.com", "Hotline": "", "ExtentionID": "1997", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"} 
+ </msg>
+<msg timestamp="20241218 18:16:13.582" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 18 Dec 2024 11:16:12 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'Vary': 'Accept, origin', 'Allow': 'OPTIONS, GET, POST', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'X-Frame-Options': 'DENY', 'Sec-Fetch-Site': 'cross-site'} 
+ body={"data": [], "message": "success", "status_code": 200} 
+ </msg>
+<msg timestamp="20241218 18:16:13.583" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20241218 18:16:13.587" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20241218 18:16:12.391" endtime="20241218 18:16:13.587"/>
+</kw>
+<status status="PASS" starttime="20241218 18:16:12.383" endtime="20241218 18:16:13.588"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>message=${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241218 18:16:13.589" endtime="20241218 18:16:13.591"/>
+</kw>
+<kw name="RPACallAPI_CALL_CTI" library="Common_keyword">
+<arg>${randomLinkeđI}</arg>
+<arg>${randomExtention}</arg>
+<arg>ANSWER</arg>
+<arg>1</arg>
+<arg>${randomPhone}</arg>
+<arg>${username}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PAYLOADRINGING}</var>
+<arg>{"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "${username}", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241218 18:16:13.603" level="INFO">${PAYLOADRINGING} = {"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "ANSWER", "TotalDuration": "0", "BillDu...</msg>
+<status status="PASS" starttime="20241218 18:16:13.597" endtime="20241218 18:16:13.603"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>api_session</arg>
+<arg>${API_URL_CTI}</arg>
+<arg>headers=&amp;{HEADERS_CTI}</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20241218 18:16:13.605" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20241218 18:16:13.604" endtime="20241218 18:16:13.607"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>url=${API_URL_CTI}</arg>
+<arg>data=${PAYLOADRINGING}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20241218 18:16:14.772" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ path_url=/ucrmapi-cti/cti/call-data 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs', 'Content-Length': '535'} 
+ body={"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "ANSWER", "TotalDuration": "0", "BillDuration": "0", "Username": "user8011@email.com", "Hotline": "", "ExtentionID": "1997", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"} 
+ </msg>
+<msg timestamp="20241218 18:16:14.773" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 18 Dec 2024 11:16:14 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'Vary': 'Accept, origin', 'Allow': 'OPTIONS, POST, GET', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'X-Frame-Options': 'DENY', 'Sec-Fetch-Site': 'cross-site'} 
+ body={"data": [], "message": "success", "status_code": 200} 
+ </msg>
+<msg timestamp="20241218 18:16:14.773" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20241218 18:16:14.774" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20241218 18:16:13.609" endtime="20241218 18:16:14.775"/>
+</kw>
+<status status="PASS" starttime="20241218 18:16:13.593" endtime="20241218 18:16:14.775"/>
+</kw>
+<kw name="RPACallAPI_CALL_CTI" library="Common_keyword">
+<arg>${randomLinkeđI}</arg>
+<arg>${randomExtention}</arg>
+<arg>SUCCESS</arg>
+<arg>1</arg>
+<arg>${randomPhone}</arg>
+<arg>${username}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${PAYLOADRINGING}</var>
+<arg>{"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "${username}", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241218 18:16:14.781" level="INFO">${PAYLOADRINGING} = {"LinkedID": "872266", "QueueID": "", "CallPhone": "0916789012", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "SUCCESS", "TotalDuration": "0", "BillD...</msg>
+<status status="PASS" starttime="20241218 18:16:14.779" endtime="20241218 18:16:14.782"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>api_session</arg>
+<arg>${API_URL_CTI}</arg>
+<arg>headers=&amp;{HEADERS_CTI}</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20241218 18:16:14.785" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20241218 18:16:14.783" endtime="20241218 18:16:14.785"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>url=${API_URL_CTI}</arg>
+<arg>data=${PAYLOADRINGING}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20241218 18:16:15.708" level="INFO">
