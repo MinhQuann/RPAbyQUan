@@ -25,9 +25,12 @@ Login CRM
     RPA.Browser.Selenium.Input Text    ${Pwdlogin}    ${pwd}
     RPA.Browser.Selenium.Click Element    ${Clickbtnlogin}
 
-
 Open CRM urlPROD
     RPA.Browser.Selenium.Open Browser    ${urlPROD}    chrome
+    RPA.Browser.Selenium.Maximize Browser Window
+
+Open CRM urlPROD2
+    RPA.Browser.Selenium.Open Browser    ${urlPROD}    edge
     RPA.Browser.Selenium.Maximize Browser Window
 
 Login urlPROD
