@@ -1,9 +1,9 @@
 *** Settings ***
-Resource    d:/RPA2/PageObject/Locators/LoginPageLocators.robot
-Resource    d:/RPA2/PageObject/Locators/Common_keyword.robot
+Resource    PageObject/Locators/LoginPageLocators.robot
+Resource    PageObject/Locators/Common_keyword.robot
 Library     RPA.Browser.Selenium
 Library     SeleniumLibrary
-Resource    d:/RPA2/PageObject/Data/Variables .robot
+Resource    PageObject/Data/Variables .robot
 
 
 *** Variables ***

@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    d:/RPA2/PageObject/Locators/Common_keyword.robot
+Resource    PageObject/Locators/Common_keyword.robot
 Library     SeleniumLibrary
 Library     RPA.Browser.Selenium
 

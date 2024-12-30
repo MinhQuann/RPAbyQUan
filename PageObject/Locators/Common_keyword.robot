@@ -1,6 +1,6 @@
 *** Settings ***
-Resource    d:/RPA2/PageObject/Locators/SettingsCRMLocators.robot
-Resource    d:/RPA2/PageObject/Data/Data.robot
+Resource    PageObject/Locators/SettingsCRMLocators.robot
+Resource    PageObject/Data/Data.robot
 Library     RPA.Browser.Selenium
 Library     RPA.Excel.Files
 Library     Collections

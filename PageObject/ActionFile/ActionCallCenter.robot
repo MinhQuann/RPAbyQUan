@@ -2,12 +2,12 @@
 Library     SeleniumLibrary
 Library     Collections
 Library     RPA.Browser.Selenium
-Resource    d:/RPA2/PageObject/Locators/LoginPageLocators.robot
-Resource    d:/RPA2/PageObject/Locators/SettingsCRMLocators.robot
-Resource    d:/RPA2/PageObject/Locators/ObjectLocators.robot
-Resource    d:/RPA2/PageObject/ActionFile/ActionLogin.robot
-Resource    d:/RPA2/PageObject/Locators/CallCenterLocator.robot
-Resource    d:/RPA2/PageObject/Locators/Common_keyword.robot
+Resource    PageObject/Locators/LoginPageLocators.robot
+Resource    PageObject/Locators/SettingsCRMLocators.robot
+Resource    PageObject/Locators/ObjectLocators.robot
+Resource    PageObject/ActionFile/ActionLogin.robot
+Resource    PageObject/Locators/CallCenterLocator.robot
+Resource    PageObject/Locators/Common_keyword.robot
 
 
 *** Tasks ***
