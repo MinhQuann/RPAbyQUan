@@ -1,0 +1,48 @@
+2024-12-29 22:29:58,490 - RPA.core.certificates - INFO - Truststore not in use, HTTPS traffic validated against `certifi` package. (requires Python 3.10.12 and 'pip' 23.2.1 at minimum)
+[ ERROR ] Calling method 'end_keyword' of listener 'RobotStackTracer' failed: UnicodeEncodeError: 'charmap' codec can't encode character '\u1ecc' in position 684: character maps to <undefined>
+Second signal will force exit.
+Exception ignored in atexit callback: <function Selenium._close_on_exit.<locals>.stop_drivers at 0x00000106299FB880>
+Traceback (most recent call last):
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\RPA\Browser\Selenium.py", line 292, in stop_drivers
+    self._quit_all_drivers()
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\RPA\Browser\Selenium.py", line 311, in _quit_all_drivers
+    driver.quit()  # quits the browser as well
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\chromium\webdriver.py", line 187, in quit
+    super().quit()
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 469, in quit
+    self.execute(Command.QUIT)
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 345, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 300, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 321, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\request.py", line 77, in request
+    return self.request_encode_url(
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\request.py", line 99, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 416, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1283, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1329, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1038, in _send_output
+    self.send(msg)
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 976, in send
+    self.connect()
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+KeyboardInterrupt: 

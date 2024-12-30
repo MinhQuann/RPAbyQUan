@@ -211,7 +211,7 @@ Test
         ${ID1}=    Get From Dictionary    ${row}    ID
         ${SDT1}=    Get From Dictionary    ${row}    SDT
 
-        Sleep    6s
+        Sleep    2s
         RPA.Browser.Selenium.Click Element
         ...    xpath=//*[@id="root"]/section/section/section/main/div[3]/div[1]/div/table/thead/tr/th[2]/div/div[1]/div/img
         # RPA.Browser.Selenium.Click Element
@@ -252,11 +252,11 @@ Action
 Test2
     Open Workbook    ${DATA2}
     ${rows}=    Read Worksheet As Table    header=True    name=${SheetNameee}
-    FOR    ${row}    IN    @{rows}
-        ${ID1}=    Get From Dictionary    ${row}    ID
-        ${SDT1}=    Get From Dictionary    ${row}    SDT
+    FOR    ${row1}    IN    @{rows}
+        ${ID1}=    Get From Dictionary    ${row1}    ID_2
+        ${SDT1}=    Get From Dictionary    ${row1}    SDT
 
-        Sleep    6s
+        Sleep    2s
         RPA.Browser.Selenium.Click Element
         ...    xpath=//*[@id="root"]/section/section/section/main/div[3]/div[1]/div/table/thead/tr/th[2]/div/div[1]/div/img
         # RPA.Browser.Selenium.Click Element
@@ -267,9 +267,9 @@ Test2
         RPA.Browser.Selenium.Press Keys
         ...    xpath=//input[@placeholder='Mã phiếu ghi']
         ...    ENTER
-        Sleep    1s
+        Sleep    3s
         RPA.Browser.Selenium.Click Element    xpath=//img[@alt='Edit']
-        Sleep    1s
+        Sleep    2s
         RPA.Browser.Selenium.Wait Until Element Is Visible    xpath=(//div[@class='staging_crm'])[1]    timeout=6s
         RPA.Browser.Selenium.Click Element
         ...    xpath=(//div[@class='staging_crm'])[1]
@@ -279,9 +279,9 @@ Test2
         ...    //input[@placeholder='Search this list...']    0${SDT1}
         RPA.Browser.Selenium.Press Keys    //input[@placeholder='Search this list...']    ENTER
         Sleep    1s
-        ${rows1}=    RPA.Browser.Selenium.Get Web Elements    xpath=(//tbody[contains(@class, 'table-body')])[2]/tr
-        Log To Console    message: ${rows1}
-        ${row_count}=    Get Length    ${rows1}
+        ${rows12}=    RPA.Browser.Selenium.Get Web Elements    xpath=(//tbody[contains(@class, 'table-body')])[2]/tr
+        Log To Console    message: ${rows12}
+        ${row_count}=    Get Length    ${rows12}
         IF    ${row_count} > 0    Action
         IF    ${row_count} == 0    RPA.Browser.Selenium.Reload Page
     END

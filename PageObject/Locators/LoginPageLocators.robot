@@ -30,7 +30,7 @@ Open CRM urlPROD
     RPA.Browser.Selenium.Maximize Browser Window
 
 Open CRM urlPROD2
-    RPA.Browser.Selenium.Open Browser    ${urlPROD}    edge
+    RPA.Browser.Selenium.Open Browser    ${urlPROD}    chrome
     RPA.Browser.Selenium.Maximize Browser Window
 
 Login urlPROD
