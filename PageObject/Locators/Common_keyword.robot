@@ -294,8 +294,6 @@ ConfigCTI
     ${rows}=    Read Worksheet As Table    header=True    name=${SheetNameeee}
     FOR    ${row2}    IN    @{rows}
         ${Extension}=    Get From Dictionary    ${row2}    Extension
-        ${Agent1}=    Get From Dictionary    ${row2}    Agent
-
         RPA.Browser.Selenium.Wait Until Element Is Visible    id:user_name
 
         RPA.Browser.Selenium.Input Text    id:user_name    ${Extension}
@@ -305,3 +303,6 @@ ConfigCTI
 
         RPA.Browser.Selenium.Click Element    //*[@id="rc-tabs-0-panel-mapping-user"]/form/button
     END
+
+
+
