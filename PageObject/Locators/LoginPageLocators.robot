@@ -37,3 +37,16 @@ Login urlPROD
     RPA.Browser.Selenium.Input Text    id:signin_username    ${email1}
     RPA.Browser.Selenium.Input Text    id:signin_password    ${pwd1}
     RPA.Browser.Selenium.Click Element    xpath=(//*[@id="signin"]/div[4]/button)[1]
+
+Open CRM CTI
+    RPA.Browser.Selenium.Open Browser    ${urlCTI}    chrome
+    RPA.Browser.Selenium.Maximize Browser Window
+
+Login CRM CTI
+    RPA.Browser.Selenium.Click Element    ${BtnLoginOutSide}
+    RPA.Browser.Selenium.Wait Until Element Is Visible    ${EmaiLogin}
+    RPA.Browser.Selenium.Input Text    ${EmaiLogin}    ${emailCTI}
+    RPA.Browser.Selenium.Input Text    ${Pwdlogin}    ${pwdCTI}
+    RPA.Browser.Selenium.Click Element    ${Clickbtnlogin}
+
+    

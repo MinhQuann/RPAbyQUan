@@ -8,21 +8,26 @@ Library     Collections
 
 
 *** Test Cases ***
-Test1
-    Open CRM urlPROD
-    Login urlPROD
-    Sleep    2s
-    ${original_tab}=    RPA.Browser.Selenium.Get Window Handles
-    Sleep    2s
-    RPA.Browser.Selenium.Click Element    xpath=//*[@id="root"]/div/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]
-    Sleep    3s
-    ${new_tabs}=    RPA.Browser.Selenium.Get Window Handles
-    ${new_tab}=    Evaluate    [tab for tab in ${new_tabs} if tab not in ${original_tab}][0]
-    RPA.Browser.Selenium.Switch Window    ${new_tab}
-    Sleep    6s
-    RPA.Browser.Selenium.Click Element
-    ...    xpath=//*[@id="root"]/section/header/div[2]/div[1]/div[2]/div[2]/div/ul/li[2]/div/span
+# Test1
+#    Open CRM urlPROD
+#    Login urlPROD
+#    Sleep    2s
+#    ${original_tab}=    RPA.Browser.Selenium.Get Window Handles
+#    Sleep    2s
+#    RPA.Browser.Selenium.Click Element    xpath=//*[@id="root"]/div/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]
+#    Sleep    3s
+#    ${new_tabs}=    RPA.Browser.Selenium.Get Window Handles
+#    ${new_tab}=    Evaluate    [tab for tab in ${new_tabs} if tab not in ${original_tab}][0]
+#    RPA.Browser.Selenium.Switch Window    ${new_tab}
+#    Sleep    6s
+#    RPA.Browser.Selenium.Click Element
+#    ...    xpath=//*[@id="root"]/section/header/div[2]/div[1]/div[2]/div[2]/div/ul/li[2]/div/span
 
-    Sleep    3s
-    Test
+#    Sleep    3s
+#    Test
 
+ConfigCTI
+    Open CRM CTI
+    Login CRM CTI
+    Sleep    2s
+    ConfigCTI

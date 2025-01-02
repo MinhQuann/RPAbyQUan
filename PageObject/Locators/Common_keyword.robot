@@ -27,6 +27,9 @@ ${SheetName}                    Test1
 
 ${DATA2}                        SDT 2.xlsx
 ${SheetNameee}                  Test2
+
+${DATA3}                        Data1.xlsx
+${SheetNameeee}                 Test3
 # RPA CAll API
 # ${LinkeđID}    1721622634.191953
 # ${ExtentionID}    8014
@@ -284,4 +287,21 @@ Test2
         ${row_count}=    Get Length    ${rows12}
         IF    ${row_count} > 0    Action
         IF    ${row_count} == 0    RPA.Browser.Selenium.Reload Page
+    END
+
+ConfigCTI
+    Open Workbook    ${DATA3}
+    ${rows}=    Read Worksheet As Table    header=True    name=${SheetNameeee}
+    FOR    ${row2}    IN    @{rows}
+        ${Extension}=    Get From Dictionary    ${row2}    Extension
+        ${Agent1}=    Get From Dictionary    ${row2}    Agent
+
+        RPA.Browser.Selenium.Wait Until Element Is Visible    id:user_name
+
+        RPA.Browser.Selenium.Input Text    id:user_name    ${Extension}
+        RPA.Browser.Selenium.Press Keys    id:user_name    ENTER
+        RPA.Browser.Selenium.Input Text    id:agent_name    ${Extension}
+        RPA.Browser.Selenium.Input Text    id:extension    ${Extension}
+
+        RPA.Browser.Selenium.Click Element    //*[@id="rc-tabs-0-panel-mapping-user"]/form/button
     END
