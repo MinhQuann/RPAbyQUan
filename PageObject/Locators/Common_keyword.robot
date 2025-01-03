@@ -33,21 +33,23 @@ ${SheetNameeee}                 Test3
 # RPA CAll API
 # ${LinkeđID}    1721622634.191953
 # ${ExtentionID}    8014
-${API_URL_CTI}                  https://lab.connect247.vn/ucrmapi-cti/cti/call-data
+# ${API_URL_CTI}                  https://lab.connect247.vn/ucrmapi-cti/cti/call-data
+${API_URL_CTI}    https://lab.connect247.vn/ucrm-demo/ucrmapi-ver3-build/cti/call-data
 ${API_URL_FIN}                  https://lab.connect247.vn/ucrmapi-ver3/finesse-integration/handle-response-from-server
 # ${PAYLOADRINGING}    {"LinkedID": "${LinkeđID} ", "QueueID": "", "CallPhone": "0399478262", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "RINGING", "TotalDuration": "0", "BillDuration": "0", "Username": "user8014@email.com", "Hotline": null, "ExtentionID": "${ExtentionID}", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}
 # ${PAYLOADRINGING_DICT}=    Evaluate    json.loads('${PAYLOADRINGING}')
 ${AUTHORIZATION_HEADER_CTI}     Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs
 &{HEADERS_CTI}                  Content-Type=application/json    Authorization=${AUTHORIZATION_HEADER_CTI}
 
+# *** Tasks ***
 
-*** Tasks ***
-RPACallAPI_CALL_CTI
-...    RPACallAPI_CALL_CTI    700000000000    8009    SUCCESS    1    0908776510    user8010@yopmail.com
+# RPACallAPI_CALL_CTI
+# ...    RPACallAPI_CALL_CTI    700000000000    8009    SUCCESS    1    0908776510    user8010@yopmail.com
+
 
 *** Keywords ***
 RPACallAPI_CALL_CTI
-    [Arguments]    ${LinkedID}   ${ExtentionID}    ${CallStatus}    ${Direction}    ${PhoneNumber}    ${username}
+    [Arguments]    ${LinkedID}    ${ExtentionID}    ${CallStatus}    ${Direction}    ${PhoneNumber}    ${username}
     ${PAYLOADRINGING}=    Set Variable
     ...    {"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "${username}", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}
     Create Session
@@ -89,10 +91,11 @@ Generate_Street
     RETURN    ${Street}
 
 Generate_Phone
-    ${Phone}=    Evaluate    random.choice(${Phone})
-    ${Phone_}=    Set Variable    ${Phone}
-    RETURN    ${Phone_}
-
+    ${prefix}=    Set Variable    090
+    ${phone_number}=    random_number    1000000    9999999
+    ${phone}=    Set Variable    ${prefix}${phone_number}
+    RETURN    ${phone}
+    Log To Console    message: ${phone}
 # Loop ListBox
 
 random_number
