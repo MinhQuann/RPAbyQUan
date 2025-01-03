@@ -40,22 +40,14 @@ ${API_URL_FIN}                  https://lab.connect247.vn/ucrmapi-ver3/finesse-i
 ${AUTHORIZATION_HEADER_CTI}     Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs
 &{HEADERS_CTI}                  Content-Type=application/json    Authorization=${AUTHORIZATION_HEADER_CTI}
 
-# *** Test Cases ***
-# Test
-#    ${randomLinkeđI}=    evaluate    random.randint(0, 1000000)
-#    ${randomPhone}=    Generate_Phone
-#    ${randomExtention}=    Generate_EXTENTION
-#    ${username_}=    Generate_Random_Email_CALL
-#    FOR    ${i}    IN RANGE    200
-# RPACallAPI_CALL_CTI    132445    8009    RINGING    1    0906453332    user8009@email.com
-#    RPACallAPI_CALL_CTI    ${randomLinkeđI}    ${randomExtention}    ANSWER    1    ${randomPhone}    ${username}
-#    RPACallAPI_CALL_CTI    ${randomLinkeđI}    ${randomExtention}    SUCCESS    1    ${randomPhone}    ${username}
-#    END
 
+*** Tasks ***
+RPACallAPI_CALL_CTI
+...    RPACallAPI_CALL_CTI    700000000000    8009    SUCCESS    1    0908776510    user8010@yopmail.com
 
 *** Keywords ***
 RPACallAPI_CALL_CTI
-    [Arguments]    ${LinkedID}    ${ExtentionID}    ${CallStatus}    ${Direction}    ${PhoneNumber}    ${username}
+    [Arguments]    ${LinkedID}   ${ExtentionID}    ${CallStatus}    ${Direction}    ${PhoneNumber}    ${username}
     ${PAYLOADRINGING}=    Set Variable
     ...    {"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "${username}", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}
     Create Session
@@ -294,7 +286,11 @@ ConfigCTI
     ${rows}=    Read Worksheet As Table    header=True    name=${SheetNameeee}
     FOR    ${row2}    IN    @{rows}
         ${Extension}=    Get From Dictionary    ${row2}    Extension
-        RPA.Browser.Selenium.Wait Until Element Is Visible    id:user_name
+        Sleep    3s
+        RPA.Browser.Selenium.Wait Until Element Is Not Visible
+        ...    //img[@src='/ucrm-cti/static/media/crmlogo.7904565d.png']
+        ...    timeout=10s
+        RPA.Browser.Selenium.Wait Until Element Is Visible    id:user_name    timeout=6s
 
         RPA.Browser.Selenium.Input Text    id:user_name    ${Extension}
         RPA.Browser.Selenium.Press Keys    id:user_name    ENTER
@@ -303,6 +299,3 @@ ConfigCTI
 
         RPA.Browser.Selenium.Click Element    //*[@id="rc-tabs-0-panel-mapping-user"]/form/button
     END
-
-
-
