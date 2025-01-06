@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <robot generator="Robot 6.1.1 (Python 3.10.11 on win32)" generated="20250106 15:50:11.047" rpa="false" schemaversion="4">
 <suite id="s1" name="Suites">
-<suite id="s1-s1" name="Tasks" source="D:\RPA2\tasks.robot">
-<test id="s1-s1-t1" name="BotCall" line="35">
+<suite id="s1-s1" name="Tasks2" source="D:\RPA2\tasks2.robot">
+<test id="s1-s1-t1" name="BotCall2" line="30">
 <kw name="random_number" library="Common_keyword">
 <var>${LINKEDID RANDOM}</var>
 <arg>1</arg>
@@ -11,15 +11,15 @@
 <var>${random_number}</var>
 <arg>random.randint(${min}, ${max})</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250106 15:50:12.871" level="INFO">${random_number} = 601039746</msg>
+<msg timestamp="20250106 15:50:12.871" level="INFO">${random_number} = 588717520</msg>
 <status status="PASS" starttime="20250106 15:50:12.870" endtime="20250106 15:50:12.871"/>
 </kw>
 <return>
 <value>${random_number}</value>
-<status status="PASS" starttime="20250106 15:50:12.871" endtime="20250106 15:50:12.872"/>
+<status status="PASS" starttime="20250106 15:50:12.871" endtime="20250106 15:50:12.871"/>
 </return>
-<msg timestamp="20250106 15:50:12.872" level="INFO">${LINKEDID RANDOM} = 601039746</msg>
-<status status="PASS" starttime="20250106 15:50:12.870" endtime="20250106 15:50:12.872"/>
+<msg timestamp="20250106 15:50:12.872" level="INFO">${LINKEDID RANDOM} = 588717520</msg>
+<status status="PASS" starttime="20250106 15:50:12.869" endtime="20250106 15:50:12.872"/>
 </kw>
 <kw name="Generate_Phone" library="Common_keyword">
 <var>${RANDOMPHONE}</var>
@@ -38,21 +38,21 @@
 <var>${random_number}</var>
 <arg>random.randint(${min}, ${max})</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250106 15:50:12.874" level="INFO">${random_number} = 1074532</msg>
+<msg timestamp="20250106 15:50:12.874" level="INFO">${random_number} = 7981570</msg>
 <status status="PASS" starttime="20250106 15:50:12.873" endtime="20250106 15:50:12.874"/>
 </kw>
 <return>
 <value>${random_number}</value>
 <status status="PASS" starttime="20250106 15:50:12.874" endtime="20250106 15:50:12.874"/>
 </return>
-<msg timestamp="20250106 15:50:12.874" level="INFO">${phone_number} = 1074532</msg>
+<msg timestamp="20250106 15:50:12.874" level="INFO">${phone_number} = 7981570</msg>
 <status status="PASS" starttime="20250106 15:50:12.873" endtime="20250106 15:50:12.874"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${phone}</var>
 <arg>${prefix}${phone_number}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250106 15:50:12.875" level="INFO">${phone} = 0901074532</msg>
+<msg timestamp="20250106 15:50:12.875" level="INFO">${phone} = 0907981570</msg>
 <status status="PASS" starttime="20250106 15:50:12.875" endtime="20250106 15:50:12.875"/>
 </kw>
 <return>
@@ -64,7 +64,7 @@
 <doc>Logs the given message to the console.</doc>
 <status status="NOT RUN" starttime="20250106 15:50:12.876" endtime="20250106 15:50:12.876"/>
 </kw>
-<msg timestamp="20250106 15:50:12.876" level="INFO">${RANDOMPHONE} = 0901074532</msg>
+<msg timestamp="20250106 15:50:12.876" level="INFO">${RANDOMPHONE} = 0907981570</msg>
 <status status="PASS" starttime="20250106 15:50:12.872" endtime="20250106 15:50:12.876"/>
 </kw>
 <kw name="Generate_EXTENTION" library="Common_keyword">
@@ -80,7 +80,7 @@
 <var>${Extension_}</var>
 <arg>${Extension}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" starttime="20250106 15:50:12.880" endtime="20250106 15:50:12.880"/>
+<status status="NOT RUN" starttime="20250106 15:50:12.879" endtime="20250106 15:50:12.880"/>
 </kw>
 <return>
 <value>${Extension_}</value>
@@ -119,7 +119,7 @@
 <arg>1</arg>
 <arg>${RANDOMPHONE}</arg>
 <arg>${EmailNameCall}</arg>
-<status status="NOT RUN" starttime="20250106 15:50:12.883" endtime="20250106 15:50:12.884"/>
+<status status="NOT RUN" starttime="20250106 15:50:12.884" endtime="20250106 15:50:12.884"/>
 </kw>
 <kw name="Get Time" library="BuiltIn">
 <var>${end_time}</var>
@@ -144,9 +144,9 @@
 </iter>
 <status status="NOT RUN" starttime="20250106 15:50:12.881" endtime="20250106 15:50:12.885"/>
 </for>
-<status status="FAIL" starttime="20250106 15:50:12.869" endtime="20250106 15:50:12.885">Variable '${Extension}' not found.</status>
+<status status="FAIL" starttime="20250106 15:50:12.868" endtime="20250106 15:50:12.885">Variable '${Extension}' not found.</status>
 </test>
-<status status="FAIL" starttime="20250106 15:50:11.092" endtime="20250106 15:50:12.886"/>
+<status status="FAIL" starttime="20250106 15:50:11.092" endtime="20250106 15:50:12.887"/>
 </suite>
 <status status="FAIL" starttime="20250106 15:50:11.064" endtime="20250106 15:50:12.888"/>
 </suite>
@@ -158,13 +158,13 @@
 </tag>
 <suite>
 <stat pass="0" fail="1" skip="0" id="s1" name="Suites">Suites</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tasks">Suites.Tasks</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tasks2">Suites.Tasks2</stat>
 </suite>
 </statistics>
 <errors>
 <msg timestamp="20250106 15:50:11.112" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\Common_keyword.robot' on line 2: Resource file 'PageObject\Locators\SettingsCRMLocators.robot' does not exist.</msg>
-<msg timestamp="20250106 15:50:11.113" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\Common_keyword.robot' on line 3: Resource file 'PageObject\Data\Data.robot' does not exist.</msg>
-<msg timestamp="20250106 15:50:12.856" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\LoginPageLocators.robot' on line 2: Resource file 'PageObject\Locators\LoginPageLocators.robot' does not exist.</msg>
+<msg timestamp="20250106 15:50:11.114" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\Common_keyword.robot' on line 3: Resource file 'PageObject\Data\Data.robot' does not exist.</msg>
+<msg timestamp="20250106 15:50:12.857" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\LoginPageLocators.robot' on line 2: Resource file 'PageObject\Locators\LoginPageLocators.robot' does not exist.</msg>
 <msg timestamp="20250106 15:50:12.858" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\LoginPageLocators.robot' on line 3: Resource file 'PageObject\Locators\Common_keyword.robot' does not exist.</msg>
 <msg timestamp="20250106 15:50:12.862" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\LoginPageLocators.robot' on line 6: Resource file 'PageObject\Data\Variables .robot' does not exist.</msg>
 </errors>

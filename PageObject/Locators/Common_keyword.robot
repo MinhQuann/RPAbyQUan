@@ -12,6 +12,7 @@ Library     Collections
 Library     random
 Library     RPA.Salesforce
 Library     OperatingSystem
+Library     PageObject/Drivers/Tensorflow.py
 
 
 *** Variables ***
@@ -34,7 +35,7 @@ ${SheetNameeee}                 Test3
 # ${LinkeđID}    1721622634.191953
 # ${ExtentionID}    8014
 ${API_URL_CTI}                  https://lab.connect247.vn/ucrmapi-cti/cti/call-data
-# ${API_URL_CTI}    https://lab.connect247.vn/ucrm-demo/ucrmapi-ver3-build/cti/call-data
+# ${API_URL_CTI}    https://lab.connect247.vn/ucrmapi-ver3/cti/call-data
 ${API_URL_FIN}                  https://lab.connect247.vn/ucrmapi-ver3/finesse-integration/handle-response-from-server
 # ${PAYLOADRINGING}    {"LinkedID": "${LinkeđID} ", "QueueID": "", "CallPhone": "0399478262", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "RINGING", "TotalDuration": "0", "BillDuration": "0", "Username": "user8014@email.com", "Hotline": null, "ExtentionID": "${ExtentionID}", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}
 # ${PAYLOADRINGING_DICT}=    Evaluate    json.loads('${PAYLOADRINGING}')
@@ -56,7 +57,6 @@ RPACallAPI_CALL_CTI
     ...    api_session
     ...    ${API_URL_CTI}
     ...    headers=&{HEADERS_CTI}
-    ...    verify=False
     ${response}=    POST On Session
     ...    api_session
     ...    url=${API_URL_CTI}
@@ -102,14 +102,6 @@ random_number
     [Arguments]    ${min}    ${max}
     ${random_number}=    Evaluate    random.randint(${min}, ${max})
     RETURN    ${random_number}
-
-Get Random Element
-    [Arguments]    ${elements}
-    ${count}=    Get Length    ${elements}
-    Log To Console    message=${count}
-    ${random_index}=    Evaluate    random.randint(0, ${count} - 1)
-    ${random_element}=    Get From List    ${elements}    ${random_index}
-    RETURN    ${random_element}
 
 Generate Random Note
     ${Note}=    Evaluate    random.choice(${Note})
