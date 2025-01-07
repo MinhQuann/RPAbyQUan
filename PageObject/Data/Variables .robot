@@ -8,6 +8,6 @@ ${urlPROD}      https://portal.connect247.vn/Account/Login?ReturnUrl=%2Fconnect%
 ${email1}       is@hunghau.vn
 ${pwd1}         Bb@@767276
 
-${urlCTI}       https://lab.connect247.vn/ucrm-cti/cti-setting
+${urlCTI}       https://lab.connect247.vn/ucrm-cti/call-center
 ${emailCTI}     annacasavn2024@yopmail.com
 ${pwdCTI}       12345678x@X

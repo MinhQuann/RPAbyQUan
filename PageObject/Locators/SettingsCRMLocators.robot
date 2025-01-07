@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    PageObject/Locators/Common_keyword.robot
+Resource    D:/RPA2/PageObject/Locators/Common_keyword.robot
 Library     SeleniumLibrary
 Library     RPA.Browser.Selenium
 
@@ -40,11 +40,11 @@ ${Consolidatedview} =       id:ucrm_setting_5_0
 Click User
     RPA.Browser.Selenium.Click Element    ${User}
 
-Click Role 
-   RPA.Browser.Selenium.Click Element   ${Role}
+Click Role
+    RPA.Browser.Selenium.Click Element    ${Role}
 
 Click Profile
-    RPA.Browser.Selenium.Click Element   ${Profile}
+    RPA.Browser.Selenium.Click Element    ${Profile}
 
 Click Group
     RPA.Browser.Selenium.Click Element    ${Group}
@@ -56,13 +56,13 @@ Click CriteriaSharing
     RPA.Browser.Selenium.Click Element    ${CriteriaSharing}
 
 Click BrandName&Theme
-    RPA.Browser.Selenium.Click Element   ${BrandName&Theme}
+    RPA.Browser.Selenium.Click Element    ${BrandName&Theme}
 
 Click AssignmentRule
-    RPA.Browser.Selenium.Click Element   ${AssignmentRule}
+    RPA.Browser.Selenium.Click Element    ${AssignmentRule}
 
 Click ObjectManagement
-    RPA.Browser.Selenium.Click Element   ${ObjectManagement}
+    RPA.Browser.Selenium.Click Element    ${ObjectManagement}
 
 Click Object&Layout
     RPA.Browser.Selenium.Click Element    ${Object&Layout}
@@ -83,7 +83,7 @@ Click DisplayKanban
     RPA.Browser.Selenium.Click Element    ${DisplayKanban}
 
 Click HighlightSetting
-   RPA.Browser.Selenium.Click Element    ${HighlightSetting}
+    RPA.Browser.Selenium.Click Element    ${HighlightSetting}
 
 Click CampaignSetting
     RPA.Browser.Selenium.Click Element    ${CampaignSetting}

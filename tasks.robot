@@ -8,7 +8,7 @@ Library     Collections
 Library     DateTime
 
 
-*** Test Cases ***
+*** Tasks ***
 # Test1
 #    Open CRM urlPROD
 #    Login urlPROD
@@ -33,19 +33,14 @@ Library     DateTime
 #    Sleep    2s
 #    ConfigCTI
 BotCall
-    # ${LINKEDID RANDOM} =    random_number    1    1000000000
-    # ${RANDOMPHONE} =    Generate_Phone
-    # ${Extension} =    Generate_EXTENTION
-    # ${EmailNameCall} =    Generate_Random_Email_CALL
-
     FOR    ${i}    IN RANGE    1000
         ${LINKEDID RANDOM} =    random_number    1    1000000000
         ${RANDOMPHONE} =    Generate_Phone
-        ${Extension} =    Generate_EXTENTION
+        ${Extension} =    Generate_Extension
         Log To Console    Phone= ${RANDOMPHONE}
         Log To Console    LinkedID= ${LINKEDID RANDOM}
         Log To Console    Extension= ${Extension}
-        ${start_time} =    Get Time    epoch
+        Log To Console    Count= ${i}
         RPACallAPI_CALL_CTI
         ...    ${LINKEDID RANDOM}
         ...    ${Extension}
@@ -53,9 +48,6 @@ BotCall
         ...    1
         ...    ${RANDOMPHONE}
         ...    user${Extension}@email.com
-        ${end_time} =    Get Time    epoch
-        ${time} =    Subtract Time From Date    ${end_time}    ${start_time}    result_format=%S
-        Log To Console    message=${time}
     END
 
 # BotCall2

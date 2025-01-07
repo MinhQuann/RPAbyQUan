@@ -30,7 +30,7 @@ Library     DateTime
 BotCall2
     ${LINKEDID RANDOM} =    random_number    1    1000000000
     ${RANDOMPHONE} =    Generate_Phone
-    ${Extension} =    Generate_EXTENTION
+    ${Extension} =    Generate_Extension
     ${EmailNameCall} =    Generate_Random_Email_CALL
 
     FOR    ${i}    IN RANGE    100

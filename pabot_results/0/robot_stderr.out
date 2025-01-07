@@ -1,6 +1,4 @@
-[ ERROR ] Error in file 'D:\RPA2\PageObject\Locators\Common_keyword.robot' on line 2: Resource file 'PageObject\Locators\SettingsCRMLocators.robot' does not exist.
-[ ERROR ] Error in file 'D:\RPA2\PageObject\Locators\Common_keyword.robot' on line 3: Resource file 'PageObject\Data\Data.robot' does not exist.
-2025-01-06 15:50:11,382 - RPA.core.certificates - INFO - Truststore not in use, HTTPS traffic validated against `certifi` package. (requires Python 3.10.12 and 'pip' 23.2.1 at minimum)
-[ ERROR ] Error in file 'D:\RPA2\PageObject\Locators\LoginPageLocators.robot' on line 2: Resource file 'PageObject\Locators\LoginPageLocators.robot' does not exist.
-[ ERROR ] Error in file 'D:\RPA2\PageObject\Locators\LoginPageLocators.robot' on line 3: Resource file 'PageObject\Locators\Common_keyword.robot' does not exist.
-[ ERROR ] Error in file 'D:\RPA2\PageObject\Locators\LoginPageLocators.robot' on line 6: Resource file 'PageObject\Data\Variables .robot' does not exist.
+2025-01-06 23:07:55,511 - RPA.core.certificates - INFO - Truststore not in use, HTTPS traffic validated against `certifi` package. (requires Python 3.10.12 and 'pip' 23.2.1 at minimum)
+Second signal will force exit.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(

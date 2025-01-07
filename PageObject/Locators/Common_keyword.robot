@@ -1,6 +1,6 @@
 *** Settings ***
-Resource    PageObject/Locators/SettingsCRMLocators.robot
-Resource    PageObject/Data/Data.robot
+Resource    D:/RPA2/PageObject/Locators/SettingsCRMLocators.robot
+Resource    D:/RPA2/PageObject/Data/Data.Robot
 Library     RPA.Browser.Selenium
 Library     RPA.Excel.Files
 Library     Collections
@@ -12,7 +12,7 @@ Library     Collections
 Library     random
 Library     RPA.Salesforce
 Library     OperatingSystem
-Library     PageObject/Drivers/Tensorflow.py
+Library     DateTime
 
 
 *** Variables ***
@@ -53,6 +53,8 @@ RPACallAPI_CALL_CTI
     [Arguments]    ${LinkedID}    ${ExtentionID}    ${CallStatus}    ${Direction}    ${PhoneNumber}    ${username}
     ${PAYLOADRINGING}=    Set Variable
     ...    {"LinkedID": "${LinkedID}", "QueueID": "", "CallPhone": "${PhoneNumber}", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "${CallStatus}", "TotalDuration": "0", "BillDuration": "0", "Username": "${username}", "Hotline": "", "ExtentionID": "${ExtentionID}", "InOutCall": "${Direction}", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}
+
+    ${start_time}=    Get Time    epoch
     Create Session
     ...    api_session
     ...    ${API_URL_CTI}
@@ -61,6 +63,9 @@ RPACallAPI_CALL_CTI
     ...    api_session
     ...    url=${API_URL_CTI}
     ...    data=${PAYLOADRINGING}
+    ${end_time}=    Get Time    epoch
+    ${elapsed_time}=    Subtract Time From Date    ${end_time}    ${start_time}    result_format=%S.%f
+    Log To Console    Response: ${response} | Time taken: ${elapsed_time} seconds
 
 Generate_Random_Full_Name
     ${first_name}=    Evaluate    random.choice(${NAMES})
@@ -84,6 +89,7 @@ Generate_Random_Gender
 GET_TEXT_FORM_TAB_NAME
     [Arguments]    ${Locator}
     ${Name}=    RPA.Browser.Selenium.Get Text    ${Locator}
+    RETURN    ${Name}
 
 Generate_Street
     ${Street}=    Evaluate    random.choice(${Street})
@@ -184,7 +190,7 @@ Try Click Element Or Execute JavaScript_Xpath
 
 # Generate Extension
 
-Generate_EXTENTION
+Generate_Extension
     ${Extension}=    Evaluate    random.choice(${Extension})
     ${Extension_}=    Set Variable    ${Extension}
     RETURN    ${Extension_}
