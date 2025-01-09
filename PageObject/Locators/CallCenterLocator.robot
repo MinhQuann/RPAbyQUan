@@ -235,10 +235,6 @@ Add_New_Ticket_History
 Search Contact CRM
     [Arguments]    ${Otherphone}
     Sleep    2s
-    # RPA.Browser.Selenium.Execute Javascript
-    # ...    document.querySelector('.overlay-class').style.display = 'none';
-    # Try Click Element Or Execute JavaScript_Xpath
-    # ...    xpath=//span[@class='ant-input-affix-wrapper']/input[@id='ucrm-multiDetail-search']
     RPA.Browser.Selenium.Wait Until Element Is Not Visible    xpath=//div[contains(@class, 'ant-drawer-mask')]
     Try Click Element Or Execute JavaScript_Xpath    id:ucrm_multiDetail_searchBtn
     Input Text Or Execute JavaScript
@@ -251,8 +247,6 @@ Search Contact CRM
     Sleep    5s
     RPA.Browser.Selenium.Execute Javascript
 ...    document.getElementById('ucrm_listOfContact_ucrmSearchBtn').click();
-    # RPA.Browser.Selenium.Wait Until Element Is Visible    ${btnSearchloc}    timeout=10
-    # RPA.Browser.Selenium.Click Element    ${btnSearchloc}
     Sleep    5s
     RPA.Browser.Selenium.Execute Javascript
     ...    var element=
@@ -261,10 +255,3 @@ Search Contact CRM
     ...    var event= new MouseEvent('dblclick', { bubbles: true, cancelable: true });
     ...    element.dispatchEvent(event);
     ...    }
-    # RPA.Browser.Selenium.Scroll Element Into View
-    # ...    xpath=//tbody//tr[contains(@class, 'ant-table-row ant-table-row-level-0 ant-table-row-selected') and position() > 1]
-    # RPA.Browser.Selenium.Wait Until Element Is Enabled
-    # ...    xpath=//tbody//tr[contains(@class, 'ant-table-row ant-table-row-level-0 ant-table-row-selected') and position() > 1]
-    # ...    timeout=10
-    # RPA.Browser.Selenium.Double Click Element
-    # ...    xpath=//tbody//tr[contains(@class, 'ant-table-row ant-table-row-level-0 ant-table-row-selected') and position() > 1]

@@ -283,6 +283,13 @@ Test2
     END
 
 ConfigCTI
+    RPA.Browser.Selenium.Wait Until Element Is Visible    //input[@type='search']    timeout=20s
+    RPA.Browser.Selenium.Click Element    //input[@type='search']
+    RPA.Browser.Selenium.Input Text    //input[@type='search']    Khách Hàng
+    RPA.Browser.Selenium.Press Keys    //input[@type='search']    ENTER
+    Sleep    5s
+    RPA.Browser.Selenium.Click Element    id:rc-tabs-0-tab-mapping-user
+
     Open Workbook    ${DATA3}
     ${rows}=    Read Worksheet As Table    header=True    name=${SheetNameeee}
     FOR    ${row2}    IN    @{rows}
@@ -290,7 +297,7 @@ ConfigCTI
         Sleep    3s
         RPA.Browser.Selenium.Wait Until Element Is Not Visible
         ...    //img[@src='/ucrm-cti/static/media/crmlogo.7904565d.png']
-        ...    timeout=10s
+        ...    timeout=25s
         RPA.Browser.Selenium.Wait Until Element Is Visible    id:user_name    timeout=6s
 
         RPA.Browser.Selenium.Input Text    id:user_name    ${Extension}
@@ -298,5 +305,5 @@ ConfigCTI
         RPA.Browser.Selenium.Input Text    id:agent_name    ${Extension}
         RPA.Browser.Selenium.Input Text    id:extension    ${Extension}
 
-        RPA.Browser.Selenium.Click Element    //*[@id="rc-tabs-0-panel-mapping-user"]/form/button
+        RPA.Browser.Selenium.Click Element    (//button[@type='submit'])[2]
     END

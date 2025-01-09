@@ -39,8 +39,8 @@ Login urlPROD
     RPA.Browser.Selenium.Click Element    xpath=(//*[@id="signin"]/div[4]/button)[1]
 
 Open CRM CTI
-    # RPA.Browser.Selenium.Open Headless Chrome Browser    ${urlCTI}
     RPA.Browser.Selenium.Open Browser    ${urlCTI}    chrome
+    RPA.Browser.Selenium.Maximize Browser Window
 
 Login CRM CTI
     RPA.Browser.Selenium.Click Element    ${BtnLoginOutSide}

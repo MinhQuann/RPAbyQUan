@@ -50,6 +50,11 @@ BotCall
         ...    user${Extension}@email.com
     END
 
+# ConFigFI
+#     Open CRM CTI
+#     Login CRM CTI
+#     Sleep    6s
+#     ConfigCTI
 # BotCall2
 #    ${LINKEDID RANDOM} =    random_number    1    1000000000
 #    ${RANDOMPHONE} =    Generate_Phone
