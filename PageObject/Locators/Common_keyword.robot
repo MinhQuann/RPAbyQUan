@@ -36,16 +36,19 @@ ${SheetNameeee}                 Test3
 # ${ExtentionID}    8014
 ${API_URL_CTI}                  https://lab.connect247.vn/ucrmapi-cti/cti/call-data
 # ${API_URL_CTI}    https://lab.connect247.vn/ucrmapi-ver3/cti/call-data
-${API_URL_FIN}                  https://lab.connect247.vn/ucrmapi-ver3/finesse-integration/handle-response-from-server
+${API_URL_FIN}                  https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server
 # ${PAYLOADRINGING}    {"LinkedID": "${LinkeđID} ", "QueueID": "", "CallPhone": "0399478262", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "RINGING", "TotalDuration": "0", "BillDuration": "0", "Username": "user8014@email.com", "Hotline": null, "ExtentionID": "${ExtentionID}", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"}
 # ${PAYLOADRINGING_DICT}=    Evaluate    json.loads('${PAYLOADRINGING}')
 ${AUTHORIZATION_HEADER_CTI}     Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjIwMzY5ODQyMTMsIlRlbmFudHMiOiJ0bnRfdGVzdGFjZmN0ZXN0OV82NDQyOTMyMiIsIklEIjoiNjY5ODg5NTIyOGM5ZGEyY2RkNjEyYTkyIiwiRW1haWwiOiJ0ZXN0YWNmYzlAeW9wbWFpbC5jb20iLCJJc19BZG1pbiI6dHJ1ZX0.mumhNV909rOtFAUFNKpOharTYWPRNo85S2Zi9QY5bJs
 &{HEADERS_CTI}                  Content-Type=application/json    Authorization=${AUTHORIZATION_HEADER_CTI}
+${AUTHORIZATION_HEADER_FIN}     Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8
+&{HEADERS_FIN}
+...                             Content-Type=application/x-www-form-urlencoded
+...                             Authorization=${AUTHORIZATION_HEADER_FIN}
 
-# *** Tasks ***
 
-# RPACallAPI_CALL_CTI
-# ...    RPACallAPI_CALL_CTI    700000000000    8009    SUCCESS    1    0908776510    user8010@yopmail.com
+*** Tasks ***
+RPACallAPI...    RPACallAPI_CALL_FI    722  8008  RINGING    1    09064533322
 
 
 *** Keywords ***
@@ -66,6 +69,23 @@ RPACallAPI_CALL_CTI
     ${end_time}=    Get Time    epoch
     ${elapsed_time}=    Subtract Time From Date    ${end_time}    ${start_time}    result_format=%S.%f
     Log To Console    Response: ${response} | Time taken: ${elapsed_time} seconds
+
+RPACallAPI_CALL_FI
+    [Arguments]    ${LinkedID}    ${ExtensionID}    ${CallStatus}    ${Direction}    ${PhoneNumber}
+    &{PAYLOADRINGING}=    Create Dictionary
+    ...    LinkedID=${LinkedID}
+    ...    CallPhone=${PhoneNumber}
+    ...    CallStartTime=2024-07-22 11:30:34
+    ...    CallConnectTime=
+    ...    CallEndTime=
+    ...    CallStatus=${CallStatus}
+    ...    Username=${ExtensionID}    ExtentionID=${ExtensionID}    InOutCall=${Direction}
+    ${start_time}=    Get Time    epoch
+    Create Session    api_session    ${API_URL_FIN}    headers=&{HEADERS_FIN}
+    ${response}=    Post Request    api_session    ${API_URL_FIN}    data=&{PAYLOADRINGING}
+    ${end_time}=    Get Time    epoch
+    ${elapsed_time2}=    Subtract Time From Date    ${end_time}    ${start_time}    result_format=%S.%f
+    Log To Console    Response: ${response} | Time taken: ${elapsed_time2} seconds
 
 Generate_Random_Full_Name
     ${first_name}=    Evaluate    random.choice(${NAMES})

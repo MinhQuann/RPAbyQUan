@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.14 on win32)" generated="20250102 18:20:56.597" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.10.14 on win32)" generated="20250110 13:38:12.732" rpa="false" schemaversion="4">
 <suite id="s1" name="Robot Interactive Console" source="c:\Users\Bui Nguyen Minh Quan\.vscode\extensions\robocorp.robotframework-lsp-1.13.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test" line="5">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<status status="PASS" starttime="20250102 18:20:56.651" endtime="20250102 18:20:59.070"/>
+<kw name="RPACallAPI_CALL_FI">
+<arg>700000000000</arg>
+<arg>8009</arg>
+<arg>RINGING</arg>
+<arg>1</arg>
+<arg>0906453332</arg>
+<msg timestamp="20250110 13:38:13.467" level="FAIL">No keyword with name 'RPACallAPI_CALL_FI' found.</msg>
+<status status="FAIL" starttime="20250110 13:38:13.467" endtime="20250110 13:38:13.467"/>
 </kw>
-<status status="PASS" starttime="20250102 18:20:56.650" endtime="20250102 18:20:59.071"/>
+<status status="PASS" starttime="20250110 13:38:12.763" endtime="20250110 13:38:16.088"/>
+</kw>
+<status status="PASS" starttime="20250110 13:38:12.762" endtime="20250110 13:38:16.089"/>
 </test>
-<status status="PASS" starttime="20250102 18:20:56.602" endtime="20250102 18:20:59.073"/>
+<status status="PASS" starttime="20250110 13:38:12.734" endtime="20250110 13:38:16.091"/>
 </suite>
 <statistics>
 <total>
