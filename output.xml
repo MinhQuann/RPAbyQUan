@@ -1,91 +1,301 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.14 on win32)" generated="20250110 21:44:34.601" rpa="true" schemaversion="4">
-<suite id="s1" name="Common keyword" source="d:\RPA2\PageObject\Locators\Common_keyword.robot">
-<test id="s1-t1" name="RPACallAPI..." line="51">
-<kw name="RPACallAPI_CALL_FI">
-<arg>722</arg>
-<arg>8008</arg>
-<arg>RINGING</arg>
-<arg>1</arg>
-<arg>09064533322</arg>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{PAYLOADRINGING}</var>
-<arg>LinkedID=${LinkedID}</arg>
-<arg>CallPhone=${PhoneNumber}</arg>
-<arg>CallStartTime=2024-07-22 11:30:34</arg>
-<arg>CallConnectTime=</arg>
-<arg>CallEndTime=</arg>
-<arg>CallStatus=${CallStatus}</arg>
-<arg>Username=${ExtensionID}</arg>
-<arg>ExtentionID=${ExtensionID}</arg>
-<arg>InOutCall=${Direction}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250110 21:44:37.227" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=722 | CallPhone=09064533322 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=RINGING | Username=8008 | ExtentionID=8008 | InOutCall=1 }</msg>
-<status status="PASS" starttime="20250110 21:44:37.225" endtime="20250110 21:44:37.228"/>
+<robot generator="Robot 6.1.1 (Python 3.10.14 on win32)" generated="20250113 10:24:34.210" rpa="true" schemaversion="4">
+<suite id="s1" name="Tasks" source="d:\RPA2\tasks.robot">
+<test id="s1-t1" name="test" line="48">
+<kw name="How Many User Login" library="LoginPageLocators">
+<arg>3</arg>
+<kw name="Get Selected Users" library="LoginPageLocators">
+<var>${selected_user}</var>
+<arg>${number_users}</arg>
+<kw name="Create List" library="BuiltIn">
+<var>${selected_users}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20250113 10:24:37.204" level="INFO">${selected_users} = []</msg>
+<status status="PASS" starttime="20250113 10:24:37.202" endtime="20250113 10:24:37.209"/>
 </kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${start_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250110 21:44:37.230" level="INFO">${start_time} = 1736520277</msg>
-<status status="PASS" starttime="20250110 21:44:37.228" endtime="20250110 21:44:37.230"/>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${number_of_users}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Append To List" library="Collections">
+<arg>${selected_users}</arg>
+<arg>${index}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250113 10:24:37.221" endtime="20250113 10:24:37.224"/>
 </kw>
-<kw name="Create Session" library="RequestsLibrary">
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>headers=&amp;{HEADERS_FIN}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250110 21:44:37.232" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250110 21:44:37.230" endtime="20250110 21:44:37.232"/>
+<status status="PASS" starttime="20250113 10:24:37.217" endtime="20250113 10:24:37.224"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Append To List" library="Collections">
+<arg>${selected_users}</arg>
+<arg>${index}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250113 10:24:37.226" endtime="20250113 10:24:37.228"/>
 </kw>
-<kw name="Post Request" library="RequestsLibrary">
-<var>${response}</var>
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>data=&amp;{PAYLOADRINGING}</arg>
-<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250110 21:44:37.232" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250110 21:44:37.883" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '164'} 
- body=LinkedID=722&amp;CallPhone=09064533322&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=RINGING&amp;Username=8008&amp;ExtentionID=8008&amp;InOutCall=1 
- </msg>
-<msg timestamp="20250110 21:44:37.884" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 10 Jan 2025 14:44:38 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'Origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
- body={"data": [], "message": "success", "status_code": 200} 
- </msg>
-<msg timestamp="20250110 21:44:37.884" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20250110 21:44:37.885" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250110 21:44:37.232" endtime="20250110 21:44:37.885"/>
+<status status="PASS" starttime="20250113 10:24:37.226" endtime="20250113 10:24:37.228"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Append To List" library="Collections">
+<arg>${selected_users}</arg>
+<arg>${index}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250113 10:24:37.233" endtime="20250113 10:24:37.234"/>
 </kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${end_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250110 21:44:37.887" level="INFO">${end_time} = 1736520277</msg>
-<status status="PASS" starttime="20250110 21:44:37.886" endtime="20250110 21:44:37.887"/>
+<status status="PASS" starttime="20250113 10:24:37.230" endtime="20250113 10:24:37.235"/>
+</iter>
+<status status="PASS" starttime="20250113 10:24:37.211" endtime="20250113 10:24:37.236"/>
+</for>
+<return>
+<value>${selected_users}</value>
+<status status="PASS" starttime="20250113 10:24:37.238" endtime="20250113 10:24:37.239"/>
+</return>
+<msg timestamp="20250113 10:24:37.241" level="INFO">${selected_user} = [0, 1, 2]</msg>
+<status status="PASS" starttime="20250113 10:24:37.199" endtime="20250113 10:24:37.241"/>
 </kw>
-<kw name="Subtract Time From Date" library="DateTime">
-<var>${elapsed_time2}</var>
-<arg>${end_time}</arg>
-<arg>${start_time}</arg>
-<arg>result_format=%S.%f</arg>
-<doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250110 21:44:37.890" level="INFO">${elapsed_time2} = 00.000000</msg>
-<status status="PASS" starttime="20250110 21:44:37.889" endtime="20250110 21:44:37.891"/>
+<for flavor="IN">
+<var>${user}</var>
+<value>@{selected_user}</value>
+<iter>
+<var name="${user}">0</var>
+<kw name="Open Headless Chrome Browser" library="RPA.Browser.Selenium">
+<arg>${urlCTI}</arg>
+<doc>Opens the Chrome browser in headless mode.</doc>
+<msg timestamp="20250113 10:24:59.083" level="INFO">Downloaded webdriver to: C:\Users\Bui Nguyen Minh Quan\AppData\Local\robocorp\webdrivers\.wdm\drivers\chromedriver\win64\131.0.6778.264\chromedriver-win32/chromedriver.exe</msg>
+<msg timestamp="20250113 10:24:59.248" level="INFO">Webdriver version taken into use: ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323})
+</msg>
+<msg timestamp="20250113 10:24:59.249" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20250113 10:25:00.594" level="INFO">Created Chrome browser (version 131.0.6778) with arguments: --headless=new --disable-gpu --window-size=1440,900 --disable-dev-shm-usage --disable-web-security --allow-running-insecure-content --no-sandbox</msg>
+<msg timestamp="20250113 10:25:00.594" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: Webdriver executable 'chromedriver' is not in PATH (with disabled Selenium Manager)
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg timestamp="20250113 10:25:00.594" level="INFO">Opening url 'https://lab.connect247.vn/ucrm-cti/call-center'</msg>
+<status status="PASS" starttime="20250113 10:24:37.243" endtime="20250113 10:25:03.116"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>${BtnLoginOutSide}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250113 10:25:03.117" endtime="20250113 10:25:03.470"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${BtnLoginOutSide}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250113 10:25:03.472" level="INFO">Clicking element '//*[@id='root']/div[2]/div/div/div[2]/div/button'.</msg>
+<status status="PASS" starttime="20250113 10:25:03.471" endtime="20250113 10:25:03.720"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>${EmaiLogin}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250113 10:25:03.722" endtime="20250113 10:25:03.772"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email}</var>
+<arg>${EmailNameCall2[${user}]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250113 10:25:03.775" level="INFO">${email} = user1909@email.com</msg>
+<status status="PASS" starttime="20250113 10:25:03.773" endtime="20250113 10:25:03.775"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${EmaiLogin}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250113 10:25:03.777" level="INFO">Typing text 'user1909@email.com' into text field 'id:basic_email'.</msg>
+<status status="PASS" starttime="20250113 10:25:03.776" endtime="20250113 10:25:04.277"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>Response: ${response} | Time taken: ${elapsed_time2} seconds</arg>
+<arg>Email nè : ${email}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250110 21:44:37.891" endtime="20250110 21:44:37.893"/>
+<status status="PASS" starttime="20250113 10:25:04.279" endtime="20250113 10:25:04.282"/>
 </kw>
-<status status="PASS" starttime="20250110 21:44:37.225" endtime="20250110 21:44:37.893"/>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${Pwdlogin}</arg>
+<arg>12345678x@X</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250113 10:25:04.289" level="INFO">Typing text '12345678x@X' into text field 'id:basic_pass'.</msg>
+<status status="PASS" starttime="20250113 10:25:04.284" endtime="20250113 10:25:04.950"/>
 </kw>
-<status status="PASS" starttime="20250110 21:44:37.223" endtime="20250110 21:44:37.895"/>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${Clickbtnlogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250113 10:25:04.954" level="INFO">Clicking element '//*[@id='basic']/div[3]/div/div/div/div/button'.</msg>
+<status status="PASS" starttime="20250113 10:25:04.952" endtime="20250113 10:25:05.212"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>//div[@class='ant-empty-description']/p[text()='Hiện chưa có cuộc gọi']</arg>
+<arg>timeout=50s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250113 10:25:05.215" endtime="20250113 10:25:07.906"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Login Success with extension: ${user}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20250113 10:25:07.906" endtime="20250113 10:25:07.908"/>
+</kw>
+<status status="PASS" starttime="20250113 10:24:37.242" endtime="20250113 10:25:07.908"/>
+</iter>
+<iter>
+<var name="${user}">1</var>
+<kw name="Open Headless Chrome Browser" library="RPA.Browser.Selenium">
+<arg>${urlCTI}</arg>
+<doc>Opens the Chrome browser in headless mode.</doc>
+<msg timestamp="20250113 10:25:25.349" level="INFO">Downloaded webdriver to: C:\Users\Bui Nguyen Minh Quan\AppData\Local\robocorp\webdrivers\.wdm\drivers\chromedriver\win64\131.0.6778.264\chromedriver-win32/chromedriver.exe</msg>
+<msg timestamp="20250113 10:25:25.383" level="INFO">Webdriver version taken into use: ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323})
+</msg>
+<msg timestamp="20250113 10:25:25.384" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20250113 10:25:26.614" level="INFO">Created Chrome browser (version 131.0.6778) with arguments: --headless=new --disable-gpu --window-size=1440,900 --disable-dev-shm-usage --disable-web-security --allow-running-insecure-content --no-sandbox</msg>
+<msg timestamp="20250113 10:25:26.614" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: Webdriver executable 'chromedriver' is not in PATH (with disabled Selenium Manager)
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg timestamp="20250113 10:25:26.614" level="INFO">Opening url 'https://lab.connect247.vn/ucrm-cti/call-center'</msg>
+<status status="PASS" starttime="20250113 10:25:07.910" endtime="20250113 10:25:28.348"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>${BtnLoginOutSide}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250113 10:25:28.349" endtime="20250113 10:25:28.432"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${BtnLoginOutSide}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250113 10:25:28.436" level="INFO">Clicking element '//*[@id='root']/div[2]/div/div/div[2]/div/button'.</msg>
+<status status="PASS" starttime="20250113 10:25:28.433" endtime="20250113 10:25:28.867"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>${EmaiLogin}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250113 10:25:28.868" endtime="20250113 10:25:28.916"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email}</var>
+<arg>${EmailNameCall2[${user}]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250113 10:25:28.918" level="INFO">${email} = user1910@email.com</msg>
+<status status="PASS" starttime="20250113 10:25:28.916" endtime="20250113 10:25:28.919"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${EmaiLogin}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250113 10:25:28.920" level="INFO">Typing text 'user1910@email.com' into text field 'id:basic_email'.</msg>
+<status status="PASS" starttime="20250113 10:25:28.919" endtime="20250113 10:25:29.315"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Email nè : ${email}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20250113 10:25:29.316" endtime="20250113 10:25:29.318"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${Pwdlogin}</arg>
+<arg>12345678x@X</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250113 10:25:29.322" level="INFO">Typing text '12345678x@X' into text field 'id:basic_pass'.</msg>
+<status status="PASS" starttime="20250113 10:25:29.319" endtime="20250113 10:25:29.553"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${Clickbtnlogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250113 10:25:29.558" level="INFO">Clicking element '//*[@id='basic']/div[3]/div/div/div/div/button'.</msg>
+<status status="PASS" starttime="20250113 10:25:29.553" endtime="20250113 10:25:29.753"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>//div[@class='ant-empty-description']/p[text()='Hiện chưa có cuộc gọi']</arg>
+<arg>timeout=50s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250113 10:25:29.754" endtime="20250113 10:25:32.533"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Login Success with extension: ${user}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20250113 10:25:32.533" endtime="20250113 10:25:32.535"/>
+</kw>
+<status status="PASS" starttime="20250113 10:25:07.909" endtime="20250113 10:25:32.535"/>
+</iter>
+<iter>
+<var name="${user}">2</var>
+<kw name="Open Headless Chrome Browser" library="RPA.Browser.Selenium">
+<arg>${urlCTI}</arg>
+<doc>Opens the Chrome browser in headless mode.</doc>
+<msg timestamp="20250113 10:25:51.299" level="INFO">Downloaded webdriver to: C:\Users\Bui Nguyen Minh Quan\AppData\Local\robocorp\webdrivers\.wdm\drivers\chromedriver\win64\131.0.6778.264\chromedriver-win32/chromedriver.exe</msg>
+<msg timestamp="20250113 10:25:51.349" level="INFO">Webdriver version taken into use: ChromeDriver 131.0.6778.264 (2d05e31515360f4da764174f7c448b33e36da871-refs/branch-heads/6778@{#4323})
+</msg>
+<msg timestamp="20250113 10:25:51.350" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20250113 10:25:52.766" level="INFO">Created Chrome browser (version 131.0.6778) with arguments: --headless=new --disable-gpu --window-size=1440,900 --disable-dev-shm-usage --disable-web-security --allow-running-insecure-content --no-sandbox</msg>
+<msg timestamp="20250113 10:25:52.766" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: Webdriver executable 'chromedriver' is not in PATH (with disabled Selenium Manager)
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg timestamp="20250113 10:25:52.767" level="INFO">Opening url 'https://lab.connect247.vn/ucrm-cti/call-center'</msg>
+<status status="PASS" starttime="20250113 10:25:32.537" endtime="20250113 10:25:54.326"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>${BtnLoginOutSide}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250113 10:25:54.327" endtime="20250113 10:25:54.378"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${BtnLoginOutSide}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250113 10:25:54.380" level="INFO">Clicking element '//*[@id='root']/div[2]/div/div/div[2]/div/button'.</msg>
+<status status="PASS" starttime="20250113 10:25:54.378" endtime="20250113 10:25:54.703"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>${EmaiLogin}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250113 10:25:54.703" endtime="20250113 10:25:54.740"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email}</var>
+<arg>${EmailNameCall2[${user}]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20250113 10:25:54.742" level="INFO">${email} = user1911@email.com</msg>
+<status status="PASS" starttime="20250113 10:25:54.740" endtime="20250113 10:25:54.743"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${EmaiLogin}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250113 10:25:54.744" level="INFO">Typing text 'user1911@email.com' into text field 'id:basic_email'.</msg>
+<status status="PASS" starttime="20250113 10:25:54.743" endtime="20250113 10:25:55.021"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Email nè : ${email}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20250113 10:25:55.022" endtime="20250113 10:25:55.023"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${Pwdlogin}</arg>
+<arg>12345678x@X</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250113 10:25:55.026" level="INFO">Typing text '12345678x@X' into text field 'id:basic_pass'.</msg>
+<status status="PASS" starttime="20250113 10:25:55.024" endtime="20250113 10:25:55.218"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${Clickbtnlogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250113 10:25:55.220" level="INFO">Clicking element '//*[@id='basic']/div[3]/div/div/div/div/button'.</msg>
+<status status="PASS" starttime="20250113 10:25:55.219" endtime="20250113 10:25:55.348"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>//div[@class='ant-empty-description']/p[text()='Hiện chưa có cuộc gọi']</arg>
+<arg>timeout=50s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250113 10:25:55.349" endtime="20250113 10:25:59.556"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Login Success with extension: ${user}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20250113 10:25:59.557" endtime="20250113 10:25:59.558"/>
+</kw>
+<status status="PASS" starttime="20250113 10:25:32.536" endtime="20250113 10:25:59.558"/>
+</iter>
+<status status="PASS" starttime="20250113 10:24:37.242" endtime="20250113 10:25:59.558"/>
+</for>
+<status status="PASS" starttime="20250113 10:24:37.196" endtime="20250113 10:25:59.559"/>
+</kw>
+<status status="PASS" starttime="20250113 10:24:37.193" endtime="20250113 10:25:59.560"/>
 </test>
-<status status="PASS" starttime="20250110 21:44:34.615" endtime="20250110 21:44:37.897"/>
+<status status="PASS" starttime="20250113 10:24:34.228" endtime="20250113 10:25:59.563"/>
 </suite>
 <statistics>
 <total>
@@ -94,11 +304,9 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Common keyword">Common keyword</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tasks">Tasks</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20250110 21:44:34.699" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\SettingsCRMLocators.robot' on line 2: Error in file 'D:\RPA2\PageObject\Locators\Common_keyword.robot' on line 50: Resource file with 'Tasks' section is invalid.</msg>
-<msg timestamp="20250110 21:44:37.232" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
 </errors>
 </robot>

@@ -255,3 +255,6 @@ Search Contact CRM
     ...    var event= new MouseEvent('dblclick', { bubbles: true, cancelable: true });
     ...    element.dispatchEvent(event);
     ...    }
+
+Get TAB NAME
+    

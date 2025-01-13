@@ -32,29 +32,27 @@ Library     DateTime
 #    Login CRM CTI
 #    Sleep    2s
 #    ConfigCTI
-BotCall
-    FOR    ${i}    IN RANGE    1000
-        ${LINKEDID RANDOM} =    random_number    1    1000000000
-        ${RANDOMPHONE} =    Generate_Phone
-        ${Extension} =    Generate_Extension
-        Log To Console    Phone= ${RANDOMPHONE}
-        Log To Console    LinkedID= ${LINKEDID RANDOM}
-        Log To Console    Extension= ${Extension}
-        Log To Console    Count= ${i}
-        RPACallAPI_CALL_CTI
-        ...    ${LINKEDID RANDOM}
-        ...    ${Extension}
-        ...    RINGING
-        ...    1
-        ...    ${RANDOMPHONE}
-        ...    user${Extension}@email.com
-    END
+# BotCall
+
+#    Open CRM CTI HEADLESS    $emailCTI    $pwdCTI
+#    FOR    ${i}    IN RANGE    1000
+#    ${LINKEDID RANDOM} =    random_number    1    1000000000
+#    ${RANDOMPHONE} =    Generate_Phone
+#    ${Extension} =    Generate_Extension
+#    Log To Console    Phone= ${RANDOMPHONE}
+#    Log To Console    LinkedID= ${LINKEDID RANDOM}
+#    Log To Console    Extension= ${Extension}
+#    Log To Console    Count= ${i}
+#    RPACallAPI_CALL_FI    ${LINKEDID RANDOM}    ${Extension}    RINGING    1    ${RANDOMPHONE}
+#    END
+test
+    How Many User Login    3
 
 # ConFigFI
-#     Open CRM CTI
-#     Login CRM CTI
-#     Sleep    6s
-#     ConfigCTI
+#    Open CRM CTI
+#    Login CRM CTI
+#    Sleep    6s
+#    ConfigCTI
 # BotCall2
 #    ${LINKEDID RANDOM} =    random_number    1    1000000000
 #    ${RANDOMPHONE} =    Generate_Phone

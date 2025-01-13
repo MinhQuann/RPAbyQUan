@@ -47,8 +47,8 @@ ${AUTHORIZATION_HEADER_FIN}     Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJl
 ...                             Authorization=${AUTHORIZATION_HEADER_FIN}
 
 
-*** Tasks ***
-RPACallAPI...    RPACallAPI_CALL_FI    722  8008  RINGING    1    09064533322
+# *** Tasks ***
+# RPACallAPI...    RPACallAPI_CALL_FI    722    8008    RINGING    1    09064533322
 
 
 *** Keywords ***
