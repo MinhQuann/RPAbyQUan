@@ -1,6 +1,8 @@
 *** Settings ***
 Resource    D:/RPA2/PageObject/Locators/SettingsCRMLocators.robot
 Resource    D:/RPA2/PageObject/Data/Data.Robot
+Resource    D:/RPA2/PageObject/Locators/LoginPageLocators.robot
+Resource    CallCenterLocator.robot
 Library     RPA.Browser.Selenium
 Library     RPA.Excel.Files
 Library     Collections
@@ -13,6 +15,7 @@ Library     random
 Library     RPA.Salesforce
 Library     OperatingSystem
 Library     DateTime
+Library     Process
 
 
 *** Variables ***
@@ -45,7 +48,6 @@ ${AUTHORIZATION_HEADER_FIN}     Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJl
 &{HEADERS_FIN}
 ...                             Content-Type=application/x-www-form-urlencoded
 ...                             Authorization=${AUTHORIZATION_HEADER_FIN}
-
 
 # *** Tasks ***
 # RPACallAPI...    RPACallAPI_CALL_FI    722    8008    RINGING    1    09064533322
@@ -211,7 +213,7 @@ Try Click Element Or Execute JavaScript_Xpath
 # Generate Extension
 
 Generate_Extension
-    ${Extension}=    Evaluate    random.choice(${Extension})
+    ${Extension}=    Evaluate    random.choice(${Extension1})
     ${Extension_}=    Set Variable    ${Extension}
     RETURN    ${Extension_}
 
@@ -327,3 +329,31 @@ ConfigCTI
 
         RPA.Browser.Selenium.Click Element    (//button[@type='submit'])[2]
     END
+
+How Many User Login And Call API
+    [Arguments]    ${number_users}    ${callcurrent}
+    ${extension}=    Get From List    ${Extension2}    ${number_users}
+    RPA.Browser.Selenium.Open Headless Chrome Browser    ${urlCTI}
+    # RPA.Browser.Selenium.Open Browser    ${urlCTI}    chrome
+    RPA.Browser.Selenium.Wait Until Element Is Visible    ${BtnLoginOutSide}    timeout=10s
+    RPA.Browser.Selenium.Click Element    ${BtnLoginOutSide}
+    RPA.Browser.Selenium.Wait Until Element Is Visible    ${EmaiLogin}
+    ${email}=    Set Variable    user${extension}@email.com
+    RPA.Browser.Selenium.Input Text    ${EmaiLogin}    ${email}
+    Log    Email nè : ${email}
+    RPA.Browser.Selenium.Input Text    ${Pwdlogin}    12345678x@X
+    RPA.Browser.Selenium.Click Element    ${Clickbtnlogin}
+    RPA.Browser.Selenium.Wait Until Element Is Visible
+    ...    //div[@class='ant-empty-description']/p[text()='Hiện chưa có cuộc gọi']
+    ...    timeout=50s
+    Log To Console    Login Success with extension: ${email}
+    How many calls currently and how long does the Popup tab display    ${extension}    ${callcurrent}
+
+
+Get Selected Users From List
+    [Arguments]    ${number_of_users}
+    ${selected_users}=    Create List
+    FOR    ${index}    IN RANGE    ${number_of_users}
+        Append To List    ${selected_users}    ${index}
+    END
+    RETURN    ${selected_users}

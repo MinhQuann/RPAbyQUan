@@ -1,6 +1,23 @@
-datasources:65154cca1299caf9a34e7bf98aa92172c350779f
-commandlineoptions:9f8598a690c7367accf83ead504756ddd374acc9
+datasources:55925c46eb86cf80d272127934c0f75676911428
+commandlineoptions:65f95c924ba97541f47949701c4e3c51192a5b43
 suitesfrom:no-suites-from-option
-file:2e668ef5957dd700a871547b13867d3edfd4044c
---suite Tasks
---suite Suites.Tasks2
+file:1f0c2bed1ed00eb5a87b47691e05f6c6366f3134
+--test Tasks.test 1
+--test Tasks.test 2
+--test Tasks.test 3
+--test Tasks.test 4
+--test Tasks.test 5
+--test Tasks.test 6
+--test Tasks.test 7
+--test Tasks.test 8
+--test Tasks.test 9
+--test Tasks.test 19
+--test Tasks.test 11
+--test Tasks.test 12
+--test Tasks.test 13
+--test Tasks.test 14
+--test Tasks.test 15
+--test Tasks.test 16
+--test Tasks.test 17
+--test Tasks.test 18
+--test Tasks.test 20

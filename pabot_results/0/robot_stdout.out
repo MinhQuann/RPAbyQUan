@@ -1,43 +1,218 @@
 ==============================================================================
-Suites                                                                        
+Tasks                                                                         
 ==============================================================================
-Suites.Tasks                                                                  
-==============================================================================
-BotCall                                                               Phone= 0907065284
-LinkedID= 727592036
-Extension= 1911
-Count= 0
-  
-  Traceback (most recent call last):
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  D:\RPA2\tasks.robot:35
-    T:  BotCall    
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  D:\RPA2\tasks.robot:36
-      ${i} IN RANGE [ 1000 ]    
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  D:\RPA2\tasks.robot:36
-      ${i} = 0    
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  D:\RPA2\tasks.robot:45
-      RPACallAPI_CALL_CTI    ${LINKEDID RANDOM}    ${Extension}    RINGING    1    ${RANDOMPHONE}    user${Extension}@email.com
-      |  ${LINKEDID RANDOM} = <Unable to define variable value>
-      |  ${Extension} = ['1909', '1910', '1911', '1912', '1913', '1914', '1916', '1917', '1918', '1920', '1921', '1922', '1923', '1924', '1926', '1927', '1928', '1929', '1930', '1931', '1932', '1933', '1935', '1937', '1938', '1942', '1943', '1945', '1947', '1948', '1950', '1951', '1952', '1953', '1954', '1956', '1957', '1958', '1959', '1962', '1963', '1968', '1969', '1970', '1971', '1972', '1974', '1975', '1976', '1977', '1978', '1983', '1989', '1990', '1992', '1994', '1995', '1996', '1997', '1998', '8000', '8002', '8004', '8005', '8006', '8007', '8008', '8009', '8015', '8016', '8017', '8018', '8019', '8020', '8021', '8022', '8023', '8024', '8025', '8026', '8027', '8028', '8029', '8030', '8031', '8032', '8033', '8034', '8035', '8036', '8037', '8038', '8039', '8040', '8041', '8042', '8043', '8044', '8045', '8046', '8047', '8048', '8049', '8050', '8051', '8052', '8053', '8054', '8055', '8056'] (str)
-      |  ${RANDOMPHONE} = <Unable to define variable value>
-      |  user${Extension}@email.com = user['1909', '1910', '1911', '1912', '1913', '1914', '1916', '1917', '1918', '1920', '1921', '1922', '1923', '1924', '1926', '1927', '1928', '1929', '1930', '1931', '1932', '1933', '1935', '1937', '1938', '1942', '1943', '1945', '1947', '1948', '1950', '1951', '1952', '1953', '1954', '1956', '1957', '1958', '1959', '1962', '1963', '1968', '1969', '1970', '1971', '1972', '1974', '1975', '1976', '1977', '1978', '1983', '1989', '1990', '1992', '1994', '1995', '1996', '1997', '1998', '8000', '8002', '8004', '8005', '8006', '8007', '8008', '8009', '8015', '8016', '8017', '8018', '8019', '8020', '8021', '8022', '8023', '8024', '8025', '8026', '8027', '8028', '8029', '8030', '8031', '8032', '8033', '8034', '8035', '8036', '8037', '8038', '8039', '8040', '8041', '8042', '8043', '8044', '8045', '8046', '8047', '8048', '8049', '8050', '8051', '8052', '8053', '8054', '8055', '8056']@email.com (str)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  D:\RPA2\PageObject\Locators\Common_keyword.robot:59
-      POST On Session    api_session    url=${API_URL_CTI}    data=${PAYLOADRINGING}
-      |  url=${API_URL_CTI} = url=https://lab.connect247.vn/ucrmapi-cti/cti/call-data (str)
-      |  data=${PAYLOADRINGING} = data={"LinkedID": "727592036", "QueueID": "", "CallPhone": "0907065284", "CallStartTime": "2024-07-22 11:30:34", "CallConnectTime": "", "CallEndTime": "", "CallStatus": "RINGING", "TotalDuration": "0", "BillDuration": "0", "Username": "user1911@email.com", "Hotline": "", "ExtentionID": "1911", "InOutCall": "1", "CompanyUID": "17e31c2b-c738-4ddb-a406-8f6fce907353", "DepartmentUID": "", "CallHoldStartTime": "", "CallHoldEndTime": "", "ExtentionTransfer": "", "TypeCall": "0", "ReasonCode": "", "ReasonName": "", "uniqueID": "1721622634.1910"} (str)
-______________________________________________________________________________
-| FAIL |
-Execution terminated by signal
+test 1                                                                Login Success with extension: user1909@email.com
+Phone= 0903754489
+LinkedID= 910566805
+Extension= 1909
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 0.6913702487945557 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0902819377
+LinkedID= 294497408
+Extension= 1909
+Response: <Response [200]> | Time taken: 01.000000 seconds
+Response: <Response [200]> | Time taken: 01.000000 seconds
+Th?i gian xu?t hi?n tab: 0.06385111808776855 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0908245835
+LinkedID= 96044471
+Extension= 1909
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 0.07648968696594238 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0905506961
+LinkedID= 209268404
+Extension= 1909
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 0.19657158851623535 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0905233724
+LinkedID= 345220933
+Extension= 1909
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 3.6372179985046387 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0907352019
+LinkedID= 891212935
+Extension= 1909
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 0.20217394828796387 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0907660009
+LinkedID= 890491445
+Extension= 1909
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 5.005836725234985 giây
+Response: <Response [200]> | Time taken: 01.000000 seconds
+Phone= 0907738218
+LinkedID= 611259742
+Extension= 1909
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 0.3172006607055664 giây
+Response: <Response [200]> | Time taken: 01.000000 seconds
+Phone= 0902014933
+LinkedID= 655911186
+Extension= 1909
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 10.132827520370483 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0908581521
+LinkedID= 120351225
+Extension= 1909
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 0.2102367877960205 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+| PASS |
 ------------------------------------------------------------------------------
-Suites.Tasks                                                          | FAIL |
-1 test, 0 passed, 1 failed
-==============================================================================
-Suites                                                                | FAIL |
-1 test, 0 passed, 1 failed
-==============================================================================
-Output:  D:\RPA2\pabot_results\0\output.xml
+test 2                                                                Login Success with extension: user1910@email.com
+Phone= 0908974736
+LinkedID= 263890027
+Extension= 1910
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 0.6274700164794922 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0909130192
+LinkedID= 511811774
+Extension= 1910
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 0.052332401275634766 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0904997917
+LinkedID= 360480543
+Extension= 1910
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 01.000000 seconds
+Th?i gian xu?t hi?n tab: 4.221090078353882 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0907985462
+LinkedID= 197996045
+Extension= 1910
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 0.2749514579772949 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0907334438
+LinkedID= 400040023
+Extension= 1910
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 4.871963262557983 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0907334012
+LinkedID= 529567337
+Extension= 1910
+Response: <Response [200]> | Time taken: 01.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 0.18518519401550293 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0902719621
+LinkedID= 283381183
+Extension= 1910
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 4.464327812194824 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0908449580
+LinkedID= 228784987
+Extension= 1910
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 0.2138221263885498 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0904804527
+LinkedID= 863620232
+Extension= 1910
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 01.000000 seconds
+Th?i gian xu?t hi?n tab: 4.277242183685303 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0908248014
+LinkedID= 374690694
+Extension= 1910
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 0.2203197479248047 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+| PASS |
+------------------------------------------------------------------------------
+test 3                                                                Login Success with extension: user1911@email.com
+Phone= 0901220457
+LinkedID= 641229357
+Extension= 1911
+Response: <Response [200]> | Time taken: 01.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 4.6635284423828125 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0905896504
+LinkedID= 931628656
+Extension= 1911
+Response: <Response [200]> | Time taken: 01.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 1.284769058227539 giây
+Response: <Response [200]> | Time taken: 01.000000 seconds
+Phone= 0909612516
+LinkedID= 650270541
+Extension= 1911
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 01.000000 seconds
+Th?i gian xu?t hi?n tab: 0.22426271438598633 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0909074758
+LinkedID= 912365034
+Extension= 1911
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 02.000000 seconds
+Th?i gian xu?t hi?n tab: 3.1561310291290283 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0907163551
+LinkedID= 256576291
+Extension= 1911
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 0.2849266529083252 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0905608987
+LinkedID= 861043349
+Extension= 1911
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 01.000000 seconds
+Th?i gian xu?t hi?n tab: 4.832557201385498 giây
+Response: <Response [200]> | Time taken: 01.000000 seconds
+Phone= 0903081541
+LinkedID= 689097584
+Extension= 1911
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 0.22080636024475098 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0908454074
+LinkedID= 513696441
+Extension= 1911
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 4.824583292007446 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0901529721
+LinkedID= 129094226
+Extension= 1911
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Th?i gian xu?t hi?n tab: 0.19629716873168945 giây
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Phone= 0907132853
+LinkedID= 994852764
+Extension= 1911
+Response: <Response [200]> | Time taken: 00.000000 seconds
+Response: <Response [200]> | Time taken: 00.000000 seconds

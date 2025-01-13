@@ -50,29 +50,5 @@ Login CRM CTI
     RPA.Browser.Selenium.Input Text    ${Pwdlogin}    ${pwdCTI}
     RPA.Browser.Selenium.Click Element    ${Clickbtnlogin}
 
-How Many User Login
-    [Arguments]    ${number_users}
-    ${selected_user}=    Get Selected Users    ${number_users}
-    FOR    ${user}    IN    @{selected_user}
-        RPA.Browser.Selenium.Open Headless Chrome Browser    ${urlCTI}
-        RPA.Browser.Selenium.Wait Until Element Is Visible    ${BtnLoginOutSide}    timeout=10s
-        RPA.Browser.Selenium.Click Element    ${BtnLoginOutSide}
-        RPA.Browser.Selenium.Wait Until Element Is Visible    ${EmaiLogin}
-        ${email}=    Set Variable    ${EmailNameCall2[${user}]}
-        RPA.Browser.Selenium.Input Text    ${EmaiLogin}    ${email}
-        Log To Console    Email nè : ${email}
-        RPA.Browser.Selenium.Input Text    ${Pwdlogin}    12345678x@X
-        RPA.Browser.Selenium.Click Element    ${Clickbtnlogin}
-        RPA.Browser.Selenium.Wait Until Element Is Visible
-        ...    //div[@class='ant-empty-description']/p[text()='Hiện chưa có cuộc gọi']
-        ...    timeout=50s
-        Log To Console    Login Success with extension: ${user}
-    END
 
-Get Selected Users
-    [Arguments]    ${number_of_users}
-    ${selected_users}=    Create List
-    FOR    ${index}    IN RANGE    ${number_of_users}
-        Append To List    ${selected_users}    ${index}
-    END
-    RETURN    ${selected_users}
+

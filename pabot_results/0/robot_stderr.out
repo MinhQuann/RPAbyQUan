@@ -1,4 +1,272 @@
-2025-01-06 23:07:55,511 - RPA.core.certificates - INFO - Truststore not in use, HTTPS traffic validated against `certifi` package. (requires Python 3.10.12 and 'pip' 23.2.1 at minimum)
-Second signal will force exit.
+2025-01-13 15:17:09,694 - RPA.core.certificates - INFO - Truststore not in use, HTTPS traffic validated against `certifi` package. (requires Python 3.10.12 and 'pip' 23.2.1 at minimum)
+[ ERROR ] Error in file 'D:\RPA2\PageObject\Locators\CallCenterLocator.robot' on line 2: Resource file 'PageObject\Locators\Common_keyword.robot' does not exist.
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
 C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+Second signal will force exit.
+Execution forcefully stopped.
+[ ERROR ] Execution stopped by user.

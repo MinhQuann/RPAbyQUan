@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    PageObject/Locators/Common_keyword.robot
+Resource    D:/RPA2/PageObject/Locators/Common_keyword.robot
 Library     SeleniumLibrary
 Library     RPA.Browser.Selenium
 Library     random
@@ -11,6 +11,7 @@ Library     XML
 
 *** Variables ***
 # Call Center
+${ELEMENT_CLASS}        xpath://div[contains(@class, 'ant-tabs-tab ant-tabs-tab-with-remove ant-tabs-tab-active')]
 
 # Multi Detail Contact
 ${NewCustomerTab}       id:ucrm_callcenter_0
@@ -256,5 +257,34 @@ Search Contact CRM
     ...    element.dispatchEvent(event);
     ...    }
 
-Get TAB NAME
-    
+How many calls currently and how long does the Popup tab display
+    [Arguments]    ${extension}    ${CallConCurent}
+    FOR    ${i}    IN RANGE    ${CallConCurent}
+        ${LINKEDID RANDOM}=    random_number    1    1000000000
+        ${RANDOMPHONE}=    Generate_Phone
+        Log To Console    Phone= ${RANDOMPHONE}
+        Log To Console    LinkedID= ${LINKEDID RANDOM}
+        Log To Console    Extension= ${extension}
+        RPACallAPI_CALL_FI    ${LINKEDID RANDOM}    ${extension}    RINGING    1    ${RANDOMPHONE}
+        Wait For Element To Appear    ${ELEMENT_CLASS}    ${extension}
+        Sleep    120s
+        RPACallAPI_CALL_FI    ${LINKEDID RANDOM}    ${extension}    SUCCESS    1    ${RANDOMPHONE}
+    END
+
+Wait For Element To Appear
+    [Arguments]    ${locator}    ${extensions}
+    ${start_time}=    Get Current Time
+    RPA.Browser.Selenium.Wait Until Element Is Visible    ${locator}    timeout=5s
+    ${end_time}=    Get Current Time
+    ${duration}=    Measure Elapsed Time    ${start_time}    ${end_time}
+    Log To Console    Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions}
+    Log    Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions}
+
+Get Current Time
+    ${current_time}=    Evaluate    time.time()    modules=time
+    RETURN    ${current_time}
+
+Measure Elapsed Time
+    [Arguments]    ${start_time}    ${end}
+    ${elapsed}=    Evaluate    (float(${end}) - float(${start_time}))
+    RETURN    ${elapsed}

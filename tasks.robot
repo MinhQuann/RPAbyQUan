@@ -1,6 +1,7 @@
 *** Settings ***
 Resource    PageObject/Locators/Common_keyword.robot
 Resource    PageObject/Locators/LoginPageLocators.robot
+Resource    PageObject/Locators/CallCenterLocator.robot
 Library     SeleniumLibrary
 Library     RPA.Browser.Selenium
 Library     RPA.Excel.Files
@@ -8,55 +9,63 @@ Library     Collections
 Library     DateTime
 
 
-*** Tasks ***
-# Test1
-#    Open CRM urlPROD
-#    Login urlPROD
-#    Sleep    2s
-#    ${original_tab}=    RPA.Browser.Selenium.Get Window Handles
-#    Sleep    2s
-#    RPA.Browser.Selenium.Click Element    xpath=//*[@id="root"]/div/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]
-#    Sleep    3s
-#    ${new_tabs}=    RPA.Browser.Selenium.Get Window Handles
-#    ${new_tab}=    Evaluate    [tab for tab in ${new_tabs} if tab not in ${original_tab}][0]
-#    RPA.Browser.Selenium.Switch Window    ${new_tab}
-#    Sleep    6s
-#    RPA.Browser.Selenium.Click Element
-#    ...    xpath=//*[@id="root"]/section/header/div[2]/div[1]/div[2]/div[2]/div/ul/li[2]/div/span
+*** Test Cases ***
+test 1
+    How Many User Login And Call API    0    19
 
-#    Sleep    3s
-#    Test
+test 2
+    How Many User Login And Call API    1    19
 
-# ConfigCTI
-#    Open CRM CTI
-#    Login CRM CTI
-#    Sleep    2s
-#    ConfigCTI
-# BotCall
+test 3
+    How Many User Login And Call API    2    19
 
-#    Open CRM CTI HEADLESS    $emailCTI    $pwdCTI
-#    FOR    ${i}    IN RANGE    1000
-#    ${LINKEDID RANDOM} =    random_number    1    1000000000
-#    ${RANDOMPHONE} =    Generate_Phone
-#    ${Extension} =    Generate_Extension
-#    Log To Console    Phone= ${RANDOMPHONE}
-#    Log To Console    LinkedID= ${LINKEDID RANDOM}
-#    Log To Console    Extension= ${Extension}
-#    Log To Console    Count= ${i}
-#    RPACallAPI_CALL_FI    ${LINKEDID RANDOM}    ${Extension}    RINGING    1    ${RANDOMPHONE}
-#    END
-test
-    How Many User Login    3
+test 4
+    How Many User Login And Call API    3    19
 
-# ConFigFI
-#    Open CRM CTI
-#    Login CRM CTI
-#    Sleep    6s
-#    ConfigCTI
-# BotCall2
-#    ${LINKEDID RANDOM} =    random_number    1    1000000000
-#    ${RANDOMPHONE} =    Generate_Phone
-#    Log To Console    ${RANDOMPHONE}
-#    # FOR    ${i}    IN RANGE    30
-#    RPACallAPI_CALL_CTI    ${LINKEDID RANDOM}    8008    RINGING    1    ${RANDOMPHONE}    user8008yopmail.com
-    # END
+test 5
+    How Many User Login And Call API    4    19
+
+test 6
+    How Many User Login And Call API    5    19
+
+test 7
+    How Many User Login And Call API    6    19
+
+test 8
+    How Many User Login And Call API    7    19
+
+test 9
+    How Many User Login And Call API    8    19
+
+test 19
+    How Many User Login And Call API    9    19
+
+test 11
+    How Many User Login And Call API    19    19
+
+test 12
+    How Many User Login And Call API    11    19
+
+test 13
+    How Many User Login And Call API    12    19
+
+test 14
+    How Many User Login And Call API    13    19
+
+test 15
+    How Many User Login And Call API    14    19
+
+test 16
+    How Many User Login And Call API    15    19
+
+test 17
+    How Many User Login And Call API    16    19
+
+test 18
+    How Many User Login And Call API    17    19
+
+test 19
+    How Many User Login And Call API    18    19
+
+test 20
+    How Many User Login And Call API    19    19
