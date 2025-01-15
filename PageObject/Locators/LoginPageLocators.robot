@@ -19,6 +19,7 @@ Open CRM
     RPA.Browser.Selenium.Open Browser    ${urlLAB1}    chrome
     RPA.Browser.Selenium.Maximize Browser Window
 
+
 Login CRM
     RPA.Browser.Selenium.Click Element    ${BtnLoginOutSide}
     RPA.Browser.Selenium.Wait Until Element Is Visible    ${EmaiLogin}

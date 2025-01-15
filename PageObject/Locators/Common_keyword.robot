@@ -345,10 +345,28 @@ How Many User Login And Call API
     RPA.Browser.Selenium.Click Element    ${Clickbtnlogin}
     RPA.Browser.Selenium.Wait Until Element Is Visible
     ...    //div[@class='ant-empty-description']/p[text()='Hiện chưa có cuộc gọi']
-    ...    timeout=50s
+    ...    timeout=30s
+    Log To Console    Login Success with extension: ${email}
+    How many calls currently and how long does the Popup tab display    ${extension}    ${callcurrent}    
+
+How Many User Login And Call API_OpenBROWSER
+    [Arguments]    ${number_users}    ${callcurrent}
+    ${extension}=    Get From List    ${Extension2}    ${number_users}
+    # RPA.Browser.Selenium.Open Headless Chrome Browser    ${urlCTI}
+    RPA.Browser.Selenium.Open Browser    ${urlCTI}    chrome
+    RPA.Browser.Selenium.Wait Until Element Is Visible    ${BtnLoginOutSide}    timeout=10s
+    RPA.Browser.Selenium.Click Element    ${BtnLoginOutSide}
+    RPA.Browser.Selenium.Wait Until Element Is Visible    ${EmaiLogin}
+    ${email}=    Set Variable    user${extension}@email.com
+    RPA.Browser.Selenium.Input Text    ${EmaiLogin}    ${email}
+    Log    Email nè : ${email}
+    RPA.Browser.Selenium.Input Text    ${Pwdlogin}    12345678x@X
+    RPA.Browser.Selenium.Click Element    ${Clickbtnlogin}
+    RPA.Browser.Selenium.Wait Until Element Is Visible
+    ...    //div[@class='ant-empty-description']/p[text()='Hiện chưa có cuộc gọi']
+    ...    timeout=30s
     Log To Console    Login Success with extension: ${email}
     How many calls currently and how long does the Popup tab display    ${extension}    ${callcurrent}
-
 
 Get Selected Users From List
     [Arguments]    ${number_of_users}

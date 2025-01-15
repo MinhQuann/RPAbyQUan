@@ -1,7 +1,7 @@
-datasources:55925c46eb86cf80d272127934c0f75676911428
+datasources:0b05902719a80d2bcd6b8c8263ace4291b0f5261
 commandlineoptions:65f95c924ba97541f47949701c4e3c51192a5b43
 suitesfrom:no-suites-from-option
-file:1f0c2bed1ed00eb5a87b47691e05f6c6366f3134
+file:c73eeab0096458b0d156b2e7a808d0c1a91dd4fe
 --test Tasks.test 1
 --test Tasks.test 2
 --test Tasks.test 3
@@ -11,13 +11,4 @@ file:1f0c2bed1ed00eb5a87b47691e05f6c6366f3134
 --test Tasks.test 7
 --test Tasks.test 8
 --test Tasks.test 9
---test Tasks.test 19
---test Tasks.test 11
---test Tasks.test 12
---test Tasks.test 13
---test Tasks.test 14
---test Tasks.test 15
---test Tasks.test 16
---test Tasks.test 17
---test Tasks.test 18
---test Tasks.test 20
+--test Tasks.test 10

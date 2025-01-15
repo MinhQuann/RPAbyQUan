@@ -11,7 +11,7 @@ Library     XML
 
 *** Variables ***
 # Call Center
-${ELEMENT_CLASS}        xpath://div[contains(@class, 'ant-tabs-tab ant-tabs-tab-with-remove ant-tabs-tab-active')]
+${ELEMENT_CLASS}        //div[contains(@class, 'ant-tabs-tab-active')]
 
 # Multi Detail Contact
 ${NewCustomerTab}       id:ucrm_callcenter_0
@@ -265,20 +265,24 @@ How many calls currently and how long does the Popup tab display
         Log To Console    Phone= ${RANDOMPHONE}
         Log To Console    LinkedID= ${LINKEDID RANDOM}
         Log To Console    Extension= ${extension}
-        RPACallAPI_CALL_FI    ${LINKEDID RANDOM}    ${extension}    RINGING    1    ${RANDOMPHONE}
-        Wait For Element To Appear    ${ELEMENT_CLASS}    ${extension}
-        Sleep    120s
-        RPACallAPI_CALL_FI    ${LINKEDID RANDOM}    ${extension}    SUCCESS    1    ${RANDOMPHONE}
+        Sleep    2s
+        RPACallAPI_CALL_FI    ${LINKEDID RANDOM}    ${extension}    RINGING    0    ${RANDOMPHONE}
+        Wait For Element To Appear    ${ELEMENT_CLASS}    ${extension}    ${RANDOMPHONE}
+        Sleep    3s
+        RPACallAPI_CALL_FI    ${LINKEDID RANDOM}    ${extension}    ANSWER    0    ${RANDOMPHONE}
+        # Sleep    120s
+        RPACallAPI_CALL_FI    ${LINKEDID RANDOM}    ${extension}    SUCCESS    0    ${RANDOMPHONE}
+        # Sleep    20s
     END
 
 Wait For Element To Appear
-    [Arguments]    ${locator}    ${extensions}
+    [Arguments]    ${locator}    ${extensions}    ${Phone}
     ${start_time}=    Get Current Time
-    RPA.Browser.Selenium.Wait Until Element Is Visible    ${locator}    timeout=5s
+    RPA.Browser.Selenium.Wait Until Element Is Visible    ${locator}    timeout=20s
     ${end_time}=    Get Current Time
     ${duration}=    Measure Elapsed Time    ${start_time}    ${end_time}
-    Log To Console    Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions}
-    Log    Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions}
+    Log To Console    Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions} | Số ĐT: ${Phone}
+    Log    Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions} | Số ĐT: ${Phone}
 
 Get Current Time
     ${current_time}=    Evaluate    time.time()    modules=time
