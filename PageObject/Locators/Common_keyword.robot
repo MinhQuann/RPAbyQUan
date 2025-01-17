@@ -347,7 +347,7 @@ How Many User Login And Call API
     ...    //div[@class='ant-empty-description']/p[text()='Hiện chưa có cuộc gọi']
     ...    timeout=30s
     Log To Console    Login Success with extension: ${email}
-    How many calls currently and how long does the Popup tab display    ${extension}    ${callcurrent}    
+    How many calls currently and how long does the Popup tab display    ${extension}    ${callcurrent}
 
 How Many User Login And Call API_OpenBROWSER
     [Arguments]    ${number_users}    ${callcurrent}

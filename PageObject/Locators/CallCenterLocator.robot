@@ -265,24 +265,30 @@ How many calls currently and how long does the Popup tab display
         Log To Console    Phone= ${RANDOMPHONE}
         Log To Console    LinkedID= ${LINKEDID RANDOM}
         Log To Console    Extension= ${extension}
-        Sleep    2s
+        Sleep    20s
         RPACallAPI_CALL_FI    ${LINKEDID RANDOM}    ${extension}    RINGING    0    ${RANDOMPHONE}
         Wait For Element To Appear    ${ELEMENT_CLASS}    ${extension}    ${RANDOMPHONE}
         Sleep    3s
         RPACallAPI_CALL_FI    ${LINKEDID RANDOM}    ${extension}    ANSWER    0    ${RANDOMPHONE}
-        # Sleep    120s
+        Sleep    120s
         RPACallAPI_CALL_FI    ${LINKEDID RANDOM}    ${extension}    SUCCESS    0    ${RANDOMPHONE}
-        # Sleep    20s
     END
+    # Calculate Average Time    ${CallConCurent}
 
 Wait For Element To Appear
     [Arguments]    ${locator}    ${extensions}    ${Phone}
     ${start_time}=    Get Current Time
-    RPA.Browser.Selenium.Wait Until Element Is Visible    ${locator}    timeout=20s
+    Run Keyword And Ignore Error    RPA.Browser.Selenium.Wait Until Element Is Visible    ${locator}    timeout=20s
     ${end_time}=    Get Current Time
     ${duration}=    Measure Elapsed Time    ${start_time}    ${end_time}
     Log To Console    Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions} | Số ĐT: ${Phone}
     Log    Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions} | Số ĐT: ${Phone}
+
+# Calculate Average Time
+#    [Arguments]    ${CallConCurent}
+#    ${total_time}=    Evaluate    sum(${Durations})
+#    ${average_time}=    Evaluate    ${total_time} / len(${Durations}) if len(${Durations}) > 0 else 0
+#    Log    Tổng số cuộc gọi: ${CallConCurent} | Thời gian trung bình xuất hiện tab: ${average_time} giây
 
 Get Current Time
     ${current_time}=    Evaluate    time.time()    modules=time
