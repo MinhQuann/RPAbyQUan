@@ -1,0 +1,10 @@
+[ ERROR ] Error in file 'D:\RPA2\PageObject\Locators\Common_keyword.robot' on line 2: Resource file 'PageObject\Locators\SettingsCRMLocators.robot' does not exist.
+[ ERROR ] Error in file 'D:\RPA2\PageObject\Locators\Common_keyword.robot' on line 3: Resource file 'PageObject\Data\Data.Robot' does not exist.
+[ ERROR ] Error in file 'D:\RPA2\PageObject\Locators\Common_keyword.robot' on line 4: Resource file 'PageObject\Locators\LoginPageLocators.robot' does not exist.
+[ ERROR ] Error in file 'D:\RPA2\PageObject\Locators\Common_keyword.robot' on line 5: Resource file 'PageObject\Locators\CallCenterLocator.robot' does not exist.
+2025-01-22 23:16:31,595 - RPA.core.certificates - INFO - Truststore not in use, HTTPS traffic validated against `certifi` package. (requires Python 3.10.12 and 'pip' 23.2.1 at minimum)
+[ ERROR ] Error in file 'D:\RPA2\PageObject\Locators\LoginPageLocators.robot' on line 2: Resource file 'PageObject\Locators\LoginPageLocators.robot' does not exist.
+[ ERROR ] Error in file 'D:\RPA2\PageObject\Locators\LoginPageLocators.robot' on line 3: Resource file 'PageObject\Locators\Common_keyword.robot' does not exist.
+[ ERROR ] Error in file 'D:\RPA2\PageObject\Locators\LoginPageLocators.robot' on line 4: Resource file 'PageObject\Data\Variables .robot' does not exist.
+[ ERROR ] Error in file 'D:\RPA2\PageObject\Locators\LoginPageLocators.robot' on line 5: Resource file 'PageObject\Data\Data.robot' does not exist.
+[ ERROR ] Error in file 'D:\RPA2\PageObject\Locators\CallCenterLocator.robot' on line 2: Resource file 'PageObject\Locators\Common_keyword.robot' does not exist.

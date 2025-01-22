@@ -1,10 +1,10 @@
 *** Settings ***
 Library     SeleniumLibrary
 Library     Collections
-Resource    PageObject/Locators/LoginPageLocators.robot
-Resource    PageObject/Locators/SettingsCRMLocators.robot
-Resource    PageObject/Locators/ObjectLocators.robot
-Resource    PageObject/ActionFile/ActionLogin.robot
+Resource    ./PageObject/Locators/LoginPageLocators.robot
+Resource    ./PageObject/Locators/SettingsCRMLocators.robot
+Resource    ./PageObject/Locators/ObjectLocators.robot
+Resource    ./PageObject/ActionFile/ActionLogin.robot
 
 
 *** Tasks ***

@@ -1,7 +1,7 @@
 *** Settings ***
-Resource    D:/RPA2/PageObject/Locators/SettingsCRMLocators.robot
-Resource    D:/RPA2/PageObject/Data/Data.Robot
-Resource    D:/RPA2/PageObject/Locators/LoginPageLocators.robot
+Resource    SettingsCRMLocators.robot
+Resource    ../Data/Data.Robot
+Resource    LoginPageLocators.robot
 Resource    CallCenterLocator.robot
 Library     RPA.Browser.Selenium
 Library     RPA.Excel.Files
@@ -19,6 +19,7 @@ Library     Process
 
 
 *** Variables ***
+${PROJECT_ROOT}                 D:/RPA2
 # Excel File
 ${ObjConfig}                    Object Test.xlsx
 ${GroupName}                    GroupName

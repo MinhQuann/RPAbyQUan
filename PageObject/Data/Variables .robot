@@ -12,3 +12,4 @@ ${pwd1}         Bb@@767276
 ${urlCTI}       https://lab.connect247.vn/ucrm-cti/call-center
 ${emailCTI}     annacasavn2024@yopmail.com
 ${pwdCTI}       12345678x@X
+

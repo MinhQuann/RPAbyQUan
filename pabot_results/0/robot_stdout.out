@@ -1,0 +1,25 @@
+==============================================================================
+Tasks                                                                         
+==============================================================================
+test 1                                                                  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\RPA2\tasks.robot:18
+    T:  test 1    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\RPA2\tasks.robot:19
+      How Many User Login And Call API    0    ${CallCurrent}
+      |  ${CallCurrent} = 10 (str)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\RPA2\PageObject\Locators\Common_keyword.robot:336
+      Get From List    ${Extension2}    ${number_users}
+      |  ${Extension2} = <Unable to define variable value>
+      |  ${number_users} = 0 (str)
+______________________________________________________________________________
+| FAIL |
+Variable '${Extension2}' not found.
+------------------------------------------------------------------------------
+Tasks                                                                 | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  D:\RPA2\pabot_results\0\output.xml

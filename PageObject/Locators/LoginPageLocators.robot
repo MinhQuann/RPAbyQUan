@@ -1,10 +1,10 @@
 *** Settings ***
-Resource    D:/RPA2/PageObject/Locators/LoginPageLocators.robot
-Resource    D:/RPA2/PageObject/Locators/Common_keyword.robot
+Resource    LoginPageLocators.robot
+Resource    Common_keyword.robot
+Resource    ../Data/Variables .robot
+Resource    ../Data/Data.robot
 Library     RPA.Browser.Selenium
 Library     SeleniumLibrary
-Resource    D:/RPA2/PageObject/Data/Variables .robot
-Resource    D:/RPA2/PageObject/Data/Data.robot
 
 
 *** Variables ***
@@ -18,7 +18,6 @@ ${Clickbtnlogin}        //*[@id='basic']/div[3]/div/div/div/div/button
 Open CRM
     RPA.Browser.Selenium.Open Browser    ${urlLAB1}    chrome
     RPA.Browser.Selenium.Maximize Browser Window
-
 
 Login CRM
     RPA.Browser.Selenium.Click Element    ${BtnLoginOutSide}
@@ -50,6 +49,3 @@ Login CRM CTI
     RPA.Browser.Selenium.Input Text    ${EmaiLogin}    ${emailCTI}
     RPA.Browser.Selenium.Input Text    ${Pwdlogin}    ${pwdCTI}
     RPA.Browser.Selenium.Click Element    ${Clickbtnlogin}
-
-
-

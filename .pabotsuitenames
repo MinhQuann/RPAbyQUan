@@ -1,1 +1,7 @@
-
+datasources:a646a6f22c889f50233b1c62ccb67ab1a50cb402
+commandlineoptions:65f95c924ba97541f47949701c4e3c51192a5b43
+suitesfrom:no-suites-from-option
+file:c65854ffadeb1bc8a0410bfe648d870a6b359d45
+--test Tasks.test 1
+--test Tasks.test 2
+--test Tasks.test 3

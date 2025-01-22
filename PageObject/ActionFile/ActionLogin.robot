@@ -1,6 +1,6 @@
 *** Settings ***
-Resource    PageObject/Locators/LoginPageLocators.robot
-Resource    PageObject/Locators/Common_keyword.robot
+Resource    ./PageObject/Locators/LoginPageLocators.robot
+Resource    ./PageObject/Locators/Common_keyword.robot
 
 
 *** Tasks ***
@@ -9,5 +9,5 @@ Resource    PageObject/Locators/Common_keyword.robot
 #     Login CRM
 #     Sleep    2s
 
-Test
-    How Many User Login    2
+# Test
+#     How Many User Login    2

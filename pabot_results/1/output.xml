@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.11 on win32)" generated="20250122 23:16:31.299" rpa="false" schemaversion="4">
+<suite id="s1" name="Tasks" source="D:\RPA2\tasks.robot">
+<test id="s1-t1" name="test 2" line="21">
+<kw name="How Many User Login And Call API" library="Common_keyword">
+<arg>1</arg>
+<arg>${CallCurrent}</arg>
+<kw name="Get From List" library="Collections">
+<var>${extension}</var>
+<arg>${Extension2}</arg>
+<arg>${number_users}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20250122 23:16:33.554" level="FAIL">Variable '${Extension2}' not found.</msg>
+<status status="FAIL" starttime="20250122 23:16:33.552" endtime="20250122 23:16:33.554"/>
+</kw>
+<kw name="Open Headless Chrome Browser" library="RPA.Browser.Selenium">
+<arg>${urlCTI}</arg>
+<doc>Opens the Chrome browser in headless mode.</doc>
+<status status="NOT RUN" starttime="20250122 23:16:33.556" endtime="20250122 23:16:33.556"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>${BtnLoginOutSide}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20250122 23:16:33.557" endtime="20250122 23:16:33.557"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${BtnLoginOutSide}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250122 23:16:33.557" endtime="20250122 23:16:33.558"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>${EmaiLogin}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20250122 23:16:33.558" endtime="20250122 23:16:33.558"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email}</var>
+<arg>user${extension}@email.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20250122 23:16:33.558" endtime="20250122 23:16:33.559"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${EmaiLogin}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250122 23:16:33.559" endtime="20250122 23:16:33.559"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Email nè : ${email}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20250122 23:16:33.559" endtime="20250122 23:16:33.559"/>
+</kw>
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<arg>${Pwdlogin}</arg>
+<arg>12345678x@X</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250122 23:16:33.560" endtime="20250122 23:16:33.560"/>
+</kw>
+<kw name="Click Element" library="RPA.Browser.Selenium">
+<arg>${Clickbtnlogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250122 23:16:33.560" endtime="20250122 23:16:33.560"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>//div[@class='ant-empty-description']/p[text()='Hiện chưa có cuộc gọi']</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20250122 23:16:33.561" endtime="20250122 23:16:33.561"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Login Success with extension: ${email}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20250122 23:16:33.561" endtime="20250122 23:16:33.561"/>
+</kw>
+<kw name="How many calls currently and how long does the Popup tab display" library="CallCenterLocator">
+<arg>${extension}</arg>
+<arg>${callcurrent}</arg>
+<status status="NOT RUN" starttime="20250122 23:16:33.561" endtime="20250122 23:16:33.562"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Quân ơi: abc</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20250122 23:16:33.562" endtime="20250122 23:16:33.562"/>
+</kw>
+<status status="FAIL" starttime="20250122 23:16:33.551" endtime="20250122 23:16:33.562"/>
+</kw>
+<status status="FAIL" starttime="20250122 23:16:33.550" endtime="20250122 23:16:33.562">Variable '${Extension2}' not found.</status>
+</test>
+<status status="FAIL" starttime="20250122 23:16:31.314" endtime="20250122 23:16:33.571"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tasks">Tasks</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20250122 23:16:31.363" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\Common_keyword.robot' on line 2: Resource file 'PageObject\Locators\SettingsCRMLocators.robot' does not exist.</msg>
+<msg timestamp="20250122 23:16:31.364" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\Common_keyword.robot' on line 3: Resource file 'PageObject\Data\Data.Robot' does not exist.</msg>
+<msg timestamp="20250122 23:16:31.366" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\Common_keyword.robot' on line 4: Resource file 'PageObject\Locators\LoginPageLocators.robot' does not exist.</msg>
+<msg timestamp="20250122 23:16:31.368" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\Common_keyword.robot' on line 5: Resource file 'PageObject\Locators\CallCenterLocator.robot' does not exist.</msg>
+<msg timestamp="20250122 23:16:32.929" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\LoginPageLocators.robot' on line 2: Resource file 'PageObject\Locators\LoginPageLocators.robot' does not exist.</msg>
+<msg timestamp="20250122 23:16:32.930" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\LoginPageLocators.robot' on line 3: Resource file 'PageObject\Locators\Common_keyword.robot' does not exist.</msg>
+<msg timestamp="20250122 23:16:32.932" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\LoginPageLocators.robot' on line 4: Resource file 'PageObject\Data\Variables .robot' does not exist.</msg>
+<msg timestamp="20250122 23:16:32.933" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\LoginPageLocators.robot' on line 5: Resource file 'PageObject\Data\Data.robot' does not exist.</msg>
+<msg timestamp="20250122 23:16:32.951" level="ERROR">Error in file 'D:\RPA2\PageObject\Locators\CallCenterLocator.robot' on line 2: Resource file 'PageObject\Locators\Common_keyword.robot' does not exist.</msg>
+</errors>
+</robot>

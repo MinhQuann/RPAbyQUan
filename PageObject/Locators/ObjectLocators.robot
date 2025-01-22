@@ -1,6 +1,6 @@
 *** Settings ***
-Resource    PageObject/Locators/Common_keyword.robot
-Resource    PageObject/Locators/SettingsCRMLocators.robot
+Resource    Common_keyword.robot
+Resource    SettingsCRMLocators.robot
 Library     SeleniumLibrary
 Library     RPA.Browser.Selenium
 Library     RPA.Excel.Files
