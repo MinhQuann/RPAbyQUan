@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.14 on win32)" generated="20250117 14:45:45.861" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.10.14 on win32)" generated="20250120 16:49:46.120" rpa="false" schemaversion="4">
 <suite id="s1" name="Tasks" source="d:\RPA2\tasks.robot">
 <test id="s1-t1" name="test 1" line="17">
 <kw name="How Many User Login And Call API_OpenBROWSER" library="Common_keyword">
@@ -10,76 +10,76 @@
 <arg>${Extension2}</arg>
 <arg>${number_users}</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<msg timestamp="20250117 14:45:49.544" level="INFO">${extension} = 1958</msg>
-<status status="PASS" starttime="20250117 14:45:49.543" endtime="20250117 14:45:49.548"/>
+<msg timestamp="20250120 16:49:49.146" level="INFO">${extension} = 1909</msg>
+<status status="PASS" starttime="20250120 16:49:49.145" endtime="20250120 16:49:49.149"/>
 </kw>
 <kw name="Open Browser" library="RPA.Browser.Selenium">
 <arg>${urlCTI}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20250117 14:45:49.550" level="INFO">Opening browser 'chrome' to base url 'https://lab.connect247.vn/ucrm-cti/call-center'.</msg>
-<status status="PASS" starttime="20250117 14:45:49.549" endtime="20250117 14:45:53.751"/>
+<msg timestamp="20250120 16:49:49.152" level="INFO">Opening browser 'chrome' to base url 'https://lab.connect247.vn/ucrm-cti/call-center'.</msg>
+<status status="PASS" starttime="20250120 16:49:49.150" endtime="20250120 16:49:53.449"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
 <arg>${BtnLoginOutSide}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20250117 14:45:53.752" endtime="20250117 14:45:53.830"/>
+<status status="PASS" starttime="20250120 16:49:53.451" endtime="20250120 16:49:53.566"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>${BtnLoginOutSide}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20250117 14:45:53.832" level="INFO">Clicking element '//*[@id='root']/div[2]/div/div/div[2]/div/button'.</msg>
-<status status="PASS" starttime="20250117 14:45:53.831" endtime="20250117 14:45:54.195"/>
+<msg timestamp="20250120 16:49:53.577" level="INFO">Clicking element '//*[@id='root']/div[2]/div/div/div[2]/div/button'.</msg>
+<status status="PASS" starttime="20250120 16:49:53.569" endtime="20250120 16:49:53.795"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
 <arg>${EmaiLogin}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20250117 14:45:54.196" endtime="20250117 14:45:54.256"/>
+<status status="PASS" starttime="20250120 16:49:53.796" endtime="20250120 16:49:53.873"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${email}</var>
 <arg>user${extension}@email.com</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250117 14:45:54.260" level="INFO">${email} = user1958@email.com</msg>
-<status status="PASS" starttime="20250117 14:45:54.258" endtime="20250117 14:45:54.262"/>
+<msg timestamp="20250120 16:49:53.876" level="INFO">${email} = user1909@email.com</msg>
+<status status="PASS" starttime="20250120 16:49:53.875" endtime="20250120 16:49:53.876"/>
 </kw>
 <kw name="Input Text" library="RPA.Browser.Selenium">
 <arg>${EmaiLogin}</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250117 14:45:54.264" level="INFO">Typing text 'user1958@email.com' into text field 'id:basic_email'.</msg>
-<status status="PASS" starttime="20250117 14:45:54.263" endtime="20250117 14:45:54.653"/>
+<msg timestamp="20250120 16:49:53.878" level="INFO">Typing text 'user1909@email.com' into text field 'id:basic_email'.</msg>
+<status status="PASS" starttime="20250120 16:49:53.877" endtime="20250120 16:49:54.179"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Email nè : ${email}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250117 14:45:54.654" level="INFO">Email nè : user1958@email.com</msg>
-<status status="PASS" starttime="20250117 14:45:54.654" endtime="20250117 14:45:54.655"/>
+<msg timestamp="20250120 16:49:54.180" level="INFO">Email nè : user1909@email.com</msg>
+<status status="PASS" starttime="20250120 16:49:54.180" endtime="20250120 16:49:54.180"/>
 </kw>
 <kw name="Input Text" library="RPA.Browser.Selenium">
 <arg>${Pwdlogin}</arg>
 <arg>12345678x@X</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250117 14:45:54.656" level="INFO">Typing text '12345678x@X' into text field 'id:basic_pass'.</msg>
-<status status="PASS" starttime="20250117 14:45:54.655" endtime="20250117 14:45:54.835"/>
+<msg timestamp="20250120 16:49:54.181" level="INFO">Typing text '12345678x@X' into text field 'id:basic_pass'.</msg>
+<status status="PASS" starttime="20250120 16:49:54.181" endtime="20250120 16:49:54.336"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>${Clickbtnlogin}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20250117 14:45:54.836" level="INFO">Clicking element '//*[@id='basic']/div[3]/div/div/div/div/button'.</msg>
-<status status="PASS" starttime="20250117 14:45:54.835" endtime="20250117 14:45:54.970"/>
+<msg timestamp="20250120 16:49:54.337" level="INFO">Clicking element '//*[@id='basic']/div[3]/div/div/div/div/button'.</msg>
+<status status="PASS" starttime="20250120 16:49:54.336" endtime="20250120 16:49:54.468"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
 <arg>//div[@class='ant-empty-description']/p[text()='Hiện chưa có cuộc gọi']</arg>
 <arg>timeout=30s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20250117 14:45:54.970" endtime="20250117 14:45:56.062"/>
+<status status="PASS" starttime="20250120 16:49:54.468" endtime="20250120 16:49:56.407"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Login Success with extension: ${email}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:45:56.063" endtime="20250117 14:45:56.065"/>
+<status status="PASS" starttime="20250120 16:49:56.407" endtime="20250120 16:49:56.410"/>
 </kw>
 <kw name="How many calls currently and how long does the Popup tab display" library="CallCenterLocator">
 <arg>${extension}</arg>
@@ -97,15 +97,15 @@
 <var>${random_number}</var>
 <arg>random.randint(${min}, ${max})</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:45:56.071" level="INFO">${random_number} = 673767007</msg>
-<status status="PASS" starttime="20250117 14:45:56.070" endtime="20250117 14:45:56.071"/>
+<msg timestamp="20250120 16:49:56.419" level="INFO">${random_number} = 949549685</msg>
+<status status="PASS" starttime="20250120 16:49:56.417" endtime="20250120 16:49:56.419"/>
 </kw>
 <return>
 <value>${random_number}</value>
-<status status="PASS" starttime="20250117 14:45:56.071" endtime="20250117 14:45:56.071"/>
+<status status="PASS" starttime="20250120 16:49:56.419" endtime="20250120 16:49:56.420"/>
 </return>
-<msg timestamp="20250117 14:45:56.072" level="INFO">${LINKEDID RANDOM} = 673767007</msg>
-<status status="PASS" starttime="20250117 14:45:56.069" endtime="20250117 14:45:56.073"/>
+<msg timestamp="20250120 16:49:56.420" level="INFO">${LINKEDID RANDOM} = 949549685</msg>
+<status status="PASS" starttime="20250120 16:49:56.416" endtime="20250120 16:49:56.421"/>
 </kw>
 <kw name="Generate_Phone" library="Common_keyword">
 <var>${RANDOMPHONE}</var>
@@ -113,8 +113,8 @@
 <var>${prefix}</var>
 <arg>090</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250117 14:45:56.075" level="INFO">${prefix} = 090</msg>
-<status status="PASS" starttime="20250117 14:45:56.074" endtime="20250117 14:45:56.075"/>
+<msg timestamp="20250120 16:49:56.422" level="INFO">${prefix} = 090</msg>
+<status status="PASS" starttime="20250120 16:49:56.422" endtime="20250120 16:49:56.422"/>
 </kw>
 <kw name="random_number" library="Common_keyword">
 <var>${phone_number}</var>
@@ -124,55 +124,55 @@
 <var>${random_number}</var>
 <arg>random.randint(${min}, ${max})</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:45:56.079" level="INFO">${random_number} = 9907960</msg>
-<status status="PASS" starttime="20250117 14:45:56.077" endtime="20250117 14:45:56.079"/>
+<msg timestamp="20250120 16:49:56.427" level="INFO">${random_number} = 2172514</msg>
+<status status="PASS" starttime="20250120 16:49:56.425" endtime="20250120 16:49:56.428"/>
 </kw>
 <return>
 <value>${random_number}</value>
-<status status="PASS" starttime="20250117 14:45:56.079" endtime="20250117 14:45:56.080"/>
+<status status="PASS" starttime="20250120 16:49:56.428" endtime="20250120 16:49:56.428"/>
 </return>
-<msg timestamp="20250117 14:45:56.080" level="INFO">${phone_number} = 9907960</msg>
-<status status="PASS" starttime="20250117 14:45:56.076" endtime="20250117 14:45:56.081"/>
+<msg timestamp="20250120 16:49:56.429" level="INFO">${phone_number} = 2172514</msg>
+<status status="PASS" starttime="20250120 16:49:56.422" endtime="20250120 16:49:56.429"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${phone}</var>
 <arg>${prefix}${phone_number}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250117 14:45:56.082" level="INFO">${phone} = 0909907960</msg>
-<status status="PASS" starttime="20250117 14:45:56.081" endtime="20250117 14:45:56.082"/>
+<msg timestamp="20250120 16:49:56.431" level="INFO">${phone} = 0902172514</msg>
+<status status="PASS" starttime="20250120 16:49:56.430" endtime="20250120 16:49:56.431"/>
 </kw>
 <return>
 <value>${phone}</value>
-<status status="PASS" starttime="20250117 14:45:56.082" endtime="20250117 14:45:56.082"/>
+<status status="PASS" starttime="20250120 16:49:56.432" endtime="20250120 16:49:56.432"/>
 </return>
 <kw name="Log To Console" library="BuiltIn">
 <arg>message: ${phone}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20250117 14:45:56.083" endtime="20250117 14:45:56.083"/>
+<status status="NOT RUN" starttime="20250120 16:49:56.432" endtime="20250120 16:49:56.433"/>
 </kw>
-<msg timestamp="20250117 14:45:56.083" level="INFO">${RANDOMPHONE} = 0909907960</msg>
-<status status="PASS" starttime="20250117 14:45:56.074" endtime="20250117 14:45:56.083"/>
+<msg timestamp="20250120 16:49:56.433" level="INFO">${RANDOMPHONE} = 0902172514</msg>
+<status status="PASS" starttime="20250120 16:49:56.421" endtime="20250120 16:49:56.433"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Phone= ${RANDOMPHONE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:45:56.084" endtime="20250117 14:45:56.085"/>
+<status status="PASS" starttime="20250120 16:49:56.433" endtime="20250120 16:49:56.434"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>LinkedID= ${LINKEDID RANDOM}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:45:56.085" endtime="20250117 14:45:56.087"/>
+<status status="PASS" starttime="20250120 16:49:56.435" endtime="20250120 16:49:56.436"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Extension= ${extension}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:45:56.087" endtime="20250117 14:45:56.088"/>
+<status status="PASS" starttime="20250120 16:49:56.437" endtime="20250120 16:49:56.438"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
+<arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20250117 14:45:58.093" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20250117 14:45:56.089" endtime="20250117 14:45:58.094"/>
+<msg timestamp="20250120 16:50:01.446" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250120 16:49:56.438" endtime="20250120 16:50:01.446"/>
 </kw>
 <kw name="RPACallAPI_CALL_FI" library="Common_keyword">
 <arg>${LINKEDID RANDOM}</arg>
@@ -192,23 +192,23 @@
 <arg>ExtentionID=${ExtensionID}</arg>
 <arg>InOutCall=${Direction}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250117 14:45:58.101" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=673767007 | CallPhone=0909907960 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=RINGING | Username=1958 | ExtentionID=1958 | InOutCall=0 }</msg>
-<status status="PASS" starttime="20250117 14:45:58.098" endtime="20250117 14:45:58.102"/>
+<msg timestamp="20250120 16:50:01.450" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=949549685 | CallPhone=0902172514 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=RINGING | Username=1909 | ExtentionID=1909 | InOutCall=0 }</msg>
+<status status="PASS" starttime="20250120 16:50:01.448" endtime="20250120 16:50:01.450"/>
 </kw>
 <kw name="Get Time" library="BuiltIn">
 <var>${start_time}</var>
 <arg>epoch</arg>
 <doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:45:58.104" level="INFO">${start_time} = 1737099958</msg>
-<status status="PASS" starttime="20250117 14:45:58.103" endtime="20250117 14:45:58.104"/>
+<msg timestamp="20250120 16:50:01.452" level="INFO">${start_time} = 1737366601</msg>
+<status status="PASS" starttime="20250120 16:50:01.451" endtime="20250120 16:50:01.452"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>api_session</arg>
 <arg>${API_URL_FIN}</arg>
 <arg>headers=&amp;{HEADERS_FIN}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250117 14:45:58.107" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250117 14:45:58.105" endtime="20250117 14:45:58.108"/>
+<msg timestamp="20250120 16:50:01.453" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20250120 16:50:01.452" endtime="20250120 16:50:01.453"/>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <var>${response}</var>
@@ -216,28 +216,28 @@
 <arg>${API_URL_FIN}</arg>
 <arg>data=&amp;{PAYLOADRINGING}</arg>
 <doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250117 14:45:58.110" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250117 14:45:58.798" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
+<msg timestamp="20250120 16:50:01.454" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20250120 16:50:02.056" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
  path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '169'} 
- body=LinkedID=673767007&amp;CallPhone=0909907960&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=RINGING&amp;Username=1958&amp;ExtentionID=1958&amp;InOutCall=0 
+ body=LinkedID=949549685&amp;CallPhone=0902172514&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=RINGING&amp;Username=1909&amp;ExtentionID=1909&amp;InOutCall=0 
  </msg>
-<msg timestamp="20250117 14:45:58.798" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
+<msg timestamp="20250120 16:50:02.058" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
  status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 17 Jan 2025 07:45:58 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
+ headers={'Server': 'nginx', 'Date': 'Mon, 20 Jan 2025 09:50:00 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
  body={"data": [], "message": "success", "status_code": 200} 
  </msg>
-<msg timestamp="20250117 14:45:58.799" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20250120 16:50:02.059" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20250117 14:45:58.800" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250117 14:45:58.109" endtime="20250117 14:45:58.801"/>
+<msg timestamp="20250120 16:50:02.060" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20250120 16:50:01.454" endtime="20250120 16:50:02.060"/>
 </kw>
 <kw name="Get Time" library="BuiltIn">
 <var>${end_time}</var>
 <arg>epoch</arg>
 <doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:45:58.803" level="INFO">${end_time} = 1737099958</msg>
-<status status="PASS" starttime="20250117 14:45:58.802" endtime="20250117 14:45:58.803"/>
+<msg timestamp="20250120 16:50:02.062" level="INFO">${end_time} = 1737366602</msg>
+<status status="PASS" starttime="20250120 16:50:02.061" endtime="20250120 16:50:02.062"/>
 </kw>
 <kw name="Subtract Time From Date" library="DateTime">
 <var>${elapsed_time2}</var>
@@ -245,15 +245,15 @@
 <arg>${start_time}</arg>
 <arg>result_format=%S.%f</arg>
 <doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250117 14:45:58.805" level="INFO">${elapsed_time2} = 00.000000</msg>
-<status status="PASS" starttime="20250117 14:45:58.804" endtime="20250117 14:45:58.805"/>
+<msg timestamp="20250120 16:50:02.065" level="INFO">${elapsed_time2} = 01.000000</msg>
+<status status="PASS" starttime="20250120 16:50:02.063" endtime="20250120 16:50:02.065"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Response: ${response} | Time taken: ${elapsed_time2} seconds</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:45:58.805" endtime="20250117 14:45:58.807"/>
+<status status="PASS" starttime="20250120 16:50:02.066" endtime="20250120 16:50:02.067"/>
 </kw>
-<status status="PASS" starttime="20250117 14:45:58.095" endtime="20250117 14:45:58.807"/>
+<status status="PASS" starttime="20250120 16:50:01.447" endtime="20250120 16:50:02.067"/>
 </kw>
 <kw name="Wait For Element To Appear" library="CallCenterLocator">
 <arg>${ELEMENT_CLASS}</arg>
@@ -266,15 +266,15 @@
 <arg>time.time()</arg>
 <arg>modules=time</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:45:58.812" level="INFO">${current_time} = 1737099958.812122</msg>
-<status status="PASS" starttime="20250117 14:45:58.811" endtime="20250117 14:45:58.812"/>
+<msg timestamp="20250120 16:50:02.076" level="INFO">${current_time} = 1737366602.0763767</msg>
+<status status="PASS" starttime="20250120 16:50:02.075" endtime="20250120 16:50:02.076"/>
 </kw>
 <return>
 <value>${current_time}</value>
-<status status="PASS" starttime="20250117 14:45:58.812" endtime="20250117 14:45:58.812"/>
+<status status="PASS" starttime="20250120 16:50:02.076" endtime="20250120 16:50:02.077"/>
 </return>
-<msg timestamp="20250117 14:45:58.813" level="INFO">${start_time} = 1737099958.812122</msg>
-<status status="PASS" starttime="20250117 14:45:58.809" endtime="20250117 14:45:58.813"/>
+<msg timestamp="20250120 16:50:02.077" level="INFO">${start_time} = 1737366602.0763767</msg>
+<status status="PASS" starttime="20250120 16:50:02.070" endtime="20250120 16:50:02.077"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <arg>RPA.Browser.Selenium.Wait Until Element Is Visible</arg>
@@ -285,9 +285,9 @@
 <arg>${locator}</arg>
 <arg>timeout=20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20250117 14:45:58.815" endtime="20250117 14:45:59.583"/>
+<status status="PASS" starttime="20250120 16:50:02.078" endtime="20250120 16:50:04.860"/>
 </kw>
-<status status="PASS" starttime="20250117 14:45:58.814" endtime="20250117 14:45:59.583"/>
+<status status="PASS" starttime="20250120 16:50:02.077" endtime="20250120 16:50:04.861"/>
 </kw>
 <kw name="Get Current Time" library="CallCenterLocator">
 <var>${end_time}</var>
@@ -296,15 +296,15 @@
 <arg>time.time()</arg>
 <arg>modules=time</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:45:59.586" level="INFO">${current_time} = 1737099959.585173</msg>
-<status status="PASS" starttime="20250117 14:45:59.585" endtime="20250117 14:45:59.586"/>
+<msg timestamp="20250120 16:50:04.863" level="INFO">${current_time} = 1737366604.8625076</msg>
+<status status="PASS" starttime="20250120 16:50:04.862" endtime="20250120 16:50:04.863"/>
 </kw>
 <return>
 <value>${current_time}</value>
-<status status="PASS" starttime="20250117 14:45:59.586" endtime="20250117 14:45:59.586"/>
+<status status="PASS" starttime="20250120 16:50:04.864" endtime="20250120 16:50:04.864"/>
 </return>
-<msg timestamp="20250117 14:45:59.587" level="INFO">${end_time} = 1737099959.585173</msg>
-<status status="PASS" starttime="20250117 14:45:59.584" endtime="20250117 14:45:59.587"/>
+<msg timestamp="20250120 16:50:04.865" level="INFO">${end_time} = 1737366604.8625076</msg>
+<status status="PASS" starttime="20250120 16:50:04.861" endtime="20250120 16:50:04.865"/>
 </kw>
 <kw name="Measure Elapsed Time" library="CallCenterLocator">
 <var>${duration}</var>
@@ -314,34 +314,34 @@
 <var>${elapsed}</var>
 <arg>(float(${end}) - float(${start_time}))</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:45:59.589" level="INFO">${elapsed} = 0.7730507850646973</msg>
-<status status="PASS" starttime="20250117 14:45:59.588" endtime="20250117 14:45:59.589"/>
+<msg timestamp="20250120 16:50:04.868" level="INFO">${elapsed} = 2.786130905151367</msg>
+<status status="PASS" starttime="20250120 16:50:04.866" endtime="20250120 16:50:04.868"/>
 </kw>
 <return>
 <value>${elapsed}</value>
-<status status="PASS" starttime="20250117 14:45:59.589" endtime="20250117 14:45:59.589"/>
+<status status="PASS" starttime="20250120 16:50:04.868" endtime="20250120 16:50:04.869"/>
 </return>
-<msg timestamp="20250117 14:45:59.589" level="INFO">${duration} = 0.7730507850646973</msg>
-<status status="PASS" starttime="20250117 14:45:59.587" endtime="20250117 14:45:59.590"/>
+<msg timestamp="20250120 16:50:04.869" level="INFO">${duration} = 2.786130905151367</msg>
+<status status="PASS" starttime="20250120 16:50:04.865" endtime="20250120 16:50:04.869"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions} | Số ĐT: ${Phone}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:45:59.590" endtime="20250117 14:45:59.593"/>
+<status status="PASS" starttime="20250120 16:50:04.870" endtime="20250120 16:50:04.872"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions} | Số ĐT: ${Phone}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250117 14:45:59.594" level="INFO">Thời gian xuất hiện tab: 0.7730507850646973 giây | Extension: 1958 | Số ĐT: 0909907960</msg>
-<status status="PASS" starttime="20250117 14:45:59.593" endtime="20250117 14:45:59.595"/>
+<msg timestamp="20250120 16:50:04.873" level="INFO">Thời gian xuất hiện tab: 2.786130905151367 giây | Extension: 1909 | Số ĐT: 0902172514</msg>
+<status status="PASS" starttime="20250120 16:50:04.872" endtime="20250120 16:50:04.873"/>
 </kw>
-<status status="PASS" starttime="20250117 14:45:58.808" endtime="20250117 14:45:59.595"/>
+<status status="PASS" starttime="20250120 16:50:02.068" endtime="20250120 16:50:04.873"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20250117 14:46:02.602" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20250117 14:45:59.595" endtime="20250117 14:46:02.602"/>
+<msg timestamp="20250120 16:50:07.890" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20250120 16:50:04.874" endtime="20250120 16:50:07.892"/>
 </kw>
 <kw name="RPACallAPI_CALL_FI" library="Common_keyword">
 <arg>${LINKEDID RANDOM}</arg>
@@ -361,23 +361,23 @@
 <arg>ExtentionID=${ExtensionID}</arg>
 <arg>InOutCall=${Direction}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250117 14:46:02.604" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=673767007 | CallPhone=0909907960 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=ANSWER | Username=1958 | ExtentionID=1958 | InOutCall=0 }</msg>
-<status status="PASS" starttime="20250117 14:46:02.603" endtime="20250117 14:46:02.605"/>
+<msg timestamp="20250120 16:50:07.910" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=949549685 | CallPhone=0902172514 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=ANSWER | Username=1909 | ExtentionID=1909 | InOutCall=0 }</msg>
+<status status="PASS" starttime="20250120 16:50:07.900" endtime="20250120 16:50:07.911"/>
 </kw>
 <kw name="Get Time" library="BuiltIn">
 <var>${start_time}</var>
 <arg>epoch</arg>
 <doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:02.605" level="INFO">${start_time} = 1737099962</msg>
-<status status="PASS" starttime="20250117 14:46:02.605" endtime="20250117 14:46:02.605"/>
+<msg timestamp="20250120 16:50:07.912" level="INFO">${start_time} = 1737366607</msg>
+<status status="PASS" starttime="20250120 16:50:07.911" endtime="20250120 16:50:07.912"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>api_session</arg>
 <arg>${API_URL_FIN}</arg>
 <arg>headers=&amp;{HEADERS_FIN}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250117 14:46:02.606" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250117 14:46:02.606" endtime="20250117 14:46:02.607"/>
+<msg timestamp="20250120 16:50:07.914" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20250120 16:50:07.913" endtime="20250120 16:50:07.914"/>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <var>${response}</var>
@@ -385,28 +385,28 @@
 <arg>${API_URL_FIN}</arg>
 <arg>data=&amp;{PAYLOADRINGING}</arg>
 <doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250117 14:46:02.607" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250117 14:46:03.276" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
+<msg timestamp="20250120 16:50:07.915" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20250120 16:50:08.428" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
  path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '168'} 
- body=LinkedID=673767007&amp;CallPhone=0909907960&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=ANSWER&amp;Username=1958&amp;ExtentionID=1958&amp;InOutCall=0 
+ body=LinkedID=949549685&amp;CallPhone=0902172514&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=ANSWER&amp;Username=1909&amp;ExtentionID=1909&amp;InOutCall=0 
  </msg>
-<msg timestamp="20250117 14:46:03.276" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
+<msg timestamp="20250120 16:50:08.428" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
  status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 17 Jan 2025 07:46:02 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
+ headers={'Server': 'nginx', 'Date': 'Mon, 20 Jan 2025 09:50:07 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
  body={"data": [], "message": "success", "status_code": 200} 
  </msg>
-<msg timestamp="20250117 14:46:03.277" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20250120 16:50:08.428" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20250117 14:46:03.278" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250117 14:46:02.607" endtime="20250117 14:46:03.279"/>
+<msg timestamp="20250120 16:50:08.429" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20250120 16:50:07.915" endtime="20250120 16:50:08.430"/>
 </kw>
 <kw name="Get Time" library="BuiltIn">
 <var>${end_time}</var>
 <arg>epoch</arg>
 <doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:03.281" level="INFO">${end_time} = 1737099963</msg>
-<status status="PASS" starttime="20250117 14:46:03.280" endtime="20250117 14:46:03.282"/>
+<msg timestamp="20250120 16:50:08.431" level="INFO">${end_time} = 1737366608</msg>
+<status status="PASS" starttime="20250120 16:50:08.430" endtime="20250120 16:50:08.431"/>
 </kw>
 <kw name="Subtract Time From Date" library="DateTime">
 <var>${elapsed_time2}</var>
@@ -414,15 +414,21 @@
 <arg>${start_time}</arg>
 <arg>result_format=%S.%f</arg>
 <doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250117 14:46:03.284" level="INFO">${elapsed_time2} = 01.000000</msg>
-<status status="PASS" starttime="20250117 14:46:03.283" endtime="20250117 14:46:03.285"/>
+<msg timestamp="20250120 16:50:08.433" level="INFO">${elapsed_time2} = 01.000000</msg>
+<status status="PASS" starttime="20250120 16:50:08.432" endtime="20250120 16:50:08.433"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Response: ${response} | Time taken: ${elapsed_time2} seconds</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:03.286" endtime="20250117 14:46:03.288"/>
+<status status="PASS" starttime="20250120 16:50:08.434" endtime="20250120 16:50:08.435"/>
 </kw>
-<status status="PASS" starttime="20250117 14:46:02.603" endtime="20250117 14:46:03.288"/>
+<status status="PASS" starttime="20250120 16:50:07.895" endtime="20250120 16:50:08.436"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>60s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250120 16:51:08.452" level="INFO">Slept 1 minute</msg>
+<status status="PASS" starttime="20250120 16:50:08.437" endtime="20250120 16:51:08.452"/>
 </kw>
 <kw name="RPACallAPI_CALL_FI" library="Common_keyword">
 <arg>${LINKEDID RANDOM}</arg>
@@ -442,23 +448,23 @@
 <arg>ExtentionID=${ExtensionID}</arg>
 <arg>InOutCall=${Direction}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250117 14:46:03.301" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=673767007 | CallPhone=0909907960 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=SUCCESS | Username=1958 | ExtentionID=1958 | InOutCall=0 }</msg>
-<status status="PASS" starttime="20250117 14:46:03.296" endtime="20250117 14:46:03.302"/>
+<msg timestamp="20250120 16:51:08.455" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=949549685 | CallPhone=0902172514 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=SUCCESS | Username=1909 | ExtentionID=1909 | InOutCall=0 }</msg>
+<status status="PASS" starttime="20250120 16:51:08.454" endtime="20250120 16:51:08.455"/>
 </kw>
 <kw name="Get Time" library="BuiltIn">
 <var>${start_time}</var>
 <arg>epoch</arg>
 <doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:03.306" level="INFO">${start_time} = 1737099963</msg>
-<status status="PASS" starttime="20250117 14:46:03.304" endtime="20250117 14:46:03.307"/>
+<msg timestamp="20250120 16:51:08.456" level="INFO">${start_time} = 1737366668</msg>
+<status status="PASS" starttime="20250120 16:51:08.455" endtime="20250120 16:51:08.456"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>api_session</arg>
 <arg>${API_URL_FIN}</arg>
 <arg>headers=&amp;{HEADERS_FIN}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250117 14:46:03.312" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250117 14:46:03.310" endtime="20250117 14:46:03.313"/>
+<msg timestamp="20250120 16:51:08.457" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20250120 16:51:08.456" endtime="20250120 16:51:08.457"/>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <var>${response}</var>
@@ -466,28 +472,28 @@
 <arg>${API_URL_FIN}</arg>
 <arg>data=&amp;{PAYLOADRINGING}</arg>
 <doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250117 14:46:03.314" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250117 14:46:04.314" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
+<msg timestamp="20250120 16:51:08.458" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20250120 16:51:08.960" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
  path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '169'} 
- body=LinkedID=673767007&amp;CallPhone=0909907960&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=SUCCESS&amp;Username=1958&amp;ExtentionID=1958&amp;InOutCall=0 
+ body=LinkedID=949549685&amp;CallPhone=0902172514&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=SUCCESS&amp;Username=1909&amp;ExtentionID=1909&amp;InOutCall=0 
  </msg>
-<msg timestamp="20250117 14:46:04.314" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
+<msg timestamp="20250120 16:51:08.961" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
  status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 17 Jan 2025 07:46:03 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
+ headers={'Server': 'nginx', 'Date': 'Mon, 20 Jan 2025 09:51:07 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
  body={"data": [], "message": "success", "status_code": 200} 
  </msg>
-<msg timestamp="20250117 14:46:04.315" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20250120 16:51:08.961" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20250117 14:46:04.316" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250117 14:46:03.313" endtime="20250117 14:46:04.316"/>
+<msg timestamp="20250120 16:51:08.961" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20250120 16:51:08.458" endtime="20250120 16:51:08.963"/>
 </kw>
 <kw name="Get Time" library="BuiltIn">
 <var>${end_time}</var>
 <arg>epoch</arg>
 <doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:04.319" level="INFO">${end_time} = 1737099964</msg>
-<status status="PASS" starttime="20250117 14:46:04.317" endtime="20250117 14:46:04.319"/>
+<msg timestamp="20250120 16:51:08.964" level="INFO">${end_time} = 1737366668</msg>
+<status status="PASS" starttime="20250120 16:51:08.963" endtime="20250120 16:51:08.964"/>
 </kw>
 <kw name="Subtract Time From Date" library="DateTime">
 <var>${elapsed_time2}</var>
@@ -495,17 +501,17 @@
 <arg>${start_time}</arg>
 <arg>result_format=%S.%f</arg>
 <doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250117 14:46:04.323" level="INFO">${elapsed_time2} = 01.000000</msg>
-<status status="PASS" starttime="20250117 14:46:04.321" endtime="20250117 14:46:04.325"/>
+<msg timestamp="20250120 16:51:08.968" level="INFO">${elapsed_time2} = 00.000000</msg>
+<status status="PASS" starttime="20250120 16:51:08.965" endtime="20250120 16:51:08.968"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Response: ${response} | Time taken: ${elapsed_time2} seconds</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:04.326" endtime="20250117 14:46:04.328"/>
+<status status="PASS" starttime="20250120 16:51:08.968" endtime="20250120 16:51:08.969"/>
 </kw>
-<status status="PASS" starttime="20250117 14:46:03.291" endtime="20250117 14:46:04.329"/>
+<status status="PASS" starttime="20250120 16:51:08.453" endtime="20250120 16:51:08.970"/>
 </kw>
-<status status="PASS" starttime="20250117 14:45:56.068" endtime="20250117 14:46:04.329"/>
+<status status="PASS" starttime="20250120 16:49:56.415" endtime="20250120 16:51:08.970"/>
 </iter>
 <iter>
 <var name="${i}">1</var>
@@ -517,15 +523,15 @@
 <var>${random_number}</var>
 <arg>random.randint(${min}, ${max})</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:04.333" level="INFO">${random_number} = 439586246</msg>
-<status status="PASS" starttime="20250117 14:46:04.332" endtime="20250117 14:46:04.333"/>
+<msg timestamp="20250120 16:51:08.973" level="INFO">${random_number} = 742278898</msg>
+<status status="PASS" starttime="20250120 16:51:08.972" endtime="20250120 16:51:08.974"/>
 </kw>
 <return>
 <value>${random_number}</value>
-<status status="PASS" starttime="20250117 14:46:04.333" endtime="20250117 14:46:04.334"/>
+<status status="PASS" starttime="20250120 16:51:08.974" endtime="20250120 16:51:08.974"/>
 </return>
-<msg timestamp="20250117 14:46:04.334" level="INFO">${LINKEDID RANDOM} = 439586246</msg>
-<status status="PASS" starttime="20250117 14:46:04.331" endtime="20250117 14:46:04.334"/>
+<msg timestamp="20250120 16:51:08.974" level="INFO">${LINKEDID RANDOM} = 742278898</msg>
+<status status="PASS" starttime="20250120 16:51:08.971" endtime="20250120 16:51:08.974"/>
 </kw>
 <kw name="Generate_Phone" library="Common_keyword">
 <var>${RANDOMPHONE}</var>
@@ -533,8 +539,8 @@
 <var>${prefix}</var>
 <arg>090</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250117 14:46:04.337" level="INFO">${prefix} = 090</msg>
-<status status="PASS" starttime="20250117 14:46:04.337" endtime="20250117 14:46:04.338"/>
+<msg timestamp="20250120 16:51:08.976" level="INFO">${prefix} = 090</msg>
+<status status="PASS" starttime="20250120 16:51:08.975" endtime="20250120 16:51:08.976"/>
 </kw>
 <kw name="random_number" library="Common_keyword">
 <var>${phone_number}</var>
@@ -544,55 +550,55 @@
 <var>${random_number}</var>
 <arg>random.randint(${min}, ${max})</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:04.343" level="INFO">${random_number} = 2131801</msg>
-<status status="PASS" starttime="20250117 14:46:04.343" endtime="20250117 14:46:04.344"/>
+<msg timestamp="20250120 16:51:08.977" level="INFO">${random_number} = 1305077</msg>
+<status status="PASS" starttime="20250120 16:51:08.976" endtime="20250120 16:51:08.977"/>
 </kw>
 <return>
 <value>${random_number}</value>
-<status status="PASS" starttime="20250117 14:46:04.344" endtime="20250117 14:46:04.344"/>
+<status status="PASS" starttime="20250120 16:51:08.977" endtime="20250120 16:51:08.978"/>
 </return>
-<msg timestamp="20250117 14:46:04.344" level="INFO">${phone_number} = 2131801</msg>
-<status status="PASS" starttime="20250117 14:46:04.341" endtime="20250117 14:46:04.345"/>
+<msg timestamp="20250120 16:51:08.978" level="INFO">${phone_number} = 1305077</msg>
+<status status="PASS" starttime="20250120 16:51:08.976" endtime="20250120 16:51:08.978"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${phone}</var>
 <arg>${prefix}${phone_number}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250117 14:46:04.345" level="INFO">${phone} = 0902131801</msg>
-<status status="PASS" starttime="20250117 14:46:04.345" endtime="20250117 14:46:04.346"/>
+<msg timestamp="20250120 16:51:08.979" level="INFO">${phone} = 0901305077</msg>
+<status status="PASS" starttime="20250120 16:51:08.978" endtime="20250120 16:51:08.979"/>
 </kw>
 <return>
 <value>${phone}</value>
-<status status="PASS" starttime="20250117 14:46:04.346" endtime="20250117 14:46:04.346"/>
+<status status="PASS" starttime="20250120 16:51:08.979" endtime="20250120 16:51:08.979"/>
 </return>
 <kw name="Log To Console" library="BuiltIn">
 <arg>message: ${phone}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20250117 14:46:04.346" endtime="20250117 14:46:04.347"/>
+<status status="NOT RUN" starttime="20250120 16:51:08.980" endtime="20250120 16:51:08.980"/>
 </kw>
-<msg timestamp="20250117 14:46:04.347" level="INFO">${RANDOMPHONE} = 0902131801</msg>
-<status status="PASS" starttime="20250117 14:46:04.335" endtime="20250117 14:46:04.347"/>
+<msg timestamp="20250120 16:51:08.980" level="INFO">${RANDOMPHONE} = 0901305077</msg>
+<status status="PASS" starttime="20250120 16:51:08.975" endtime="20250120 16:51:08.980"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Phone= ${RANDOMPHONE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:04.347" endtime="20250117 14:46:04.348"/>
+<status status="PASS" starttime="20250120 16:51:08.981" endtime="20250120 16:51:08.983"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>LinkedID= ${LINKEDID RANDOM}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:04.350" endtime="20250117 14:46:04.353"/>
+<status status="PASS" starttime="20250120 16:51:08.983" endtime="20250120 16:51:08.984"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Extension= ${extension}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:04.354" endtime="20250117 14:46:04.355"/>
+<status status="PASS" starttime="20250120 16:51:08.986" endtime="20250120 16:51:08.986"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
+<arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20250117 14:46:06.366" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20250117 14:46:04.358" endtime="20250117 14:46:06.366"/>
+<msg timestamp="20250120 16:51:13.999" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250120 16:51:08.987" endtime="20250120 16:51:13.999"/>
 </kw>
 <kw name="RPACallAPI_CALL_FI" library="Common_keyword">
 <arg>${LINKEDID RANDOM}</arg>
@@ -612,23 +618,23 @@
 <arg>ExtentionID=${ExtensionID}</arg>
 <arg>InOutCall=${Direction}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250117 14:46:06.369" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=439586246 | CallPhone=0902131801 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=RINGING | Username=1958 | ExtentionID=1958 | InOutCall=0 }</msg>
-<status status="PASS" starttime="20250117 14:46:06.367" endtime="20250117 14:46:06.369"/>
+<msg timestamp="20250120 16:51:14.001" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=742278898 | CallPhone=0901305077 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=RINGING | Username=1909 | ExtentionID=1909 | InOutCall=0 }</msg>
+<status status="PASS" starttime="20250120 16:51:14.000" endtime="20250120 16:51:14.001"/>
 </kw>
 <kw name="Get Time" library="BuiltIn">
 <var>${start_time}</var>
 <arg>epoch</arg>
 <doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:06.369" level="INFO">${start_time} = 1737099966</msg>
-<status status="PASS" starttime="20250117 14:46:06.369" endtime="20250117 14:46:06.370"/>
+<msg timestamp="20250120 16:51:14.003" level="INFO">${start_time} = 1737366674</msg>
+<status status="PASS" starttime="20250120 16:51:14.002" endtime="20250120 16:51:14.003"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>api_session</arg>
 <arg>${API_URL_FIN}</arg>
 <arg>headers=&amp;{HEADERS_FIN}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250117 14:46:06.370" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250117 14:46:06.370" endtime="20250117 14:46:06.371"/>
+<msg timestamp="20250120 16:51:14.005" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20250120 16:51:14.004" endtime="20250120 16:51:14.005"/>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <var>${response}</var>
@@ -636,28 +642,28 @@
 <arg>${API_URL_FIN}</arg>
 <arg>data=&amp;{PAYLOADRINGING}</arg>
 <doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250117 14:46:06.372" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250117 14:46:06.941" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
+<msg timestamp="20250120 16:51:14.006" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20250120 16:51:14.479" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
  path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '169'} 
- body=LinkedID=439586246&amp;CallPhone=0902131801&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=RINGING&amp;Username=1958&amp;ExtentionID=1958&amp;InOutCall=0 
+ body=LinkedID=742278898&amp;CallPhone=0901305077&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=RINGING&amp;Username=1909&amp;ExtentionID=1909&amp;InOutCall=0 
  </msg>
-<msg timestamp="20250117 14:46:06.942" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
+<msg timestamp="20250120 16:51:14.479" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
  status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 17 Jan 2025 07:46:06 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
+ headers={'Server': 'nginx', 'Date': 'Mon, 20 Jan 2025 09:51:13 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
  body={"data": [], "message": "success", "status_code": 200} 
  </msg>
-<msg timestamp="20250117 14:46:06.942" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20250120 16:51:14.479" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20250117 14:46:06.942" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250117 14:46:06.371" endtime="20250117 14:46:06.943"/>
+<msg timestamp="20250120 16:51:14.480" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20250120 16:51:14.005" endtime="20250120 16:51:14.481"/>
 </kw>
 <kw name="Get Time" library="BuiltIn">
 <var>${end_time}</var>
 <arg>epoch</arg>
 <doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:06.944" level="INFO">${end_time} = 1737099966</msg>
-<status status="PASS" starttime="20250117 14:46:06.943" endtime="20250117 14:46:06.944"/>
+<msg timestamp="20250120 16:51:14.483" level="INFO">${end_time} = 1737366674</msg>
+<status status="PASS" starttime="20250120 16:51:14.482" endtime="20250120 16:51:14.484"/>
 </kw>
 <kw name="Subtract Time From Date" library="DateTime">
 <var>${elapsed_time2}</var>
@@ -665,15 +671,15 @@
 <arg>${start_time}</arg>
 <arg>result_format=%S.%f</arg>
 <doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250117 14:46:06.946" level="INFO">${elapsed_time2} = 00.000000</msg>
-<status status="PASS" starttime="20250117 14:46:06.945" endtime="20250117 14:46:06.946"/>
+<msg timestamp="20250120 16:51:14.487" level="INFO">${elapsed_time2} = 00.000000</msg>
+<status status="PASS" starttime="20250120 16:51:14.485" endtime="20250120 16:51:14.487"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Response: ${response} | Time taken: ${elapsed_time2} seconds</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:06.946" endtime="20250117 14:46:06.948"/>
+<status status="PASS" starttime="20250120 16:51:14.488" endtime="20250120 16:51:14.490"/>
 </kw>
-<status status="PASS" starttime="20250117 14:46:06.367" endtime="20250117 14:46:06.948"/>
+<status status="PASS" starttime="20250120 16:51:13.999" endtime="20250120 16:51:14.490"/>
 </kw>
 <kw name="Wait For Element To Appear" library="CallCenterLocator">
 <arg>${ELEMENT_CLASS}</arg>
@@ -686,15 +692,15 @@
 <arg>time.time()</arg>
 <arg>modules=time</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:06.952" level="INFO">${current_time} = 1737099966.9521015</msg>
-<status status="PASS" starttime="20250117 14:46:06.952" endtime="20250117 14:46:06.953"/>
+<msg timestamp="20250120 16:51:14.494" level="INFO">${current_time} = 1737366674.4933443</msg>
+<status status="PASS" starttime="20250120 16:51:14.493" endtime="20250120 16:51:14.494"/>
 </kw>
 <return>
 <value>${current_time}</value>
-<status status="PASS" starttime="20250117 14:46:06.953" endtime="20250117 14:46:06.953"/>
+<status status="PASS" starttime="20250120 16:51:14.494" endtime="20250120 16:51:14.494"/>
 </return>
-<msg timestamp="20250117 14:46:06.953" level="INFO">${start_time} = 1737099966.9521015</msg>
-<status status="PASS" starttime="20250117 14:46:06.951" endtime="20250117 14:46:06.953"/>
+<msg timestamp="20250120 16:51:14.495" level="INFO">${start_time} = 1737366674.4933443</msg>
+<status status="PASS" starttime="20250120 16:51:14.492" endtime="20250120 16:51:14.495"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <arg>RPA.Browser.Selenium.Wait Until Element Is Visible</arg>
@@ -705,9 +711,57 @@
 <arg>${locator}</arg>
 <arg>timeout=20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20250117 14:46:06.955" endtime="20250117 14:46:06.986"/>
+<msg timestamp="20250120 16:51:14.501" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF780BA80D5+2992373]
+	(No symbol) [0x00007FF78083BFD0]
+	(No symbol) [0x00007FF7806D590A]
+	(No symbol) [0x00007FF7806AF4F5]
+	(No symbol) [0x00007FF7807563A7]
+	(No symbol) [0x00007FF78076EE72]
+	(No symbol) [0x00007FF78074F113]
+	(No symbol) [0x00007FF78071A918]
+	(No symbol) [0x00007FF78071BA81]
+	GetHandleVerifier [0x00007FF780C06A2D+3379789]
+	GetHandleVerifier [0x00007FF780C1C32D+3468109]
+	GetHandleVerifier [0x00007FF780C10043+3418211]
+	GetHandleVerifier [0x00007FF78099C78B+847787]
+	(No symbol) [0x00007FF78084757F]
+	(No symbol) [0x00007FF780842FC4]
+	(No symbol) [0x00007FF78084315D]
+	(No symbol) [0x00007FF780832979]
+	BaseThreadInitThunk [0x00007FFD3226259D+29]
+	RtlUserThreadStart [0x00007FFD330AAF38+40]
+</msg>
+<msg timestamp="20250120 16:51:14.506" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF780BA80D5+2992373]
+	(No symbol) [0x00007FF78083BFD0]
+	(No symbol) [0x00007FF7806D590A]
+	(No symbol) [0x00007FF7806AF4F5]
+	(No symbol) [0x00007FF7807563A7]
+	(No symbol) [0x00007FF78076EE72]
+	(No symbol) [0x00007FF78074F113]
+	(No symbol) [0x00007FF78071A918]
+	(No symbol) [0x00007FF78071BA81]
+	GetHandleVerifier [0x00007FF780C06A2D+3379789]
+	GetHandleVerifier [0x00007FF780C1C32D+3468109]
+	GetHandleVerifier [0x00007FF780C10043+3418211]
+	GetHandleVerifier [0x00007FF78099C78B+847787]
+	(No symbol) [0x00007FF78084757F]
+	(No symbol) [0x00007FF780842FC4]
+	(No symbol) [0x00007FF78084315D]
+	(No symbol) [0x00007FF780832979]
+	BaseThreadInitThunk [0x00007FFD3226259D+29]
+	RtlUserThreadStart [0x00007FFD330AAF38+40]
+</msg>
+<status status="FAIL" starttime="20250120 16:51:14.495" endtime="20250120 16:51:14.574"/>
 </kw>
-<status status="PASS" starttime="20250117 14:46:06.954" endtime="20250117 14:46:06.987"/>
+<status status="PASS" starttime="20250120 16:51:14.495" endtime="20250120 16:51:14.575"/>
 </kw>
 <kw name="Get Current Time" library="CallCenterLocator">
 <var>${end_time}</var>
@@ -716,15 +770,15 @@
 <arg>time.time()</arg>
 <arg>modules=time</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:06.990" level="INFO">${current_time} = 1737099966.9895341</msg>
-<status status="PASS" starttime="20250117 14:46:06.988" endtime="20250117 14:46:06.991"/>
+<msg timestamp="20250120 16:51:14.577" level="INFO">${current_time} = 1737366674.5762508</msg>
+<status status="PASS" starttime="20250120 16:51:14.576" endtime="20250120 16:51:14.577"/>
 </kw>
 <return>
 <value>${current_time}</value>
-<status status="PASS" starttime="20250117 14:46:06.992" endtime="20250117 14:46:06.992"/>
+<status status="PASS" starttime="20250120 16:51:14.577" endtime="20250120 16:51:14.577"/>
 </return>
-<msg timestamp="20250117 14:46:06.993" level="INFO">${end_time} = 1737099966.9895341</msg>
-<status status="PASS" starttime="20250117 14:46:06.987" endtime="20250117 14:46:06.993"/>
+<msg timestamp="20250120 16:51:14.577" level="INFO">${end_time} = 1737366674.5762508</msg>
+<status status="PASS" starttime="20250120 16:51:14.575" endtime="20250120 16:51:14.577"/>
 </kw>
 <kw name="Measure Elapsed Time" library="CallCenterLocator">
 <var>${duration}</var>
@@ -734,34 +788,34 @@
 <var>${elapsed}</var>
 <arg>(float(${end}) - float(${start_time}))</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:06.996" level="INFO">${elapsed} = 0.03743267059326172</msg>
-<status status="PASS" starttime="20250117 14:46:06.995" endtime="20250117 14:46:06.996"/>
+<msg timestamp="20250120 16:51:14.579" level="INFO">${elapsed} = 0.08290648460388184</msg>
+<status status="PASS" starttime="20250120 16:51:14.578" endtime="20250120 16:51:14.579"/>
 </kw>
 <return>
 <value>${elapsed}</value>
-<status status="PASS" starttime="20250117 14:46:06.996" endtime="20250117 14:46:06.996"/>
+<status status="PASS" starttime="20250120 16:51:14.579" endtime="20250120 16:51:14.581"/>
 </return>
-<msg timestamp="20250117 14:46:06.997" level="INFO">${duration} = 0.03743267059326172</msg>
-<status status="PASS" starttime="20250117 14:46:06.994" endtime="20250117 14:46:06.998"/>
+<msg timestamp="20250120 16:51:14.582" level="INFO">${duration} = 0.08290648460388184</msg>
+<status status="PASS" starttime="20250120 16:51:14.578" endtime="20250120 16:51:14.582"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions} | Số ĐT: ${Phone}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:06.998" endtime="20250117 14:46:06.999"/>
+<status status="PASS" starttime="20250120 16:51:14.582" endtime="20250120 16:51:14.583"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions} | Số ĐT: ${Phone}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250117 14:46:07.000" level="INFO">Thời gian xuất hiện tab: 0.03743267059326172 giây | Extension: 1958 | Số ĐT: 0902131801</msg>
-<status status="PASS" starttime="20250117 14:46:06.999" endtime="20250117 14:46:07.001"/>
+<msg timestamp="20250120 16:51:14.585" level="INFO">Thời gian xuất hiện tab: 0.08290648460388184 giây | Extension: 1909 | Số ĐT: 0901305077</msg>
+<status status="PASS" starttime="20250120 16:51:14.584" endtime="20250120 16:51:14.585"/>
 </kw>
-<status status="PASS" starttime="20250117 14:46:06.949" endtime="20250117 14:46:07.001"/>
+<status status="PASS" starttime="20250120 16:51:14.491" endtime="20250120 16:51:14.586"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20250117 14:46:10.008" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20250117 14:46:07.001" endtime="20250117 14:46:10.008"/>
+<msg timestamp="20250120 16:51:17.600" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20250120 16:51:14.586" endtime="20250120 16:51:17.601"/>
 </kw>
 <kw name="RPACallAPI_CALL_FI" library="Common_keyword">
 <arg>${LINKEDID RANDOM}</arg>
@@ -781,23 +835,23 @@
 <arg>ExtentionID=${ExtensionID}</arg>
 <arg>InOutCall=${Direction}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250117 14:46:10.013" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=439586246 | CallPhone=0902131801 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=ANSWER | Username=1958 | ExtentionID=1958 | InOutCall=0 }</msg>
-<status status="PASS" starttime="20250117 14:46:10.010" endtime="20250117 14:46:10.013"/>
+<msg timestamp="20250120 16:51:17.604" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=742278898 | CallPhone=0901305077 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=ANSWER | Username=1909 | ExtentionID=1909 | InOutCall=0 }</msg>
+<status status="PASS" starttime="20250120 16:51:17.602" endtime="20250120 16:51:17.604"/>
 </kw>
 <kw name="Get Time" library="BuiltIn">
 <var>${start_time}</var>
 <arg>epoch</arg>
 <doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:10.014" level="INFO">${start_time} = 1737099970</msg>
-<status status="PASS" starttime="20250117 14:46:10.014" endtime="20250117 14:46:10.014"/>
+<msg timestamp="20250120 16:51:17.605" level="INFO">${start_time} = 1737366677</msg>
+<status status="PASS" starttime="20250120 16:51:17.605" endtime="20250120 16:51:17.605"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>api_session</arg>
 <arg>${API_URL_FIN}</arg>
 <arg>headers=&amp;{HEADERS_FIN}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250117 14:46:10.015" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250117 14:46:10.014" endtime="20250117 14:46:10.016"/>
+<msg timestamp="20250120 16:51:17.607" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20250120 16:51:17.606" endtime="20250120 16:51:17.608"/>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <var>${response}</var>
@@ -805,28 +859,28 @@
 <arg>${API_URL_FIN}</arg>
 <arg>data=&amp;{PAYLOADRINGING}</arg>
 <doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250117 14:46:10.017" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250117 14:46:10.507" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
+<msg timestamp="20250120 16:51:17.610" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20250120 16:51:18.189" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
  path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '168'} 
- body=LinkedID=439586246&amp;CallPhone=0902131801&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=ANSWER&amp;Username=1958&amp;ExtentionID=1958&amp;InOutCall=0 
+ body=LinkedID=742278898&amp;CallPhone=0901305077&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=ANSWER&amp;Username=1909&amp;ExtentionID=1909&amp;InOutCall=0 
  </msg>
-<msg timestamp="20250117 14:46:10.508" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
+<msg timestamp="20250120 16:51:18.189" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
  status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 17 Jan 2025 07:46:09 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
+ headers={'Server': 'nginx', 'Date': 'Mon, 20 Jan 2025 09:51:17 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
  body={"data": [], "message": "success", "status_code": 200} 
  </msg>
-<msg timestamp="20250117 14:46:10.508" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20250120 16:51:18.189" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20250117 14:46:10.510" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250117 14:46:10.016" endtime="20250117 14:46:10.510"/>
+<msg timestamp="20250120 16:51:18.191" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20250120 16:51:17.609" endtime="20250120 16:51:18.191"/>
 </kw>
 <kw name="Get Time" library="BuiltIn">
 <var>${end_time}</var>
 <arg>epoch</arg>
 <doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:10.511" level="INFO">${end_time} = 1737099970</msg>
-<status status="PASS" starttime="20250117 14:46:10.511" endtime="20250117 14:46:10.512"/>
+<msg timestamp="20250120 16:51:18.193" level="INFO">${end_time} = 1737366678</msg>
+<status status="PASS" starttime="20250120 16:51:18.192" endtime="20250120 16:51:18.193"/>
 </kw>
 <kw name="Subtract Time From Date" library="DateTime">
 <var>${elapsed_time2}</var>
@@ -834,15 +888,21 @@
 <arg>${start_time}</arg>
 <arg>result_format=%S.%f</arg>
 <doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250117 14:46:10.513" level="INFO">${elapsed_time2} = 00.000000</msg>
-<status status="PASS" starttime="20250117 14:46:10.512" endtime="20250117 14:46:10.513"/>
+<msg timestamp="20250120 16:51:18.196" level="INFO">${elapsed_time2} = 01.000000</msg>
+<status status="PASS" starttime="20250120 16:51:18.194" endtime="20250120 16:51:18.197"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Response: ${response} | Time taken: ${elapsed_time2} seconds</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:10.514" endtime="20250117 14:46:10.514"/>
+<status status="PASS" starttime="20250120 16:51:18.200" endtime="20250120 16:51:18.201"/>
 </kw>
-<status status="PASS" starttime="20250117 14:46:10.009" endtime="20250117 14:46:10.515"/>
+<status status="PASS" starttime="20250120 16:51:17.601" endtime="20250120 16:51:18.202"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>60s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250120 16:52:18.211" level="INFO">Slept 1 minute</msg>
+<status status="PASS" starttime="20250120 16:51:18.203" endtime="20250120 16:52:18.213"/>
 </kw>
 <kw name="RPACallAPI_CALL_FI" library="Common_keyword">
 <arg>${LINKEDID RANDOM}</arg>
@@ -862,23 +922,23 @@
 <arg>ExtentionID=${ExtensionID}</arg>
 <arg>InOutCall=${Direction}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250117 14:46:10.519" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=439586246 | CallPhone=0902131801 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=SUCCESS | Username=1958 | ExtentionID=1958 | InOutCall=0 }</msg>
-<status status="PASS" starttime="20250117 14:46:10.516" endtime="20250117 14:46:10.519"/>
+<msg timestamp="20250120 16:52:18.222" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=742278898 | CallPhone=0901305077 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=SUCCESS | Username=1909 | ExtentionID=1909 | InOutCall=0 }</msg>
+<status status="PASS" starttime="20250120 16:52:18.217" endtime="20250120 16:52:18.223"/>
 </kw>
 <kw name="Get Time" library="BuiltIn">
 <var>${start_time}</var>
 <arg>epoch</arg>
 <doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:10.520" level="INFO">${start_time} = 1737099970</msg>
-<status status="PASS" starttime="20250117 14:46:10.519" endtime="20250117 14:46:10.520"/>
+<msg timestamp="20250120 16:52:18.225" level="INFO">${start_time} = 1737366738</msg>
+<status status="PASS" starttime="20250120 16:52:18.224" endtime="20250120 16:52:18.226"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>api_session</arg>
 <arg>${API_URL_FIN}</arg>
 <arg>headers=&amp;{HEADERS_FIN}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250117 14:46:10.521" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250117 14:46:10.520" endtime="20250117 14:46:10.521"/>
+<msg timestamp="20250120 16:52:18.229" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20250120 16:52:18.226" endtime="20250120 16:52:18.230"/>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <var>${response}</var>
@@ -886,28 +946,28 @@
 <arg>${API_URL_FIN}</arg>
 <arg>data=&amp;{PAYLOADRINGING}</arg>
 <doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250117 14:46:10.521" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250117 14:46:11.003" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
+<msg timestamp="20250120 16:52:18.231" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20250120 16:52:18.817" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
  path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '169'} 
- body=LinkedID=439586246&amp;CallPhone=0902131801&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=SUCCESS&amp;Username=1958&amp;ExtentionID=1958&amp;InOutCall=0 
+ body=LinkedID=742278898&amp;CallPhone=0901305077&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=SUCCESS&amp;Username=1909&amp;ExtentionID=1909&amp;InOutCall=0 
  </msg>
-<msg timestamp="20250117 14:46:11.004" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
+<msg timestamp="20250120 16:52:18.818" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
  status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 17 Jan 2025 07:46:10 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
+ headers={'Server': 'nginx', 'Date': 'Mon, 20 Jan 2025 09:52:17 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
  body={"data": [], "message": "success", "status_code": 200} 
  </msg>
-<msg timestamp="20250117 14:46:11.004" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20250120 16:52:18.819" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20250117 14:46:11.005" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250117 14:46:10.521" endtime="20250117 14:46:11.005"/>
+<msg timestamp="20250120 16:52:18.822" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20250120 16:52:18.231" endtime="20250120 16:52:18.823"/>
 </kw>
 <kw name="Get Time" library="BuiltIn">
 <var>${end_time}</var>
 <arg>epoch</arg>
 <doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:11.007" level="INFO">${end_time} = 1737099971</msg>
-<status status="PASS" starttime="20250117 14:46:11.006" endtime="20250117 14:46:11.008"/>
+<msg timestamp="20250120 16:52:18.829" level="INFO">${end_time} = 1737366738</msg>
+<status status="PASS" starttime="20250120 16:52:18.827" endtime="20250120 16:52:18.829"/>
 </kw>
 <kw name="Subtract Time From Date" library="DateTime">
 <var>${elapsed_time2}</var>
@@ -915,17 +975,17 @@
 <arg>${start_time}</arg>
 <arg>result_format=%S.%f</arg>
 <doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250117 14:46:11.010" level="INFO">${elapsed_time2} = 01.000000</msg>
-<status status="PASS" starttime="20250117 14:46:11.008" endtime="20250117 14:46:11.010"/>
+<msg timestamp="20250120 16:52:18.832" level="INFO">${elapsed_time2} = 00.000000</msg>
+<status status="PASS" starttime="20250120 16:52:18.830" endtime="20250120 16:52:18.833"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Response: ${response} | Time taken: ${elapsed_time2} seconds</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:11.012" endtime="20250117 14:46:11.013"/>
+<status status="PASS" starttime="20250120 16:52:18.834" endtime="20250120 16:52:18.836"/>
 </kw>
-<status status="PASS" starttime="20250117 14:46:10.515" endtime="20250117 14:46:11.014"/>
+<status status="PASS" starttime="20250120 16:52:18.214" endtime="20250120 16:52:18.837"/>
 </kw>
-<status status="PASS" starttime="20250117 14:46:04.330" endtime="20250117 14:46:11.014"/>
+<status status="PASS" starttime="20250120 16:51:08.971" endtime="20250120 16:52:18.839"/>
 </iter>
 <iter>
 <var name="${i}">2</var>
@@ -937,15 +997,15 @@
 <var>${random_number}</var>
 <arg>random.randint(${min}, ${max})</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:11.018" level="INFO">${random_number} = 686338654</msg>
-<status status="PASS" starttime="20250117 14:46:11.017" endtime="20250117 14:46:11.018"/>
+<msg timestamp="20250120 16:52:18.844" level="INFO">${random_number} = 475543674</msg>
+<status status="PASS" starttime="20250120 16:52:18.842" endtime="20250120 16:52:18.845"/>
 </kw>
 <return>
 <value>${random_number}</value>
-<status status="PASS" starttime="20250117 14:46:11.019" endtime="20250117 14:46:11.019"/>
+<status status="PASS" starttime="20250120 16:52:18.845" endtime="20250120 16:52:18.846"/>
 </return>
-<msg timestamp="20250117 14:46:11.020" level="INFO">${LINKEDID RANDOM} = 686338654</msg>
-<status status="PASS" starttime="20250117 14:46:11.015" endtime="20250117 14:46:11.021"/>
+<msg timestamp="20250120 16:52:18.847" level="INFO">${LINKEDID RANDOM} = 475543674</msg>
+<status status="PASS" starttime="20250120 16:52:18.841" endtime="20250120 16:52:18.848"/>
 </kw>
 <kw name="Generate_Phone" library="Common_keyword">
 <var>${RANDOMPHONE}</var>
@@ -953,8 +1013,8 @@
 <var>${prefix}</var>
 <arg>090</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250117 14:46:11.023" level="INFO">${prefix} = 090</msg>
-<status status="PASS" starttime="20250117 14:46:11.022" endtime="20250117 14:46:11.024"/>
+<msg timestamp="20250120 16:52:18.851" level="INFO">${prefix} = 090</msg>
+<status status="PASS" starttime="20250120 16:52:18.850" endtime="20250120 16:52:18.851"/>
 </kw>
 <kw name="random_number" library="Common_keyword">
 <var>${phone_number}</var>
@@ -964,55 +1024,55 @@
 <var>${random_number}</var>
 <arg>random.randint(${min}, ${max})</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:11.027" level="INFO">${random_number} = 9498931</msg>
-<status status="PASS" starttime="20250117 14:46:11.025" endtime="20250117 14:46:11.028"/>
+<msg timestamp="20250120 16:52:18.857" level="INFO">${random_number} = 2582770</msg>
+<status status="PASS" starttime="20250120 16:52:18.854" endtime="20250120 16:52:18.858"/>
 </kw>
 <return>
 <value>${random_number}</value>
-<status status="PASS" starttime="20250117 14:46:11.028" endtime="20250117 14:46:11.042"/>
+<status status="PASS" starttime="20250120 16:52:18.860" endtime="20250120 16:52:18.861"/>
 </return>
-<msg timestamp="20250117 14:46:11.043" level="INFO">${phone_number} = 9498931</msg>
-<status status="PASS" starttime="20250117 14:46:11.024" endtime="20250117 14:46:11.044"/>
+<msg timestamp="20250120 16:52:18.862" level="INFO">${phone_number} = 2582770</msg>
+<status status="PASS" starttime="20250120 16:52:18.852" endtime="20250120 16:52:18.863"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${phone}</var>
 <arg>${prefix}${phone_number}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250117 14:46:11.049" level="INFO">${phone} = 0909498931</msg>
-<status status="PASS" starttime="20250117 14:46:11.048" endtime="20250117 14:46:11.049"/>
+<msg timestamp="20250120 16:52:18.865" level="INFO">${phone} = 0902582770</msg>
+<status status="PASS" starttime="20250120 16:52:18.863" endtime="20250120 16:52:18.866"/>
 </kw>
 <return>
 <value>${phone}</value>
-<status status="PASS" starttime="20250117 14:46:11.049" endtime="20250117 14:46:11.050"/>
+<status status="PASS" starttime="20250120 16:52:18.867" endtime="20250120 16:52:18.867"/>
 </return>
 <kw name="Log To Console" library="BuiltIn">
 <arg>message: ${phone}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20250117 14:46:11.051" endtime="20250117 14:46:11.051"/>
+<status status="NOT RUN" starttime="20250120 16:52:18.868" endtime="20250120 16:52:18.868"/>
 </kw>
-<msg timestamp="20250117 14:46:11.052" level="INFO">${RANDOMPHONE} = 0909498931</msg>
-<status status="PASS" starttime="20250117 14:46:11.021" endtime="20250117 14:46:11.053"/>
+<msg timestamp="20250120 16:52:18.869" level="INFO">${RANDOMPHONE} = 0902582770</msg>
+<status status="PASS" starttime="20250120 16:52:18.848" endtime="20250120 16:52:18.870"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Phone= ${RANDOMPHONE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:11.054" endtime="20250117 14:46:11.061"/>
+<status status="PASS" starttime="20250120 16:52:18.872" endtime="20250120 16:52:18.874"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>LinkedID= ${LINKEDID RANDOM}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:11.062" endtime="20250117 14:46:11.064"/>
+<status status="PASS" starttime="20250120 16:52:18.875" endtime="20250120 16:52:18.877"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Extension= ${extension}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:11.065" endtime="20250117 14:46:11.067"/>
+<status status="PASS" starttime="20250120 16:52:18.878" endtime="20250120 16:52:18.879"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
+<arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20250117 14:46:13.072" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20250117 14:46:11.068" endtime="20250117 14:46:13.073"/>
+<msg timestamp="20250120 16:52:23.894" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250120 16:52:18.880" endtime="20250120 16:52:23.895"/>
 </kw>
 <kw name="RPACallAPI_CALL_FI" library="Common_keyword">
 <arg>${LINKEDID RANDOM}</arg>
@@ -1032,23 +1092,23 @@
 <arg>ExtentionID=${ExtensionID}</arg>
 <arg>InOutCall=${Direction}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250117 14:46:13.076" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=686338654 | CallPhone=0909498931 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=RINGING | Username=1958 | ExtentionID=1958 | InOutCall=0 }</msg>
-<status status="PASS" starttime="20250117 14:46:13.074" endtime="20250117 14:46:13.076"/>
+<msg timestamp="20250120 16:52:23.903" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=475543674 | CallPhone=0902582770 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=RINGING | Username=1909 | ExtentionID=1909 | InOutCall=0 }</msg>
+<status status="PASS" starttime="20250120 16:52:23.899" endtime="20250120 16:52:23.904"/>
 </kw>
 <kw name="Get Time" library="BuiltIn">
 <var>${start_time}</var>
 <arg>epoch</arg>
 <doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:13.078" level="INFO">${start_time} = 1737099973</msg>
-<status status="PASS" starttime="20250117 14:46:13.077" endtime="20250117 14:46:13.078"/>
+<msg timestamp="20250120 16:52:23.906" level="INFO">${start_time} = 1737366743</msg>
+<status status="PASS" starttime="20250120 16:52:23.905" endtime="20250120 16:52:23.907"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>api_session</arg>
 <arg>${API_URL_FIN}</arg>
 <arg>headers=&amp;{HEADERS_FIN}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250117 14:46:13.081" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250117 14:46:13.079" endtime="20250117 14:46:13.082"/>
+<msg timestamp="20250120 16:52:23.909" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20250120 16:52:23.908" endtime="20250120 16:52:23.911"/>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <var>${response}</var>
@@ -1056,28 +1116,28 @@
 <arg>${API_URL_FIN}</arg>
 <arg>data=&amp;{PAYLOADRINGING}</arg>
 <doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250117 14:46:13.083" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250117 14:46:13.610" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
+<msg timestamp="20250120 16:52:23.913" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20250120 16:52:24.458" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
  path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '169'} 
- body=LinkedID=686338654&amp;CallPhone=0909498931&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=RINGING&amp;Username=1958&amp;ExtentionID=1958&amp;InOutCall=0 
+ body=LinkedID=475543674&amp;CallPhone=0902582770&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=RINGING&amp;Username=1909&amp;ExtentionID=1909&amp;InOutCall=0 
  </msg>
-<msg timestamp="20250117 14:46:13.610" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
+<msg timestamp="20250120 16:52:24.458" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
  status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 17 Jan 2025 07:46:13 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
+ headers={'Server': 'nginx', 'Date': 'Mon, 20 Jan 2025 09:52:23 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
  body={"data": [], "message": "success", "status_code": 200} 
  </msg>
-<msg timestamp="20250117 14:46:13.610" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20250120 16:52:24.459" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20250117 14:46:13.612" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250117 14:46:13.082" endtime="20250117 14:46:13.613"/>
+<msg timestamp="20250120 16:52:24.461" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20250120 16:52:23.912" endtime="20250120 16:52:24.462"/>
 </kw>
 <kw name="Get Time" library="BuiltIn">
 <var>${end_time}</var>
 <arg>epoch</arg>
 <doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:13.614" level="INFO">${end_time} = 1737099973</msg>
-<status status="PASS" starttime="20250117 14:46:13.614" endtime="20250117 14:46:13.615"/>
+<msg timestamp="20250120 16:52:24.463" level="INFO">${end_time} = 1737366744</msg>
+<status status="PASS" starttime="20250120 16:52:24.462" endtime="20250120 16:52:24.463"/>
 </kw>
 <kw name="Subtract Time From Date" library="DateTime">
 <var>${elapsed_time2}</var>
@@ -1085,15 +1145,15 @@
 <arg>${start_time}</arg>
 <arg>result_format=%S.%f</arg>
 <doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250117 14:46:13.616" level="INFO">${elapsed_time2} = 00.000000</msg>
-<status status="PASS" starttime="20250117 14:46:13.615" endtime="20250117 14:46:13.616"/>
+<msg timestamp="20250120 16:52:24.464" level="INFO">${elapsed_time2} = 01.000000</msg>
+<status status="PASS" starttime="20250120 16:52:24.464" endtime="20250120 16:52:24.464"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Response: ${response} | Time taken: ${elapsed_time2} seconds</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:13.617" endtime="20250117 14:46:13.618"/>
+<status status="PASS" starttime="20250120 16:52:24.464" endtime="20250120 16:52:24.466"/>
 </kw>
-<status status="PASS" starttime="20250117 14:46:13.073" endtime="20250117 14:46:13.618"/>
+<status status="PASS" starttime="20250120 16:52:23.896" endtime="20250120 16:52:24.466"/>
 </kw>
 <kw name="Wait For Element To Appear" library="CallCenterLocator">
 <arg>${ELEMENT_CLASS}</arg>
@@ -1106,15 +1166,15 @@
 <arg>time.time()</arg>
 <arg>modules=time</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:13.622" level="INFO">${current_time} = 1737099973.62227</msg>
-<status status="PASS" starttime="20250117 14:46:13.621" endtime="20250117 14:46:13.622"/>
+<msg timestamp="20250120 16:52:24.470" level="INFO">${current_time} = 1737366744.4685738</msg>
+<status status="PASS" starttime="20250120 16:52:24.469" endtime="20250120 16:52:24.470"/>
 </kw>
 <return>
 <value>${current_time}</value>
-<status status="PASS" starttime="20250117 14:46:13.622" endtime="20250117 14:46:13.623"/>
+<status status="PASS" starttime="20250120 16:52:24.470" endtime="20250120 16:52:24.470"/>
 </return>
-<msg timestamp="20250117 14:46:13.623" level="INFO">${start_time} = 1737099973.62227</msg>
-<status status="PASS" starttime="20250117 14:46:13.620" endtime="20250117 14:46:13.623"/>
+<msg timestamp="20250120 16:52:24.470" level="INFO">${start_time} = 1737366744.4685738</msg>
+<status status="PASS" starttime="20250120 16:52:24.468" endtime="20250120 16:52:24.471"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <arg>RPA.Browser.Selenium.Wait Until Element Is Visible</arg>
@@ -1125,1056 +1185,4 @@
 <arg>${locator}</arg>
 <arg>timeout=20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20250117 14:46:13.624" endtime="20250117 14:46:13.651"/>
-</kw>
-<status status="PASS" starttime="20250117 14:46:13.623" endtime="20250117 14:46:13.651"/>
-</kw>
-<kw name="Get Current Time" library="CallCenterLocator">
-<var>${end_time}</var>
-<kw name="Evaluate" library="BuiltIn">
-<var>${current_time}</var>
-<arg>time.time()</arg>
-<arg>modules=time</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:13.653" level="INFO">${current_time} = 1737099973.653188</msg>
-<status status="PASS" starttime="20250117 14:46:13.653" endtime="20250117 14:46:13.653"/>
-</kw>
-<return>
-<value>${current_time}</value>
-<status status="PASS" starttime="20250117 14:46:13.654" endtime="20250117 14:46:13.654"/>
-</return>
-<msg timestamp="20250117 14:46:13.654" level="INFO">${end_time} = 1737099973.653188</msg>
-<status status="PASS" starttime="20250117 14:46:13.652" endtime="20250117 14:46:13.654"/>
-</kw>
-<kw name="Measure Elapsed Time" library="CallCenterLocator">
-<var>${duration}</var>
-<arg>${start_time}</arg>
-<arg>${end_time}</arg>
-<kw name="Evaluate" library="BuiltIn">
-<var>${elapsed}</var>
-<arg>(float(${end}) - float(${start_time}))</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:13.656" level="INFO">${elapsed} = 0.030917882919311523</msg>
-<status status="PASS" starttime="20250117 14:46:13.655" endtime="20250117 14:46:13.656"/>
-</kw>
-<return>
-<value>${elapsed}</value>
-<status status="PASS" starttime="20250117 14:46:13.656" endtime="20250117 14:46:13.656"/>
-</return>
-<msg timestamp="20250117 14:46:13.657" level="INFO">${duration} = 0.030917882919311523</msg>
-<status status="PASS" starttime="20250117 14:46:13.655" endtime="20250117 14:46:13.657"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions} | Số ĐT: ${Phone}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:13.657" endtime="20250117 14:46:13.658"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions} | Số ĐT: ${Phone}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250117 14:46:13.659" level="INFO">Thời gian xuất hiện tab: 0.030917882919311523 giây | Extension: 1958 | Số ĐT: 0909498931</msg>
-<status status="PASS" starttime="20250117 14:46:13.659" endtime="20250117 14:46:13.660"/>
-</kw>
-<status status="PASS" starttime="20250117 14:46:13.619" endtime="20250117 14:46:13.660"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20250117 14:46:16.671" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20250117 14:46:13.660" endtime="20250117 14:46:16.672"/>
-</kw>
-<kw name="RPACallAPI_CALL_FI" library="Common_keyword">
-<arg>${LINKEDID RANDOM}</arg>
-<arg>${extension}</arg>
-<arg>ANSWER</arg>
-<arg>0</arg>
-<arg>${RANDOMPHONE}</arg>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{PAYLOADRINGING}</var>
-<arg>LinkedID=${LinkedID}</arg>
-<arg>CallPhone=${PhoneNumber}</arg>
-<arg>CallStartTime=2024-07-22 11:30:34</arg>
-<arg>CallConnectTime=</arg>
-<arg>CallEndTime=</arg>
-<arg>CallStatus=${CallStatus}</arg>
-<arg>Username=${ExtensionID}</arg>
-<arg>ExtentionID=${ExtensionID}</arg>
-<arg>InOutCall=${Direction}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250117 14:46:16.676" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=686338654 | CallPhone=0909498931 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=ANSWER | Username=1958 | ExtentionID=1958 | InOutCall=0 }</msg>
-<status status="PASS" starttime="20250117 14:46:16.674" endtime="20250117 14:46:16.676"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${start_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:16.677" level="INFO">${start_time} = 1737099976</msg>
-<status status="PASS" starttime="20250117 14:46:16.677" endtime="20250117 14:46:16.678"/>
-</kw>
-<kw name="Create Session" library="RequestsLibrary">
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>headers=&amp;{HEADERS_FIN}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250117 14:46:16.679" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250117 14:46:16.678" endtime="20250117 14:46:16.679"/>
-</kw>
-<kw name="Post Request" library="RequestsLibrary">
-<var>${response}</var>
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>data=&amp;{PAYLOADRINGING}</arg>
-<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250117 14:46:16.680" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250117 14:46:17.134" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '168'} 
- body=LinkedID=686338654&amp;CallPhone=0909498931&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=ANSWER&amp;Username=1958&amp;ExtentionID=1958&amp;InOutCall=0 
- </msg>
-<msg timestamp="20250117 14:46:17.134" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 17 Jan 2025 07:46:16 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
- body={"data": [], "message": "success", "status_code": 200} 
- </msg>
-<msg timestamp="20250117 14:46:17.134" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20250117 14:46:17.136" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250117 14:46:16.680" endtime="20250117 14:46:17.136"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${end_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:17.138" level="INFO">${end_time} = 1737099977</msg>
-<status status="PASS" starttime="20250117 14:46:17.137" endtime="20250117 14:46:17.138"/>
-</kw>
-<kw name="Subtract Time From Date" library="DateTime">
-<var>${elapsed_time2}</var>
-<arg>${end_time}</arg>
-<arg>${start_time}</arg>
-<arg>result_format=%S.%f</arg>
-<doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250117 14:46:17.141" level="INFO">${elapsed_time2} = 01.000000</msg>
-<status status="PASS" starttime="20250117 14:46:17.139" endtime="20250117 14:46:17.141"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Response: ${response} | Time taken: ${elapsed_time2} seconds</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:17.142" endtime="20250117 14:46:17.143"/>
-</kw>
-<status status="PASS" starttime="20250117 14:46:16.672" endtime="20250117 14:46:17.143"/>
-</kw>
-<kw name="RPACallAPI_CALL_FI" library="Common_keyword">
-<arg>${LINKEDID RANDOM}</arg>
-<arg>${extension}</arg>
-<arg>SUCCESS</arg>
-<arg>0</arg>
-<arg>${RANDOMPHONE}</arg>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{PAYLOADRINGING}</var>
-<arg>LinkedID=${LinkedID}</arg>
-<arg>CallPhone=${PhoneNumber}</arg>
-<arg>CallStartTime=2024-07-22 11:30:34</arg>
-<arg>CallConnectTime=</arg>
-<arg>CallEndTime=</arg>
-<arg>CallStatus=${CallStatus}</arg>
-<arg>Username=${ExtensionID}</arg>
-<arg>ExtentionID=${ExtensionID}</arg>
-<arg>InOutCall=${Direction}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250117 14:46:17.147" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=686338654 | CallPhone=0909498931 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=SUCCESS | Username=1958 | ExtentionID=1958 | InOutCall=0 }</msg>
-<status status="PASS" starttime="20250117 14:46:17.144" endtime="20250117 14:46:17.147"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${start_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:17.149" level="INFO">${start_time} = 1737099977</msg>
-<status status="PASS" starttime="20250117 14:46:17.148" endtime="20250117 14:46:17.149"/>
-</kw>
-<kw name="Create Session" library="RequestsLibrary">
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>headers=&amp;{HEADERS_FIN}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250117 14:46:17.150" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250117 14:46:17.149" endtime="20250117 14:46:17.151"/>
-</kw>
-<kw name="Post Request" library="RequestsLibrary">
-<var>${response}</var>
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>data=&amp;{PAYLOADRINGING}</arg>
-<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250117 14:46:17.153" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250117 14:46:17.620" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '169'} 
- body=LinkedID=686338654&amp;CallPhone=0909498931&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=SUCCESS&amp;Username=1958&amp;ExtentionID=1958&amp;InOutCall=0 
- </msg>
-<msg timestamp="20250117 14:46:17.620" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 17 Jan 2025 07:46:17 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
- body={"data": [], "message": "success", "status_code": 200} 
- </msg>
-<msg timestamp="20250117 14:46:17.620" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20250117 14:46:17.621" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250117 14:46:17.151" endtime="20250117 14:46:17.622"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${end_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:17.623" level="INFO">${end_time} = 1737099977</msg>
-<status status="PASS" starttime="20250117 14:46:17.622" endtime="20250117 14:46:17.623"/>
-</kw>
-<kw name="Subtract Time From Date" library="DateTime">
-<var>${elapsed_time2}</var>
-<arg>${end_time}</arg>
-<arg>${start_time}</arg>
-<arg>result_format=%S.%f</arg>
-<doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250117 14:46:17.624" level="INFO">${elapsed_time2} = 00.000000</msg>
-<status status="PASS" starttime="20250117 14:46:17.623" endtime="20250117 14:46:17.624"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Response: ${response} | Time taken: ${elapsed_time2} seconds</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:17.625" endtime="20250117 14:46:17.626"/>
-</kw>
-<status status="PASS" starttime="20250117 14:46:17.143" endtime="20250117 14:46:17.627"/>
-</kw>
-<status status="PASS" starttime="20250117 14:46:11.015" endtime="20250117 14:46:17.627"/>
-</iter>
-<iter>
-<var name="${i}">3</var>
-<kw name="random_number" library="Common_keyword">
-<var>${LINKEDID RANDOM}</var>
-<arg>1</arg>
-<arg>1000000000</arg>
-<kw name="Evaluate" library="BuiltIn">
-<var>${random_number}</var>
-<arg>random.randint(${min}, ${max})</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:17.629" level="INFO">${random_number} = 732043231</msg>
-<status status="PASS" starttime="20250117 14:46:17.628" endtime="20250117 14:46:17.629"/>
-</kw>
-<return>
-<value>${random_number}</value>
-<status status="PASS" starttime="20250117 14:46:17.629" endtime="20250117 14:46:17.629"/>
-</return>
-<msg timestamp="20250117 14:46:17.629" level="INFO">${LINKEDID RANDOM} = 732043231</msg>
-<status status="PASS" starttime="20250117 14:46:17.628" endtime="20250117 14:46:17.630"/>
-</kw>
-<kw name="Generate_Phone" library="Common_keyword">
-<var>${RANDOMPHONE}</var>
-<kw name="Set Variable" library="BuiltIn">
-<var>${prefix}</var>
-<arg>090</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250117 14:46:17.630" level="INFO">${prefix} = 090</msg>
-<status status="PASS" starttime="20250117 14:46:17.630" endtime="20250117 14:46:17.631"/>
-</kw>
-<kw name="random_number" library="Common_keyword">
-<var>${phone_number}</var>
-<arg>1000000</arg>
-<arg>9999999</arg>
-<kw name="Evaluate" library="BuiltIn">
-<var>${random_number}</var>
-<arg>random.randint(${min}, ${max})</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:17.632" level="INFO">${random_number} = 9141209</msg>
-<status status="PASS" starttime="20250117 14:46:17.631" endtime="20250117 14:46:17.632"/>
-</kw>
-<return>
-<value>${random_number}</value>
-<status status="PASS" starttime="20250117 14:46:17.632" endtime="20250117 14:46:17.632"/>
-</return>
-<msg timestamp="20250117 14:46:17.633" level="INFO">${phone_number} = 9141209</msg>
-<status status="PASS" starttime="20250117 14:46:17.631" endtime="20250117 14:46:17.634"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${phone}</var>
-<arg>${prefix}${phone_number}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250117 14:46:17.635" level="INFO">${phone} = 0909141209</msg>
-<status status="PASS" starttime="20250117 14:46:17.634" endtime="20250117 14:46:17.636"/>
-</kw>
-<return>
-<value>${phone}</value>
-<status status="PASS" starttime="20250117 14:46:17.636" endtime="20250117 14:46:17.636"/>
-</return>
-<kw name="Log To Console" library="BuiltIn">
-<arg>message: ${phone}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20250117 14:46:17.636" endtime="20250117 14:46:17.636"/>
-</kw>
-<msg timestamp="20250117 14:46:17.637" level="INFO">${RANDOMPHONE} = 0909141209</msg>
-<status status="PASS" starttime="20250117 14:46:17.630" endtime="20250117 14:46:17.637"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Phone= ${RANDOMPHONE}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:17.637" endtime="20250117 14:46:17.638"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>LinkedID= ${LINKEDID RANDOM}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:17.639" endtime="20250117 14:46:17.640"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Extension= ${extension}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:17.641" endtime="20250117 14:46:17.642"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20250117 14:46:19.648" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20250117 14:46:17.642" endtime="20250117 14:46:19.651"/>
-</kw>
-<kw name="RPACallAPI_CALL_FI" library="Common_keyword">
-<arg>${LINKEDID RANDOM}</arg>
-<arg>${extension}</arg>
-<arg>RINGING</arg>
-<arg>0</arg>
-<arg>${RANDOMPHONE}</arg>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{PAYLOADRINGING}</var>
-<arg>LinkedID=${LinkedID}</arg>
-<arg>CallPhone=${PhoneNumber}</arg>
-<arg>CallStartTime=2024-07-22 11:30:34</arg>
-<arg>CallConnectTime=</arg>
-<arg>CallEndTime=</arg>
-<arg>CallStatus=${CallStatus}</arg>
-<arg>Username=${ExtensionID}</arg>
-<arg>ExtentionID=${ExtensionID}</arg>
-<arg>InOutCall=${Direction}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250117 14:46:19.666" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=732043231 | CallPhone=0909141209 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=RINGING | Username=1958 | ExtentionID=1958 | InOutCall=0 }</msg>
-<status status="PASS" starttime="20250117 14:46:19.659" endtime="20250117 14:46:19.668"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${start_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:19.673" level="INFO">${start_time} = 1737099979</msg>
-<status status="PASS" starttime="20250117 14:46:19.670" endtime="20250117 14:46:19.674"/>
-</kw>
-<kw name="Create Session" library="RequestsLibrary">
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>headers=&amp;{HEADERS_FIN}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250117 14:46:19.678" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250117 14:46:19.675" endtime="20250117 14:46:19.681"/>
-</kw>
-<kw name="Post Request" library="RequestsLibrary">
-<var>${response}</var>
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>data=&amp;{PAYLOADRINGING}</arg>
-<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250117 14:46:19.686" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250117 14:46:20.205" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '169'} 
- body=LinkedID=732043231&amp;CallPhone=0909141209&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=RINGING&amp;Username=1958&amp;ExtentionID=1958&amp;InOutCall=0 
- </msg>
-<msg timestamp="20250117 14:46:20.205" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 17 Jan 2025 07:46:19 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
- body={"data": [], "message": "success", "status_code": 200} 
- </msg>
-<msg timestamp="20250117 14:46:20.205" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20250117 14:46:20.206" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250117 14:46:19.684" endtime="20250117 14:46:20.207"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${end_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:20.209" level="INFO">${end_time} = 1737099980</msg>
-<status status="PASS" starttime="20250117 14:46:20.207" endtime="20250117 14:46:20.209"/>
-</kw>
-<kw name="Subtract Time From Date" library="DateTime">
-<var>${elapsed_time2}</var>
-<arg>${end_time}</arg>
-<arg>${start_time}</arg>
-<arg>result_format=%S.%f</arg>
-<doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250117 14:46:20.211" level="INFO">${elapsed_time2} = 01.000000</msg>
-<status status="PASS" starttime="20250117 14:46:20.210" endtime="20250117 14:46:20.211"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Response: ${response} | Time taken: ${elapsed_time2} seconds</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:20.212" endtime="20250117 14:46:20.213"/>
-</kw>
-<status status="PASS" starttime="20250117 14:46:19.653" endtime="20250117 14:46:20.214"/>
-</kw>
-<kw name="Wait For Element To Appear" library="CallCenterLocator">
-<arg>${ELEMENT_CLASS}</arg>
-<arg>${extension}</arg>
-<arg>${RANDOMPHONE}</arg>
-<kw name="Get Current Time" library="CallCenterLocator">
-<var>${start_time}</var>
-<kw name="Evaluate" library="BuiltIn">
-<var>${current_time}</var>
-<arg>time.time()</arg>
-<arg>modules=time</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:20.220" level="INFO">${current_time} = 1737099980.2204094</msg>
-<status status="PASS" starttime="20250117 14:46:20.218" endtime="20250117 14:46:20.220"/>
-</kw>
-<return>
-<value>${current_time}</value>
-<status status="PASS" starttime="20250117 14:46:20.220" endtime="20250117 14:46:20.221"/>
-</return>
-<msg timestamp="20250117 14:46:20.221" level="INFO">${start_time} = 1737099980.2204094</msg>
-<status status="PASS" starttime="20250117 14:46:20.216" endtime="20250117 14:46:20.221"/>
-</kw>
-<kw name="Run Keyword And Ignore Error" library="BuiltIn">
-<arg>RPA.Browser.Selenium.Wait Until Element Is Visible</arg>
-<arg>${locator}</arg>
-<arg>timeout=20s</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
-<arg>${locator}</arg>
-<arg>timeout=20s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20250117 14:46:20.222" endtime="20250117 14:46:20.272"/>
-</kw>
-<status status="PASS" starttime="20250117 14:46:20.222" endtime="20250117 14:46:20.272"/>
-</kw>
-<kw name="Get Current Time" library="CallCenterLocator">
-<var>${end_time}</var>
-<kw name="Evaluate" library="BuiltIn">
-<var>${current_time}</var>
-<arg>time.time()</arg>
-<arg>modules=time</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:20.275" level="INFO">${current_time} = 1737099980.2748456</msg>
-<status status="PASS" starttime="20250117 14:46:20.274" endtime="20250117 14:46:20.275"/>
-</kw>
-<return>
-<value>${current_time}</value>
-<status status="PASS" starttime="20250117 14:46:20.275" endtime="20250117 14:46:20.276"/>
-</return>
-<msg timestamp="20250117 14:46:20.276" level="INFO">${end_time} = 1737099980.2748456</msg>
-<status status="PASS" starttime="20250117 14:46:20.273" endtime="20250117 14:46:20.277"/>
-</kw>
-<kw name="Measure Elapsed Time" library="CallCenterLocator">
-<var>${duration}</var>
-<arg>${start_time}</arg>
-<arg>${end_time}</arg>
-<kw name="Evaluate" library="BuiltIn">
-<var>${elapsed}</var>
-<arg>(float(${end}) - float(${start_time}))</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:20.279" level="INFO">${elapsed} = 0.05443620681762695</msg>
-<status status="PASS" starttime="20250117 14:46:20.278" endtime="20250117 14:46:20.279"/>
-</kw>
-<return>
-<value>${elapsed}</value>
-<status status="PASS" starttime="20250117 14:46:20.279" endtime="20250117 14:46:20.280"/>
-</return>
-<msg timestamp="20250117 14:46:20.280" level="INFO">${duration} = 0.05443620681762695</msg>
-<status status="PASS" starttime="20250117 14:46:20.277" endtime="20250117 14:46:20.280"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions} | Số ĐT: ${Phone}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:20.280" endtime="20250117 14:46:20.282"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions} | Số ĐT: ${Phone}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250117 14:46:20.283" level="INFO">Thời gian xuất hiện tab: 0.05443620681762695 giây | Extension: 1958 | Số ĐT: 0909141209</msg>
-<status status="PASS" starttime="20250117 14:46:20.282" endtime="20250117 14:46:20.283"/>
-</kw>
-<status status="PASS" starttime="20250117 14:46:20.215" endtime="20250117 14:46:20.283"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20250117 14:46:23.289" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20250117 14:46:20.284" endtime="20250117 14:46:23.290"/>
-</kw>
-<kw name="RPACallAPI_CALL_FI" library="Common_keyword">
-<arg>${LINKEDID RANDOM}</arg>
-<arg>${extension}</arg>
-<arg>ANSWER</arg>
-<arg>0</arg>
-<arg>${RANDOMPHONE}</arg>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{PAYLOADRINGING}</var>
-<arg>LinkedID=${LinkedID}</arg>
-<arg>CallPhone=${PhoneNumber}</arg>
-<arg>CallStartTime=2024-07-22 11:30:34</arg>
-<arg>CallConnectTime=</arg>
-<arg>CallEndTime=</arg>
-<arg>CallStatus=${CallStatus}</arg>
-<arg>Username=${ExtensionID}</arg>
-<arg>ExtentionID=${ExtensionID}</arg>
-<arg>InOutCall=${Direction}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250117 14:46:23.301" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=732043231 | CallPhone=0909141209 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=ANSWER | Username=1958 | ExtentionID=1958 | InOutCall=0 }</msg>
-<status status="PASS" starttime="20250117 14:46:23.296" endtime="20250117 14:46:23.302"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${start_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:23.308" level="INFO">${start_time} = 1737099983</msg>
-<status status="PASS" starttime="20250117 14:46:23.304" endtime="20250117 14:46:23.310"/>
-</kw>
-<kw name="Create Session" library="RequestsLibrary">
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>headers=&amp;{HEADERS_FIN}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250117 14:46:23.313" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250117 14:46:23.311" endtime="20250117 14:46:23.314"/>
-</kw>
-<kw name="Post Request" library="RequestsLibrary">
-<var>${response}</var>
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>data=&amp;{PAYLOADRINGING}</arg>
-<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250117 14:46:23.315" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250117 14:46:23.756" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '168'} 
- body=LinkedID=732043231&amp;CallPhone=0909141209&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=ANSWER&amp;Username=1958&amp;ExtentionID=1958&amp;InOutCall=0 
- </msg>
-<msg timestamp="20250117 14:46:23.757" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 17 Jan 2025 07:46:23 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
- body={"data": [], "message": "success", "status_code": 200} 
- </msg>
-<msg timestamp="20250117 14:46:23.757" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20250117 14:46:23.758" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250117 14:46:23.314" endtime="20250117 14:46:23.759"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${end_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:23.760" level="INFO">${end_time} = 1737099983</msg>
-<status status="PASS" starttime="20250117 14:46:23.759" endtime="20250117 14:46:23.760"/>
-</kw>
-<kw name="Subtract Time From Date" library="DateTime">
-<var>${elapsed_time2}</var>
-<arg>${end_time}</arg>
-<arg>${start_time}</arg>
-<arg>result_format=%S.%f</arg>
-<doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250117 14:46:23.762" level="INFO">${elapsed_time2} = 00.000000</msg>
-<status status="PASS" starttime="20250117 14:46:23.761" endtime="20250117 14:46:23.762"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Response: ${response} | Time taken: ${elapsed_time2} seconds</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:23.762" endtime="20250117 14:46:23.763"/>
-</kw>
-<status status="PASS" starttime="20250117 14:46:23.292" endtime="20250117 14:46:23.764"/>
-</kw>
-<kw name="RPACallAPI_CALL_FI" library="Common_keyword">
-<arg>${LINKEDID RANDOM}</arg>
-<arg>${extension}</arg>
-<arg>SUCCESS</arg>
-<arg>0</arg>
-<arg>${RANDOMPHONE}</arg>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{PAYLOADRINGING}</var>
-<arg>LinkedID=${LinkedID}</arg>
-<arg>CallPhone=${PhoneNumber}</arg>
-<arg>CallStartTime=2024-07-22 11:30:34</arg>
-<arg>CallConnectTime=</arg>
-<arg>CallEndTime=</arg>
-<arg>CallStatus=${CallStatus}</arg>
-<arg>Username=${ExtensionID}</arg>
-<arg>ExtentionID=${ExtensionID}</arg>
-<arg>InOutCall=${Direction}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250117 14:46:23.767" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=732043231 | CallPhone=0909141209 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=SUCCESS | Username=1958 | ExtentionID=1958 | InOutCall=0 }</msg>
-<status status="PASS" starttime="20250117 14:46:23.765" endtime="20250117 14:46:23.767"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${start_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:23.768" level="INFO">${start_time} = 1737099983</msg>
-<status status="PASS" starttime="20250117 14:46:23.768" endtime="20250117 14:46:23.768"/>
-</kw>
-<kw name="Create Session" library="RequestsLibrary">
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>headers=&amp;{HEADERS_FIN}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250117 14:46:23.769" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250117 14:46:23.769" endtime="20250117 14:46:23.769"/>
-</kw>
-<kw name="Post Request" library="RequestsLibrary">
-<var>${response}</var>
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>data=&amp;{PAYLOADRINGING}</arg>
-<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250117 14:46:23.770" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250117 14:46:24.238" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '169'} 
- body=LinkedID=732043231&amp;CallPhone=0909141209&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=SUCCESS&amp;Username=1958&amp;ExtentionID=1958&amp;InOutCall=0 
- </msg>
-<msg timestamp="20250117 14:46:24.239" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 17 Jan 2025 07:46:23 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
- body={"data": [], "message": "success", "status_code": 200} 
- </msg>
-<msg timestamp="20250117 14:46:24.240" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20250117 14:46:24.241" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250117 14:46:23.770" endtime="20250117 14:46:24.241"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${end_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:24.242" level="INFO">${end_time} = 1737099984</msg>
-<status status="PASS" starttime="20250117 14:46:24.241" endtime="20250117 14:46:24.242"/>
-</kw>
-<kw name="Subtract Time From Date" library="DateTime">
-<var>${elapsed_time2}</var>
-<arg>${end_time}</arg>
-<arg>${start_time}</arg>
-<arg>result_format=%S.%f</arg>
-<doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250117 14:46:24.244" level="INFO">${elapsed_time2} = 01.000000</msg>
-<status status="PASS" starttime="20250117 14:46:24.243" endtime="20250117 14:46:24.244"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Response: ${response} | Time taken: ${elapsed_time2} seconds</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:24.245" endtime="20250117 14:46:24.245"/>
-</kw>
-<status status="PASS" starttime="20250117 14:46:23.764" endtime="20250117 14:46:24.246"/>
-</kw>
-<status status="PASS" starttime="20250117 14:46:17.627" endtime="20250117 14:46:24.246"/>
-</iter>
-<iter>
-<var name="${i}">4</var>
-<kw name="random_number" library="Common_keyword">
-<var>${LINKEDID RANDOM}</var>
-<arg>1</arg>
-<arg>1000000000</arg>
-<kw name="Evaluate" library="BuiltIn">
-<var>${random_number}</var>
-<arg>random.randint(${min}, ${max})</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:24.250" level="INFO">${random_number} = 990633274</msg>
-<status status="PASS" starttime="20250117 14:46:24.249" endtime="20250117 14:46:24.250"/>
-</kw>
-<return>
-<value>${random_number}</value>
-<status status="PASS" starttime="20250117 14:46:24.250" endtime="20250117 14:46:24.250"/>
-</return>
-<msg timestamp="20250117 14:46:24.250" level="INFO">${LINKEDID RANDOM} = 990633274</msg>
-<status status="PASS" starttime="20250117 14:46:24.248" endtime="20250117 14:46:24.251"/>
-</kw>
-<kw name="Generate_Phone" library="Common_keyword">
-<var>${RANDOMPHONE}</var>
-<kw name="Set Variable" library="BuiltIn">
-<var>${prefix}</var>
-<arg>090</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250117 14:46:24.252" level="INFO">${prefix} = 090</msg>
-<status status="PASS" starttime="20250117 14:46:24.251" endtime="20250117 14:46:24.252"/>
-</kw>
-<kw name="random_number" library="Common_keyword">
-<var>${phone_number}</var>
-<arg>1000000</arg>
-<arg>9999999</arg>
-<kw name="Evaluate" library="BuiltIn">
-<var>${random_number}</var>
-<arg>random.randint(${min}, ${max})</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:24.253" level="INFO">${random_number} = 1625374</msg>
-<status status="PASS" starttime="20250117 14:46:24.253" endtime="20250117 14:46:24.253"/>
-</kw>
-<return>
-<value>${random_number}</value>
-<status status="PASS" starttime="20250117 14:46:24.253" endtime="20250117 14:46:24.254"/>
-</return>
-<msg timestamp="20250117 14:46:24.254" level="INFO">${phone_number} = 1625374</msg>
-<status status="PASS" starttime="20250117 14:46:24.252" endtime="20250117 14:46:24.254"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${phone}</var>
-<arg>${prefix}${phone_number}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250117 14:46:24.255" level="INFO">${phone} = 0901625374</msg>
-<status status="PASS" starttime="20250117 14:46:24.254" endtime="20250117 14:46:24.255"/>
-</kw>
-<return>
-<value>${phone}</value>
-<status status="PASS" starttime="20250117 14:46:24.255" endtime="20250117 14:46:24.255"/>
-</return>
-<kw name="Log To Console" library="BuiltIn">
-<arg>message: ${phone}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20250117 14:46:24.256" endtime="20250117 14:46:24.256"/>
-</kw>
-<msg timestamp="20250117 14:46:24.256" level="INFO">${RANDOMPHONE} = 0901625374</msg>
-<status status="PASS" starttime="20250117 14:46:24.251" endtime="20250117 14:46:24.257"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Phone= ${RANDOMPHONE}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:24.257" endtime="20250117 14:46:24.258"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>LinkedID= ${LINKEDID RANDOM}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:24.259" endtime="20250117 14:46:24.259"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Extension= ${extension}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:24.260" endtime="20250117 14:46:24.261"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20250117 14:46:26.272" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20250117 14:46:24.261" endtime="20250117 14:46:26.274"/>
-</kw>
-<kw name="RPACallAPI_CALL_FI" library="Common_keyword">
-<arg>${LINKEDID RANDOM}</arg>
-<arg>${extension}</arg>
-<arg>RINGING</arg>
-<arg>0</arg>
-<arg>${RANDOMPHONE}</arg>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{PAYLOADRINGING}</var>
-<arg>LinkedID=${LinkedID}</arg>
-<arg>CallPhone=${PhoneNumber}</arg>
-<arg>CallStartTime=2024-07-22 11:30:34</arg>
-<arg>CallConnectTime=</arg>
-<arg>CallEndTime=</arg>
-<arg>CallStatus=${CallStatus}</arg>
-<arg>Username=${ExtensionID}</arg>
-<arg>ExtentionID=${ExtensionID}</arg>
-<arg>InOutCall=${Direction}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250117 14:46:26.285" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=990633274 | CallPhone=0901625374 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=RINGING | Username=1958 | ExtentionID=1958 | InOutCall=0 }</msg>
-<status status="PASS" starttime="20250117 14:46:26.280" endtime="20250117 14:46:26.286"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${start_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:26.291" level="INFO">${start_time} = 1737099986</msg>
-<status status="PASS" starttime="20250117 14:46:26.287" endtime="20250117 14:46:26.292"/>
-</kw>
-<kw name="Create Session" library="RequestsLibrary">
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>headers=&amp;{HEADERS_FIN}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250117 14:46:26.300" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250117 14:46:26.295" endtime="20250117 14:46:26.301"/>
-</kw>
-<kw name="Post Request" library="RequestsLibrary">
-<var>${response}</var>
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>data=&amp;{PAYLOADRINGING}</arg>
-<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250117 14:46:26.303" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250117 14:46:26.806" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '169'} 
- body=LinkedID=990633274&amp;CallPhone=0901625374&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=RINGING&amp;Username=1958&amp;ExtentionID=1958&amp;InOutCall=0 
- </msg>
-<msg timestamp="20250117 14:46:26.807" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 17 Jan 2025 07:46:26 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
- body={"data": [], "message": "success", "status_code": 200} 
- </msg>
-<msg timestamp="20250117 14:46:26.807" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20250117 14:46:26.808" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250117 14:46:26.302" endtime="20250117 14:46:26.808"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${end_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:26.810" level="INFO">${end_time} = 1737099986</msg>
-<status status="PASS" starttime="20250117 14:46:26.809" endtime="20250117 14:46:26.810"/>
-</kw>
-<kw name="Subtract Time From Date" library="DateTime">
-<var>${elapsed_time2}</var>
-<arg>${end_time}</arg>
-<arg>${start_time}</arg>
-<arg>result_format=%S.%f</arg>
-<doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250117 14:46:26.812" level="INFO">${elapsed_time2} = 00.000000</msg>
-<status status="PASS" starttime="20250117 14:46:26.811" endtime="20250117 14:46:26.812"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Response: ${response} | Time taken: ${elapsed_time2} seconds</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:26.812" endtime="20250117 14:46:26.813"/>
-</kw>
-<status status="PASS" starttime="20250117 14:46:26.276" endtime="20250117 14:46:26.813"/>
-</kw>
-<kw name="Wait For Element To Appear" library="CallCenterLocator">
-<arg>${ELEMENT_CLASS}</arg>
-<arg>${extension}</arg>
-<arg>${RANDOMPHONE}</arg>
-<kw name="Get Current Time" library="CallCenterLocator">
-<var>${start_time}</var>
-<kw name="Evaluate" library="BuiltIn">
-<var>${current_time}</var>
-<arg>time.time()</arg>
-<arg>modules=time</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:26.817" level="INFO">${current_time} = 1737099986.8170526</msg>
-<status status="PASS" starttime="20250117 14:46:26.816" endtime="20250117 14:46:26.817"/>
-</kw>
-<return>
-<value>${current_time}</value>
-<status status="PASS" starttime="20250117 14:46:26.817" endtime="20250117 14:46:26.818"/>
-</return>
-<msg timestamp="20250117 14:46:26.818" level="INFO">${start_time} = 1737099986.8170526</msg>
-<status status="PASS" starttime="20250117 14:46:26.816" endtime="20250117 14:46:26.818"/>
-</kw>
-<kw name="Run Keyword And Ignore Error" library="BuiltIn">
-<arg>RPA.Browser.Selenium.Wait Until Element Is Visible</arg>
-<arg>${locator}</arg>
-<arg>timeout=20s</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
-<arg>${locator}</arg>
-<arg>timeout=20s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20250117 14:46:26.819" endtime="20250117 14:46:26.844"/>
-</kw>
-<status status="PASS" starttime="20250117 14:46:26.818" endtime="20250117 14:46:26.844"/>
-</kw>
-<kw name="Get Current Time" library="CallCenterLocator">
-<var>${end_time}</var>
-<kw name="Evaluate" library="BuiltIn">
-<var>${current_time}</var>
-<arg>time.time()</arg>
-<arg>modules=time</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:26.848" level="INFO">${current_time} = 1737099986.8479698</msg>
-<status status="PASS" starttime="20250117 14:46:26.846" endtime="20250117 14:46:26.849"/>
-</kw>
-<return>
-<value>${current_time}</value>
-<status status="PASS" starttime="20250117 14:46:26.851" endtime="20250117 14:46:26.852"/>
-</return>
-<msg timestamp="20250117 14:46:26.853" level="INFO">${end_time} = 1737099986.8479698</msg>
-<status status="PASS" starttime="20250117 14:46:26.845" endtime="20250117 14:46:26.853"/>
-</kw>
-<kw name="Measure Elapsed Time" library="CallCenterLocator">
-<var>${duration}</var>
-<arg>${start_time}</arg>
-<arg>${end_time}</arg>
-<kw name="Evaluate" library="BuiltIn">
-<var>${elapsed}</var>
-<arg>(float(${end}) - float(${start_time}))</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250117 14:46:26.872" level="INFO">${elapsed} = 0.03091716766357422</msg>
-<status status="PASS" starttime="20250117 14:46:26.871" endtime="20250117 14:46:26.873"/>
-</kw>
-<return>
-<value>${elapsed}</value>
-<status status="PASS" starttime="20250117 14:46:26.873" endtime="20250117 14:46:26.874"/>
-</return>
-<msg timestamp="20250117 14:46:26.875" level="INFO">${duration} = 0.03091716766357422</msg>
-<status status="PASS" starttime="20250117 14:46:26.870" endtime="20250117 14:46:26.875"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions} | Số ĐT: ${Phone}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:26.876" endtime="20250117 14:46:26.886"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>Thời gian xuất hiện tab: ${duration} giây | Extension: ${extensions} | Số ĐT: ${Phone}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250117 14:46:26.888" level="INFO">Thời gian xuất hiện tab: 0.03091716766357422 giây | Extension: 1958 | Số ĐT: 0901625374</msg>
-<status status="PASS" starttime="20250117 14:46:26.887" endtime="20250117 14:46:26.888"/>
-</kw>
-<status status="PASS" starttime="20250117 14:46:26.814" endtime="20250117 14:46:26.889"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20250117 14:46:29.899" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20250117 14:46:26.890" endtime="20250117 14:46:29.900"/>
-</kw>
-<kw name="RPACallAPI_CALL_FI" library="Common_keyword">
-<arg>${LINKEDID RANDOM}</arg>
-<arg>${extension}</arg>
-<arg>ANSWER</arg>
-<arg>0</arg>
-<arg>${RANDOMPHONE}</arg>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{PAYLOADRINGING}</var>
-<arg>LinkedID=${LinkedID}</arg>
-<arg>CallPhone=${PhoneNumber}</arg>
-<arg>CallStartTime=2024-07-22 11:30:34</arg>
-<arg>CallConnectTime=</arg>
-<arg>CallEndTime=</arg>
-<arg>CallStatus=${CallStatus}</arg>
-<arg>Username=${ExtensionID}</arg>
-<arg>ExtentionID=${ExtensionID}</arg>
-<arg>InOutCall=${Direction}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250117 14:46:29.906" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=990633274 | CallPhone=0901625374 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=ANSWER | Username=1958 | ExtentionID=1958 | InOutCall=0 }</msg>
-<status status="PASS" starttime="20250117 14:46:29.903" endtime="20250117 14:46:29.906"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${start_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:29.908" level="INFO">${start_time} = 1737099989</msg>
-<status status="PASS" starttime="20250117 14:46:29.907" endtime="20250117 14:46:29.909"/>
-</kw>
-<kw name="Create Session" library="RequestsLibrary">
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>headers=&amp;{HEADERS_FIN}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250117 14:46:29.911" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250117 14:46:29.909" endtime="20250117 14:46:29.912"/>
-</kw>
-<kw name="Post Request" library="RequestsLibrary">
-<var>${response}</var>
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>data=&amp;{PAYLOADRINGING}</arg>
-<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250117 14:46:29.913" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250117 14:46:30.387" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '168'} 
- body=LinkedID=990633274&amp;CallPhone=0901625374&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=ANSWER&amp;Username=1958&amp;ExtentionID=1958&amp;InOutCall=0 
- </msg>
-<msg timestamp="20250117 14:46:30.387" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 17 Jan 2025 07:46:29 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
- body={"data": [], "message": "success", "status_code": 200} 
- </msg>
-<msg timestamp="20250117 14:46:30.388" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20250117 14:46:30.389" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250117 14:46:29.913" endtime="20250117 14:46:30.390"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${end_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:30.391" level="INFO">${end_time} = 1737099990</msg>
-<status status="PASS" starttime="20250117 14:46:30.390" endtime="20250117 14:46:30.391"/>
-</kw>
-<kw name="Subtract Time From Date" library="DateTime">
-<var>${elapsed_time2}</var>
-<arg>${end_time}</arg>
-<arg>${start_time}</arg>
-<arg>result_format=%S.%f</arg>
-<doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250117 14:46:30.393" level="INFO">${elapsed_time2} = 01.000000</msg>
-<status status="PASS" starttime="20250117 14:46:30.392" endtime="20250117 14:46:30.394"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Response: ${response} | Time taken: ${elapsed_time2} seconds</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20250117 14:46:30.394" endtime="20250117 14:46:30.395"/>
-</kw>
-<status status="PASS" starttime="20250117 14:46:29.900" endtime="20250117 14:46:30.396"/>
-</kw>
-<kw name="RPACallAPI_CALL_FI" library="Common_keyword">
-<arg>${LINKEDID RANDOM}</arg>
-<arg>${extension}</arg>
-<arg>SUCCESS</arg>
-<arg>0</arg>
-<arg>${RANDOMPHONE}</arg>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{PAYLOADRINGING}</var>
-<arg>LinkedID=${LinkedID}</arg>
-<arg>CallPhone=${PhoneNumber}</arg>
-<arg>CallStartTime=2024-07-22 11:30:34</arg>
-<arg>CallConnectTime=</arg>
-<arg>CallEndTime=</arg>
-<arg>CallStatus=${CallStatus}</arg>
-<arg>Username=${ExtensionID}</arg>
-<arg>ExtentionID=${ExtensionID}</arg>
-<arg>InOutCall=${Direction}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250117 14:46:30.400" level="INFO">&amp;{PAYLOADRINGING} = { LinkedID=990633274 | CallPhone=0901625374 | CallStartTime=2024-07-22 11:30:34 | CallConnectTime= | CallEndTime= | CallStatus=SUCCESS | Username=1958 | ExtentionID=1958 | InOutCall=0 }</msg>
-<status status="PASS" starttime="20250117 14:46:30.398" endtime="20250117 14:46:30.400"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${start_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:30.401" level="INFO">${start_time} = 1737099990</msg>
-<status status="PASS" starttime="20250117 14:46:30.400" endtime="20250117 14:46:30.402"/>
-</kw>
-<kw name="Create Session" library="RequestsLibrary">
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>headers=&amp;{HEADERS_FIN}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250117 14:46:30.403" level="INFO">Creating Session using : alias=api_session, url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250117 14:46:30.402" endtime="20250117 14:46:30.403"/>
-</kw>
-<kw name="Post Request" library="RequestsLibrary">
-<var>${response}</var>
-<arg>api_session</arg>
-<arg>${API_URL_FIN}</arg>
-<arg>data=&amp;{PAYLOADRINGING}</arg>
-<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20250117 14:46:30.404" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20250117 14:46:30.890" level="INFO">POST Request : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- path_url=/ucrmapi-cti/finesse-integration/handle-response-from-server 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDYwMDI5MjEsIlRlbmFudHMiOiJ0bnRfY2FsbGMyNDdzdGFuZGFyZF80MTQ1NzUyMSIsIklEIjoiNjU0OThhNWE0MjEzMTc2YTczOTE3OWZjIiwiRW1haWwiOiJjYWxsYzI0N3N0YW5kYXJkQGdtYWlsLmNvbSIsIklzX0FkbWluIjp0cnVlfQ.RywH1LqP6cjTSoGEJrsTPOl_uhiIWNuntG8ay0mxXx8', 'Content-Length': '169'} 
- body=LinkedID=990633274&amp;CallPhone=0901625374&amp;CallStartTime=2024-07-22+11%3A30%3A34&amp;CallConnectTime=&amp;CallEndTime=&amp;CallStatus=SUCCESS&amp;Username=1958&amp;ExtentionID=1958&amp;InOutCall=0 
- </msg>
-<msg timestamp="20250117 14:46:30.891" level="INFO">POST Response : url=https://lab.connect247.vn/ucrmapi-cti/finesse-integration/handle-response-from-server 
- status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 17 Jan 2025 07:46:30 GMT', 'Content-Type': 'application/json', 'Content-Length': '54', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Vary': 'origin', 'X-Frame-Options': 'DENY', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'X-XSS-Protection': '1; mode=block', 'Accept-Ranges': 'bytes'} 
- body={"data": [], "message": "success", "status_code": 200} 
- </msg>
-<msg timestamp="20250117 14:46:30.891" level="INFO">C:\Users\Bui Nguyen Minh Quan\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\connectionpool.py:1064: InsecureRequestWarning: Unverified HTTPS request is being made to host 'lab.connect247.vn'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20250117 14:46:30.892" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20250117 14:46:30.404" endtime="20250117 14:46:30.893"/>
-</kw>
-<kw name="Get Time" library="BuiltIn">
-<var>${end_time}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<msg timestamp="20250117 14:46:30.894" level="INFO">${end_time} = 1737099990</msg>
-<status status="PASS" starttime="20250117 14:46:30.893" endtime="20250117 14:46:30.894"/>
-</kw>
-<kw name="Subtract Time From Date" library="DateTime">
-<var>${elapsed_time2}</var>
-<arg>${end_time}</arg>
-<arg>${start_time}</arg>
-<arg>result_format=%S.%f</arg>
-<doc>Subtracts time from date and returns the resulting date.</doc>
-<msg timestamp="20250117 14:46:30.895" level="INFO">${elapsed_time2} = 00.000000</msg>
-<status status="PASS" starttime="20250117 14:46:30.894" endtime="20250117 14:46:30.895"/>
-</kw>
+<msg timestamp="20250120 16:52:24.477" level="WARN">

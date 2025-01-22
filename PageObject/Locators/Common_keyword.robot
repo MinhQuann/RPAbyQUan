@@ -120,7 +120,7 @@ Generate_Street
 
 Generate_Phone
     ${prefix}=    Set Variable    090
-    ${phone_number}=    random_number    1000000    9999999
+    ${phone_number}=    random_number    10000000    99999999
     ${phone}=    Set Variable    ${prefix}${phone_number}
     RETURN    ${phone}
     Log To Console    message: ${phone}
@@ -348,6 +348,7 @@ How Many User Login And Call API
     ...    timeout=30s
     Log To Console    Login Success with extension: ${email}
     How many calls currently and how long does the Popup tab display    ${extension}    ${callcurrent}
+    Log To Console    Quân ơi: abc
 
 How Many User Login And Call API_OpenBROWSER
     [Arguments]    ${number_users}    ${callcurrent}
