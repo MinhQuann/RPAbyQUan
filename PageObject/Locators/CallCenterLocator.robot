@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    Common_keyword.robot
+Resource    ./PageObject/Locators/Common_keyword.robot
 Library     SeleniumLibrary
 Library     RPA.Browser.Selenium
 Library     random
@@ -10,6 +10,7 @@ Library     XML
 
 
 *** Variables ***
+
 # Call Center
 ${ELEMENT_CLASS}        //div[contains(@class, 'ant-tabs-tab-active')]
 ${Component_Contact}    //div[@class='title' and text()='Thông tin khách hàng - Popup Call']
@@ -37,7 +38,7 @@ ${FỉeldOtherPhone1}     fld_contact_other_phone_00000001_form_interaction
 ${FieldOtherPhone2}     fld_contact_other_phone2_00000001_form_interaction
 ${SaveContact}          //*[@id="basic"]/div[4]/button[1]
 
-# TicketHistory
+# TicketHistory VTB
 ${+}                    id:ucrm_ticketlist_addrecord
 ${link}                 ${EMPTY}
 ${NgônNgữ}              //*[@id="basic"]/div[2]/div[2]/div/div[3]/div/div/div[2]/div/div/div/div

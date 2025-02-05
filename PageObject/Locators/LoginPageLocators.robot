@@ -49,3 +49,12 @@ Login CRM CTI
     RPA.Browser.Selenium.Input Text    ${EmaiLogin}    ${emailCTI}
     RPA.Browser.Selenium.Input Text    ${Pwdlogin}    ${pwdCTI}
     RPA.Browser.Selenium.Click Element    ${Clickbtnlogin}
+
+Open CRM CDP
+    RPA.Browser.Selenium.Open Browser    ${urlCDP}    chrome
+    RPA.Browser.Selenium.Maximize Browser Window
+    RPA.Browser.Selenium.Click Element    ${BtnLoginOutSide}
+    RPA.Browser.Selenium.Wait Until Element Is Visible    ${EmaiLogin}
+    RPA.Browser.Selenium.Input Text    ${EmaiLogin}    ${emailCTI}
+    RPA.Browser.Selenium.Input Text    ${Pwdlogin}    ${pwdCTI}
+    RPA.Browser.Selenium.Click Element    ${Clickbtnlogin}

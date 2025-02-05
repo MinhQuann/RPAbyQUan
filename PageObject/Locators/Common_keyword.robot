@@ -164,7 +164,7 @@ Try Double Click Or Execute JavaScript From XPath
         ...    ${elements}[${random_index}]
     END
 
-Try Click Element Or Execute JavaScript
+Try Click Element Or Execute JavaScript_index
     [Arguments]    ${elements}    ${index}
     TRY
         # Cố gắng click trực tiếp vào phần tử

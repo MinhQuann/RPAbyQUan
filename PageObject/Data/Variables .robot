@@ -13,3 +13,6 @@ ${urlCTI}       https://lab.connect247.vn/ucrm-cti/call-center
 ${emailCTI}     annacasavn2024@yopmail.com
 ${pwdCTI}       12345678x@X
 
+${urlCDP}       https://lab.connect247.vn/cdp/objects/obj_cdp_chat_detail_00000001/default-view
+${emailCDP}     cdpv1@gmail.com
+${pwdCTI}       12345678x@X
