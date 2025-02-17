@@ -35,6 +35,9 @@ ${SheetNameee}                  Test2
 
 ${DATA3}                        Data1.xlsx
 ${SheetNameeee}                 Test3
+
+${DATA4}                        DataUserEx2.xlsx
+${SheetNameeeeee}                Trang tính1
 # RPA CAll API
 # ${LinkeđID}    1721622634.191953
 # ${ExtentionID}    8014
@@ -330,26 +333,6 @@ ConfigCTI
 
         RPA.Browser.Selenium.Click Element    (//button[@type='submit'])[2]
     END
-
-How Many User Login And Call API
-    [Arguments]    ${number_users}    ${callcurrent}
-    ${extension}=    Get From List    ${Extension2}    ${number_users}
-    RPA.Browser.Selenium.Open Headless Chrome Browser    ${urlCTI}
-    # RPA.Browser.Selenium.Open Browser    ${urlCTI}    chrome
-    RPA.Browser.Selenium.Wait Until Element Is Visible    ${BtnLoginOutSide}    timeout=10s
-    RPA.Browser.Selenium.Click Element    ${BtnLoginOutSide}
-    RPA.Browser.Selenium.Wait Until Element Is Visible    ${EmaiLogin}
-    ${email}=    Set Variable    user${extension}@email.com
-    RPA.Browser.Selenium.Input Text    ${EmaiLogin}    ${email}
-    Log    Email nè : ${email}
-    RPA.Browser.Selenium.Input Text    ${Pwdlogin}    12345678x@X
-    RPA.Browser.Selenium.Click Element    ${Clickbtnlogin}
-    RPA.Browser.Selenium.Wait Until Element Is Visible
-    ...    //div[@class='ant-empty-description']/p[text()='Hiện chưa có cuộc gọi']
-    ...    timeout=30s
-    Log To Console    Login Success with extension: ${email}
-    How many calls currently and how long does the Popup tab display    ${extension}    ${callcurrent}
-    Log To Console    Quân ơi: abc
 
 How Many User Login And Call API_OpenBROWSER
     [Arguments]    ${number_users}    ${callcurrent}

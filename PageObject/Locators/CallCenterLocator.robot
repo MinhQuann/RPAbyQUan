@@ -5,7 +5,6 @@ Library     RPA.Browser.Selenium
 Library     random
 Library     Collections
 Library     BuiltIn
-Library     RPA.Desktop
 Library     XML
 
 

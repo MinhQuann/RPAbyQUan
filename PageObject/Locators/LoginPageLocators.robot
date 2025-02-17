@@ -22,7 +22,7 @@ Open CRM
 Login CRM
     RPA.Browser.Selenium.Click Element    ${BtnLoginOutSide}
     RPA.Browser.Selenium.Wait Until Element Is Visible    ${EmaiLogin}
-    RPA.Browser.Selenium.Input Text    ${EmaiLogin}    ${email}
+    RPA.Browser.Selenium.Input Text    ${EmaiLogin}    annacasavn2024@yopmail.com
     RPA.Browser.Selenium.Input Text    ${Pwdlogin}    ${pwd}
     RPA.Browser.Selenium.Click Element    ${Clickbtnlogin}
 
